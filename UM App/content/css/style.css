@@ -63,7 +63,7 @@ h1 {
 
 .def, .comment {
     margin: 10px 10px 10px 40px;
-    width: p00px;
+    width: 900px;
     border-left: solid 1px;
     border-top: solid 1px;
 }
@@ -85,6 +85,10 @@ h1 {
 }
 .comment{
     background: #BAC0E3;
+}
+
+#examples{
+	
 }
 
 #comments{
