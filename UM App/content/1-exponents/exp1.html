@@ -1,0 +1,352 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- Math Jax Configuration -->
+        <script type="text/javascript"src="./../common/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<!--jQuery-->
+	<script src= "../common/jquery-ui.custom/js/jquery-1.9.1.js"></script>
+	<link href="../common/jquery-ui.custom/css/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+	<script src="../common/jquery-ui.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
+        <!-- SCORM API Wrapper -->
+	<script type="text/javascript" src="../common/APIWrapper.js"></script>
+	
+	<!--Score Script-->
+	<script type="text/javascript">
+	    //Global,total and student Score
+	    var gScore = 0 ,totalScore = 0,studentScore = 0;
+	    
+	    function setTotal(t){
+		totalScore = t;
+	    }
+	    
+	    function addPoint(p){
+		console.log("adding point " + p);
+		gScore += p;
+	    }
+	    
+	    function reducePoint(p){
+		console.log("reducing point " + p);
+		gScore -= p;
+	    }
+	    
+	    function calcScore(){
+		console.log("total score: "+totalScore);
+		console.log("gScore: "+gScore);
+		if(gScore != undefined){
+		    studentScore = gScore/totalScore;   
+		}
+	    }
+	//    function getCalcScore(){
+	//	return studentScore;
+	//    }
+	    function clearScore(){
+		console.log("clearing bro");
+		gScore = 0;
+		studentScore = 0;
+	    }
+	    
+	    function updateScore(){
+		calcScore();
+		console.log("I am getting called bro and score is = "+studentScore);
+		document.getElementById("score").innerHTML = studentScore.toFixed(2);
+	    }
+	    function send_score(){
+			// Set Blackboard value
+			console.log("sending..."+studentScore.toFixed(2))
+			doSetValue("cmi.score.scaled",studentScore.toFixed(2));
+	    }
+	</script>
+	
+	<!--jQuery scripts-->
+	<script type="text/javascript">
+	    $(function(){
+		$("#dialog").dialog({
+		    autoOpen: false,
+		    show: {
+			    effect: "blind",
+			    duration: 1000
+		    },
+		    width: 500
+		});
+		
+		$("#checkAns").click(function(){
+		    $("#dialog").dialog("open");
+		});
+	
+		$(document).tooltip();
+	    });
+	</script>
+	
+	<!-- Initialization SCORM Script -->
+	<script type="text/javascript">
+		function loadPage(){
+			doInitialize();
+		}
+		
+		//function userName(){
+		//    var name = doGetValue ("cmi.learner_name");
+		//	if(name != ""){
+		//		document.getElementById("name").innerHTML = "Hello "+name+"!";
+		//	}
+		//}
+		
+		function unloadPage(){
+			doTerminate();
+		}
+	</script>
+	
+	<!-- Script to evaluate quiz -->
+	<script type="text/javascript">
+	    
+	    var a,b,c,d,g,h,j,k,m,n,o,p,q,r,s,t,u,v,w,z;
+	    
+	    function randomize(){
+		var variables = new Array();
+		    for (var i = 0;i<20; i++ ){
+			var random = 0;
+			while (random == 0){
+			    random = Math.floor(Math.random()*(6+6))-6;   
+			}
+			variables[i] = random;
+		    }
+		    a = variables[0];  b = variables[1];  c = variables[2];   d = variables[3];  g =variables[4];
+		    h = variables[5];  j = variables[6];   k = variables[7];   m = variables[8];  n =variables[9];
+		    o = variables[10];  p = variables[11];   q = variables[12];   r = variables[13];  s =variables[14];
+		    t = variables[15];  u = variables[16];   v = variables[17];   w = variables[18];  z =variables[19];
+		}
+	    
+	    function createQ(){
+		//Set variables for question
+		document.getElementById("q1").innerHTML ="\\("+a+"x^{"+b+"}(x^{"+c+"}y^{"+d+"})^{"+o+ "}= \t{} \\)";
+		document.getElementById("q2").innerHTML ="\\(("+g+"x^{"+h+"}y^{"+j+"})^{"+k+"}(x^{"+m+"}y^{"+n+"})^{"+p+"}= \t{}\\)";
+		document.getElementById("q3").innerHTML = "\\(\\frac{y^{"+q+"}(x^{"+r+"}y^{"+s+"})^{"+t+"}}{({"+u+"}x^{"+v+"}y^{"+w+"})^{"+z+"}}= \t{}\\)";
+	    }
+	    
+	    // Draw answer portion
+	    function answer_space(qNum){
+		document.write('<div style=\"float: left; padding-top: 10px;\"><input id=\"cAns'+qNum+'\"name = \"cAns'+qNum+'\"type=\"text\" style=\"width: 30px;\"/>\\(x\\)</div>');
+		document.write('<div style=\"float: left; width: 40px; height: 30px; padding-bottom:10px;\"><input id=\"pAns'+qNum+'\"name = \"pAns'+qNum+'\" type=\"text\" style=\" width: 20px;\"/></div>');
+		document.write('<div style=\"float: left; padding-top: 10px;\">\\(y\\)</div>');
+		document.write('<div style=\"float: left; width: 40px; height: 30px; padding-bottom:10px;\"><input id=\"qAns'+qNum+'\"name = "qAns'+qNum+'\" type=\"text\" style=\" width: 20px;\"/></div>');
+	    }
+	    
+	    // Run functions after loading
+	    window.onload = function(){
+		loadPage();
+		//document.getElementById("reset").onclick = randomize();
+		//document.getElementById("send_to_bb").onclick = send_score();
+	    };
+	    
+	</script>
+		<script type="text/javascript" src="../scripts/cr.js"></script>
+		<script type="text/javascript" src="../scripts/1.1.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+	
+        <title>UM Topic 1.1</title>
+    </head>
+    <body onbeforeunload="unloadPage()">
+	<script type="text/javascript">
+	   setTotal(3);
+	</script>
+	<div id="wrapper">
+		
+	    <h1>Integer Exponents</h1>
+	    <hr />
+	    
+	    <br />Repeated addition leads to multiplication.  For example, <br />
+	    <div id="eqn">
+		    \(2+2+2+2 = 2*5\)<br />
+	    </div>
+	    Similarly, repeated multiplication leads to <em>exponentiation</em>.
+	    For example, <br />
+	    <div id="eqn">
+	    \(2*2*2*2 =2^5\)<br />
+	    </div>
+	    Here, 5 is the <em>exponent</em> and 2 is the <em>base</em>.  Notice
+	    that
+	    \(2^5\)
+	    is not the same as 
+	    \(5^2\)
+	    because the first is 32 while the second is 25.  
+	    Using this understanding of exponentiation, we have the following definitions and rules:<br />
+	    <div class="def" style="height: 270px;">
+		<h1>Definitions:</h1>
+		<div class="eqn">
+		    \(a^0 = 1\)<br \>
+		    \(a^1 = a\)<br \>
+		    \(a^n = a*a...a\)<br \>
+		    \(a^{-1} = \frac{1}{a}\)<br \>
+		</div>
+		<div id="explanation">
+		    (if \(a\) isn't zero)<br \><br \>
+		    (for \(n\) a positive integer)<br \>
+		    <br \></br \>
+		</div>
+		<h1> Rules for Exponents:</h1>
+		<div class="eqn">
+		    \(a^m*a^n = a^{m+n}\)<br \>
+		    \(\frac{a^m}{a^n} = a{m-n}\)<br \>
+		    \((a^m)^n = a^{mn}\)<br \>
+		    \((ab)^n = a^nb^n\)<br \>
+		    \((\frac{a}{b})^n = \frac{a^n}{b^n}\)
+		</div>
+		<div>
+		    multiplying powers<br \>
+		    dividing powers<br \>
+		    raising a power to a power<br \>
+		    power of a product<br \>
+		    power of a quotient<br \>
+		</div>
+	    </div>
+	    
+	    Notice how the rules for exponents follow from our definition: for example, when we multiply powers we have <br \>
+	    <div id="eqn">\(a^m*a^n = a*a...a*a*a..a = a*a...a = a^{m+n}\)</div>
+	    <p>Go through the remaining rules to see how you can derive them from the definition.  Yes, now.  Get out some paper and write them down.</p><br \>
+	    <p>Note that while these definitions and rules are largely intuitive, there are a couple of places where this may not be the case:</p>
+	    <div id="def" class="comment" style="height: 150px;">
+		<h1>Be careful using the following</h1>
+		<div class="eqn">
+		    \(ab^n = a(b)^n\)<br \>
+		    \(-b^n = -(b^n)\)<br \>
+		    \(-ab^n = (-a)(b)^n\)
+		</div>
+		<div>
+		    (Notice that \(ab^n \not= (ab)^n\))<br \>
+		    (Notice that \(-b^n \not= (-b)^n\))<br \>
+		    <br \>
+		</div>
+		<h1>and watch out for this common mistake</h1>
+		<div class="eqn">
+		    \((a+b)^n \not= a^n + b^n\)
+		</div>
+		<div>
+		    (The power of a sum is not equal to the sum of the powers)
+		</div>
+	    </div>
+	    <br />
+	    
+	    <!-- Randomize eqn values -->
+	    <script>
+	    	randomize();
+	    </script>
+	    
+	    <strong>Examples</strong><br />
+	    As you go through these, be sure that you can explain each step of each example.<br />
+	    <div id="examples">
+		1. <img src="../images/Exponents_1/expintex01.gif" style = "padding-top: 5px;" /><br />
+		2. <img src="../images/Exponents_1/expintex02.gif" style = "padding-top: 5px;" /><br />
+		3. <img src="../images/Exponents_1/expintex03.gif" style = "padding-top: 5px;" /><br />
+		4. <img src="../images/Exponents_1/expintex04.gif" style = "padding-top: 5px;" />
+	    </div>
+	    
+	    <br /><strong>Practice</strong><br />
+	<!--    <form name="intpractice" action="">-->
+	<!--		    Before doing these practice problems, make sure that you have explained each step in the examples above. Then work the practice problems until you are sure you understand them. You can get more practice in the section test at the end of this section.-->
+	<!--	    <br /><br />-->
+	<!--		    Note that you can get new practice problems by clicking the "Refresh" button at the bottom of the practice set.-->
+	<!--	    <br /><br />-->
+	<!--	    <div>-->
+	<!--		    1. Use the rules of exponents to simplify the following expression into the form: \(cx^pu^q\)<br />-->
+	<!--		    -->
+	<!--		    <div style="height:40px; margin: 10px 10px 10px 10px;">-->
+	<!--		    	<!-- Question 1 -->-->
+	<!--			    <div id="q1" style="float: left; padding-top: 10px;"> </div>	 -->
+	<!--		    	 <script type="text/javascript">-->
+	<!--		    	 	answer_space(1);-->
+	<!--		    	 </script>-->
+	<!--		    </div>-->
+	<!--	    	(Enter answers, then click: <input type="button" value="check answer" onclick="checkPrac1(this.form);">. Answer Message: <input type="text" name="ansTxt1" style="width: 300px;" />)<br /><br />-->
+	<!--	    -->
+	<!--	    	2. Next, use the rules of exponents to simplify this next expression into the same form,<br />-->
+	<!--	    	<div style="height:40px; margin: 10px 10px 10px 10px;">-->
+	<!--	    		<!-- Question 2 -->-->
+	<!--	    		<div id="q2" style="float: left; padding-top: 10px;"> </div>-->
+	<!--	    		<script type="text/javascript">-->
+	<!--		    		answer_space(2);-->
+	<!--		    	</script>-->
+	<!--	    	</div>-->
+	<!--	    	(Enter answers, then click: <input type="button" value="check answer" onclick="checkPrac2(this.form);">. Answer Message: <input type="text" name="ansTxt2" style="width: 300px;" />)<br /><br />-->
+	<!--	    	-->
+	<!--	    	3. Another one!  With a fraction this time: again use rules of exponents to simplify the following expression into the same form as before,-->
+	<!--		    <div style="height:40px; margin: 10px 10px 20px 10px;">-->
+	<!--		    	<!-- <div style="font-size: 170%;" >\(\frac{y^{q}(x^{r}y^{s})^{t}}{({u}x^{v}y^{w})^{z}}\)</div> -->-->
+	<!--		    	<div id="q3" style="float: left; font-size: 140%"> </div>-->
+	<!--	    		<script type="text/javascript">-->
+	<!--		    		answer_space(3);-->
+	<!--		    	</script>-->
+	<!--	    	</div>-->
+	<!--	    	(Enter answers, then click: <input type="button" value="check answer" onclick="checkPrac3(this.form);">. Answer Message: <input type="text" name="ansTxt3" style="width: 300px;" />)<br /><br />-->
+	<!--	    	-->
+	<!--	    	<!-- Create questions -->-->
+	<!--	    	<script type="text/javascript">-->
+	<!--			createQ();-->
+	<!--		    </script>-->
+	<!--		    <button id="reset"> Reset Questions</button>-->
+	<!--	    </div>-->
+		    
+		    <h1>New Practice Mode</h1>
+		    <form name="intpractice" action="">
+		    <div>
+			    1. Use the rules of exponents to simplify the following expression into the form: \(cx^pu^q\)<br />
+			    
+			    <div style="height:40px; margin: 10px 10px 10px 10px;">
+			    	<!-- Question 1 -->
+				    <div id="q1" style="float: left; padding-top: 10px;"> </div>	 
+			    	 <script type="text/javascript">
+			    	 	answer_space(1);
+			    	 </script>
+			    </div>
+		    	2. Next, use the rules of exponents to simplify this next expression into the same form,<br />
+		    	<div style="height:40px; margin: 10px 10px 10px 10px;">
+		    		<!-- Question 2 -->
+		    		<div id="q2" style="float: left; padding-top: 10px;"> </div>
+		    		<script type="text/javascript">
+			    		answer_space(2);
+			    	</script>
+		    	</div>
+		    	
+		    	3. Another one!  With a fraction this time: again use rules of exponents to simplify the following expression into the same form as before,
+			    <div style="height:40px; margin: 10px 10px 20px 10px;">
+			    	<!-- <div style="font-size: 170%;" >\(\frac{y^{q}(x^{r}y^{s})^{t}}{({u}x^{v}y^{w})^{z}}\)</div> -->
+			    	<div id="q3" style="float: left; font-size: 140%"> </div>
+		    		<script type="text/javascript">
+			    		answer_space(3);
+			    	</script>
+		    	</div>
+		    	
+		    	<!-- Create questions -->
+		    	<script type="text/javascript">
+				createQ();
+			    </script>
+		    </div>
+		
+		    <div id="dialog" >
+			Score:
+			<div id="score">
+			</div>
+			<script>
+			    updateScore();
+			</script>
+			Question 1:<br /><input type="text" class="ansMess" id="ansTxt1" disabled = "disabled"/><br /><br />
+			Question 2:<br /><input type="text" class="ansMess" id="ansTxt2" disabled = "disabled"/><br /><br />
+			Question 3:<br /><input type="text" class="ansMess" id="ansTxt3" disabled = "disabled"/><br /><br />
+			<!--<button id="reset"> Reset Questions</button>-->
+			<button id="send_to_bb" onclick="send_score();"> Submit Score to Blackboard</button>
+		    </div>
+		    
+		    <input type="button" id= "checkAns" value="Check Answers" onclick="checkPracQ(this.form);"/><br />
+		    
+		    <!--Score:-->
+		    <!--<div id="score">-->
+		    <!--</div>-->
+		    <!--<!--<script>-->-->
+		    <!--<!--	updateScore();-->-->
+		    <!--<!--</script>-->-->
+		    <!---->
+		    <!--<button id="send_to_bb"> Submit Score to Blackboard</button>-->
+	    </form>
+		    <br /><a href="./index.html"> Return to Main</a>
+	</div>
+    </body>
+</html>
