@@ -1,16 +1,26 @@
+function checkPracQ(f){
+    clearScore();
+    checkPrac1(f);
+    checkPrac2(f);
+    checkPrac3(f);
+    updateScore();
+}
+
 function checkPrac1(f) {
     if ( f.iAns1.value == 16 ) {
-        f.ansTxt1.value = "Correct!  Try another practice problem!";
+        document.getElementById("ansTxt1").setAttribute("value", "Correct!  Try another practice problem!");
+	addPoint(1);
     } else {
-        f.ansTxt1.value = "Oops...  Not quite; try again!";
+	document.getElementById("ansTxt1").setAttribute("value", "Oops...  Not quite; try again!");
     }
 }
 
 function checkPrac2(f) {
     if ( f.iAns2.value == 32 ) {
-        f.ansTxt2.value = "Correct!  Try another practice problem!";
+        document.getElementById("ansTxt2").setAttribute("value", "Correct!  Try another practice problem!");
+	addPoint(1);
     } else {
-        f.ansTxt2.value = "Oops...  Not quite; try again!";
+	document.getElementById("ansTxt2").setAttribute("value", "Oops...  Not quite; try again!");
     }
 }
 
@@ -23,7 +33,8 @@ function checkPrac3(f) {
     var pVal = evalFrac(f.pAns3.value);
 
     if ( cVal == cAns && pVal == pAns ) {
-        f.ansTxt3.value="Correct!  Try another practice problem!";
+        document.getElementById("ansTxt3").setAttribute("value", "Correct!  Try another practice problem!");
+	addPoint(1);
     } else {
         var wrongAns = '';
         if ( cVal != cAns ) { wrongAns = 'c'; }
@@ -34,7 +45,9 @@ function checkPrac3(f) {
 	        wrongAns = 'p';
             }
         }
-        f.ansTxt3.value="Not quite... check your value(s) for " + wrongAns;
+	var string = "Not quite... check your value(s) for " + wrongAns;
+        document.getElementById("ansTxt3").setAttribute("value", string);
+	addPoint(0.5);
     }
 }
 
@@ -49,16 +62,19 @@ function checkPrac4(f) {
     var qVal = evalFrac(f.qAns4.value);
 
     if ( cVal == cAns && pVal == pAns && qVal == qAns ) {
-        f.ansTxt4.value="Correct!  Try another practice problem!";
+        document.getElementById("ansTxt4").setAttribute("value", "Correct!  Try another practice problem!");
+	addPoint(1);
     } else {
+	var points = 1;
         var wrongAns = '';
-        if ( cVal != cAns ) { wrongAns = 'c'; }
+        if ( cVal != cAns ) { wrongAns = 'c'; points -= 0.3; }
         if ( pVal != pAns ) {  
 	    if ( wrongAns != '' ) {
 	        wrongAns = wrongAns + ', p';
 	    } else {
 	        wrongAns = 'p';
             }
+	    points -= 0.3;
         }
         if ( qVal != qAns ) { 
 	    if ( wrongAns != '' ) {
@@ -66,8 +82,13 @@ function checkPrac4(f) {
 	    } else {
 	        wrongAns = 'q';
             }
+	    points -= 0.3;
 	}
-        f.ansTxt4.value="Not quite... check your value(s) for " + wrongAns;
+        var string = "Not quite... check your value(s) for " + wrongAns;
+        document.getElementById("ansTxt4").setAttribute("value", string);
+	if(points>0.1){
+	    addPoint(points);
+	}
     }
 }
 
@@ -80,18 +101,25 @@ function checkPrac5(f) {
     var qVal = evalFrac(f.qAns5.value);
 
     if ( pVal == pAns && qVal == qAns ) {
-        f.ansTxt5.value="Correct!  Click Refresh for more practice!";
+        document.getElementById("ansTxt5").setAttribute("value", "Correct!  Try another practice problem!");
+	addPoint(1);
     } else {
+	var points = 1;
         var wrongAns = '';
-        if ( pVal != pAns ) { wrongAns = 'p'; }
+        if ( pVal != pAns ) { wrongAns = 'p'; points -= 0.5;}
         if ( qVal != qAns ) { 
 	    if ( wrongAns != '' ) {
 	        wrongAns = wrongAns + ', q';
 	    } else {
 	        wrongAns = 'q';
             }
+	    points -= 0.5;
 	}
-        f.ansTxt5.value="Not quite... check your value(s) for " + wrongAns;
+        var string = "Not quite... check your value(s) for " + wrongAns;
+        document.getElementById("ansTxt5").setAttribute("value", string);
+	if(points > 0){
+	    addPoint(points);
+	}
     }
 }
 

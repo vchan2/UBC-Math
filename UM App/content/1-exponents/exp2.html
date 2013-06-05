@@ -109,27 +109,80 @@
 	    var a,b,c,d,g,h,j,k,m,n,o,p,q,r,s,t,u,v,w,z,aa,bb,cc;
 	    
 	    function randomize(){
+		//var variables = new Array();
+		//    for (var i = 0;i<23; i++ ){
+		//	var random = 0;
+		//	while (random == 0){
+		//	    random = Math.floor(Math.random()*(6+6))-6;   
+		//	}
+		//	variables[i] = random;
+		//    }
+		
+		var random = Math.floor(Math.random()*(6+6))-6;  
+		while (random == 0){
+		    random = Math.floor(Math.random()*(6+6))-6;  
+		}
+		a = random; 		//None
+		 
 		var variables = new Array();
-		    for (var i = 0;i<23; i++ ){
-			var random = 0;
-			while (random == 0){
-			    random = Math.floor(Math.random()*(6+6))-6;   
-			}
-			variables[i] = random;
+		//Check that random != 1
+		for(var i=0; i<14;i++){
+		    random = 0;
+		    while(random == 0 || random == 1){
+			random = Math.floor(Math.random()*(6+6))-6; 
 		    }
-		    a = variables[0];  b = variables[1];  c = variables[2];   d = variables[3];  g =variables[4];
-		    h = variables[5];  j = variables[6];   k = variables[7];   m = variables[8];  n =variables[9];
-		    o = variables[10];  p = variables[11];   q = variables[12];   r = variables[13];  s =variables[14];
-		    t = variables[15];  u = variables[16];   v = variables[17];   w = variables[18];  z =variables[19];
-                    aa = variables[20]; bb = variables[21]; cc = variables[22]
+		    variables[i] = random;
+		}
+		
+		b = variables[0]; 		// !=1
+		g =variables[1];  		// !=1
+		m = variables[2]; 		// !=1
+		p = variables[3];		// !=1
+		s =variables[4]; 		// !=1
+		v = variables[5]; 		// !=1
+		z =variables[6]; 	 	// !=1
+		bb = variables[7];		// !=1
+		
+		//Positive variables
+		for(var i=8; i<14;i++){
+		    if(variables[i]<0){
+			variables[i] *= -1;
+		    }
+		}
+		c = variables[8]; 		// !=1 , + ,max=8
+		h = variables[9]; 		// !=1 , +
+		n =variables[10];  		// !=1 , +
+		q = variables[11];		 // !=1 , +
+		t = variables[12]; 		// !=1 , +
+		w = variables[13]; 		// !=1 , +
+		
+		//Fixed Numbers
+		u = 1;		//	   *********
+		aa = 3;		// !=1 , + *********
+		cc = 2;		// !=1 , + *********
+		
+		//No Restrictions
+		var variables2 = new Array();
+		for(var i =0; i<5; i++){
+		    random = 0;
+		    while (random == 0){
+			random = Math.floor(Math.random()*(6+6))-6;
+		    }
+		    variables2[i] = random;
+		}
+		d = variables2[0];
+		j = variables2[1];
+	        k = variables2[2];
+		o = variables2[3];
+	        r = variables2[4];
+	    
 		}
 	    
 	    function createQ(){
 		//Set variables for question
-		document.getElementById("q1").innerHTML ="\\(("+a+")^{"+b+"/"+c+"}=\t{}\\)";
-		document.getElementById("q2").innerHTML ="\\(("+a+")^{"+b+"/"+c+"}=\t{}\\)";
-		document.getElementById("q3").innerHTML = "\\(\\frac{y^{"+q+"}(x^{"+r+"}y^{"+s+"})^{"+t+"}}{({"+u+"}x^{"+v+"}y^{"+w+"})^{"+z+"}}= \t{}\\)";
-                //\(ax^{b/c}(dx^{(e)/f})^g\)
+		document.getElementById("q3").innerHTML ="\\("+a+"x^{"+b+"/"+c+"}("+d+"x^{"+g+"/"+h+"})=\t{}\\)";
+		document.getElementById("q4").innerHTML ="\\(\\frac{"+k+"(x^{"+m+"/"+n+"}y^{"+o+"})^{"+p+"/"+q+"}}{("+r+"y^{"+s+"/"+t+"})}=\t{}\\)"; //u variable is used here
+		document.getElementById("q5").innerHTML = "\\(\\frac{x^{"+v+"/"+w+"}\\sqrt{x}y^{"+z+"/"+aa+"}}{x^{"+bb+"/"+cc+"}\\sqrt[3]{y}}= \t{}\\)";
 	    }
 	    
 	    // Draw answer portion
@@ -137,14 +190,18 @@
                 
                 switch (type) {
                     case 1:
-                        document.write('<div style=\"float: left; padding-top: 10px;\"><input type=\"text\" name=\"iAns'+qNum+' \" style=\"width: 30px;\"/></div>');
+                        document.write('<div style=\"float: left; padding-top: 10px;\"><input type=\"text\" id=\"iAns'+qNum+'\" name=\"iAns'+qNum+' \" style=\"width: 30px;\"/></div>');
                         break;
-                    case 2:
-                        document.write('<div style=\"float: left; padding-top: 10px;\"><input id=\"cAns'+qNum+'\"name = \"cAns'+qNum+'\"type=\"text\" style=\"width: 30px;\"/>\\(x\\)</div>');
-                    case 3:
+		    case 2:
+                        document.write('<div style=\"float: left; padding-top: 10px;\">\\(x\\)</div>');
                         document.write('<div style=\"float: left; width: 40px; height: 30px; padding-bottom:10px;\"><input id=\"pAns'+qNum+'\"name = \"pAns'+qNum+'\" type=\"text\" style=\" width: 20px;\"/></div>');
+			break;
+                    case 3:
                         document.write('<div style=\"float: left; padding-top: 10px;\">\\(y\\)</div>');
                         document.write('<div style=\"float: left; width: 40px; height: 30px; padding-bottom:10px;\"><input id=\"qAns'+qNum+'\"name = "qAns'+qNum+'\" type=\"text\" style=\" width: 20px;\"/></div>');
+                        break;
+		    case 4:
+                        document.write('<div style=\"float: left; padding-top: 10px;\"><input type=\"text\" id=\"cAns'+qNum+'\" name=\"cAns'+qNum+' \" style=\"width: 30px;\"/></div>');
                         break;
                 }
                 
@@ -167,7 +224,7 @@
     </head>
     <body onbeforeunload="unloadPage()">
 	<script type="text/javascript">
-	   setTotal(3);
+	   setTotal(6);
 	</script>
 	<div id="wrapper">
 		
@@ -175,9 +232,9 @@
 	    <hr />
 	    
 	    <br />The natural definition for exponentiation as an abbreviation for multiplication holds for positive integers only. We've already chosen definitions for negative and zero exponents
-            (as shown on the <a href="./exp1.html">integer exponent page</a>) which are consistent with our rules for exponents. For example, that a to the 0 equals 1 makes sense with the multiplication of exponents rule:<br />
+            (as shown on the <a href="./exp1.html">integer exponent page</a>) which are consistent with our rules for exponents. For example, that \(a\) to the 0 equals 1 makes sense with the multiplication of exponents rule:<br />
 	    <div id="eqn">
-		    EQUATION!!!!!!!!!<br />
+		    \(a^na^0=a^{n+0}=a^n\)
 	    </div>
 	    so, looking at the first and last entries in the equalities, a to the 0 must be one.<br />
 	    <br />
@@ -186,50 +243,62 @@
             
             <em>Fractional exponents</em> are defined as roots, which makes sense from the rule for powers of powers:<br />
             <div id="eqn">
-                EQUATION!!!!!!!!!!!!!!!!!!
+                \((a^{1/2})^2=a^{2/2}=a^1=a,\) so \((a^{1/2})^2=a \)
             </div>
-            Is it obvious that the 1/2 power of a is therefore the square root of a? Take the square root of both sides of the right-most equation above:
+            Is it obvious that the 1/2 power of \(a\) is therefore the square root of \(a\)? Take the square root of both sides of the right-most equation above:
             <div id="eqn">
-                EQUATION!!!!!!!!!!!!!!!!!!
+                \((a^{1/2}) = \sqrt{a}\)
             </div>
-            Another way of thinking about this is that the 1/<i>n</i>th power of <i>a</i> is the number which when raised to the <i>n</i> gives <i>a</i>--which is just the <i>n</i>th root of <i>a</i>.<br />
+            Another way of thinking about this is that the 1/\(n\)th power of \(a\) is the number which when raised to the \(n\)gives \(a\)--which is just the \(n\)th root of \(a\).<br />
              
-	    <!-- Fix Definition -->
-            <div class="def" style="height: 270px;">
+            <div class="comment" style="height: 200px;">
 		<h1>Definition of Roots:</h1>
-		<!--<div class="eqn">
-		    \(a^0 = 1\)<br \>
-		    \(a^1 = a\)<br \>
-		    \(a^n = a*a...a\)<br \>
-		    \(a^{-1} = \frac{1}{a}\)<br \>
+		<div class="eqn" style="margin-left: 70px; line-height: 25px;">
+		    For positive numbers \(a\)<br />
+		    <div style="margin-left: 20px;">
+			\(\sqrt{a}\) is the positive number whose square is \(a\): e.g.,<br />
+			\(\sqrt[n]{a}\) is the positive number whose \(n\)th power is \(a\): e.g.,<br />
+		    </div>
+		    For negative numbers \(a\)<br />
+		    <div style="margin-left: 20px;">
+			\(\sqrt{a}\) is the negative number whose \(n\)th power is \(a\) if \(n\) is odd: e.g.,<br />
+			\(\sqrt[n]{a}\) is not a real number if \(a\) is negative and \(n\) is even: e.g.,<br />
+		    </div>
 		</div>
-		<div id="explanation">
-		    (if \(a\) isn't zero)<br \><br \>
-		    (for \(n\) a positive integer)<br \>
-		    <br \></br \>
+		<div id="explanation" style="line-height: 25px;">
+		    <br />
+		    \(\sqrt{49} = 7\)<br \>
+		    \(\sqrt[3]{125} = 5\)<br \><br />
+		    \(\sqrt[3]{-8} = -2\)<br \>
+		    \(\sqrt{-8} =\ ?\)
 		</div>
-		<h1> Rules for Exponents:</h1>
-		<div class="eqn">
-		    \(a^m*a^n = a^{m+n}\)<br \>
-		    \(\frac{a^m}{a^n} = a{m-n}\)<br \>
-		    \((a^m)^n = a^{mn}\)<br \>
-		    \((ab)^n = a^nb^n\)<br \>
-		    \((\frac{a}{b})^n = \frac{a^n}{b^n}\)
-		</div>
-		<div>
-		    multiplying powers<br \>
-		    dividing powers<br \>
-		    raising a power to a power<br \>
-		    power of a product<br \>
-		    power of a quotient<br \>
-		</div>-->
 	    </div>
-	    <!--================================================ -->
+
             Because fractional exponents are defined as roots, we have the definitions below. The rules for fractional exponents are the same as those for <a href="./exp1.html">integer exponents</a>. Thus we have: <br />
             
-	    <!-- Fix Definition -->
-            <div class="def" style="height: 200px;">
-                FIX ME :)
+            <div class="def" style="height: 240px;">
+                <h1>Definitions:</h1>
+		<div class="eqn" style="margin-left: 70px; line-height: 25px;">
+			\(a^{1/n}=\sqrt[n]{a}\)<br />
+			\(a^{m/n}=\sqrt[n]{a^m}=(\sqrt[n]{a})^m\)<br />
+		</div>
+		<div id="explanation" style="line-height: 25px;">
+		    (\(a\) must be non-negative if \(n\) is even)<br \>
+		    (\(a^m\) must be non-negative if \(n\) is even)
+		</div>
+		<h1>Rules for Fractional Exponents</h1>
+		<div class="eqn" style="line-height: 25px;">
+		    The rules for integer exponents for multiplying, dividing and raising exponentials to powers all
+		    apply for fractional exponents. In particular, we have<br />
+		    <div style="margin-left: 40px; float: left;">
+			\((ab)^{1/n}=a^{1/n}b^{1/n}=\sqrt[n]{a}\sqrt[n]{b}=\sqrt[n]{ab}\)<br />
+			\((\frac{a}{b})^{1/n}=\frac{a^{1/n}}{b^{1/n}}=\frac{\sqrt[n]{a}}{\sqrt[n]{b}}=\sqrt[n]{\frac{a}{b}}\)<br />
+		    </div>
+		    <div id="explanation" style="line-height: 25px;">
+		        (the root of a product is the product of the roots)<br />
+		        (the root of a quotient if the quotient of the roots)
+		    </div>
+		</div>
             </div>
             
             <strong>Examples</strong><br />
@@ -239,88 +308,106 @@
 		2. <img src="../images/Exponents_2/expratex02.gif" style = "padding-top: 5px;" /><br />
 		3. <img src="../images/Exponents_2/expratex03.gif" style = "padding-top: 5px;" />
             </div>
-	    
 	    <!-- Randomize eqn values -->
 	    <script>
 	    	randomize();
 	    </script>
 	    
 	    <br /><strong>Practice</strong><br />
+	    
 	    Before doing these practice problems, make sure that you can explain every step in the examples above.
             You should be sure that you work the practice problems until you are sure you understand them. When you
             get to the end of the section there are more practice problems on the <em>section test</em>.<br /><br />
             
             Note that you can get new practice problems (for #3-5) by clicking the "Refresh" button at the bottom of the practice set.
-                    
-                    
-		    <h1>New Practice Mode</h1>
-		    <form name="intpractice" action="">
-		    <div>
-			    1. Write the following without exponents by simplifying mentally, without using a calculator:<br />
-			    
-			    <div style="height:40px; margin: 10px 10px 10px 10px;">
-			    	<!-- Question 1 -->
-				    <div style="float: left; padding-top: 10px;"> \((8)^{4/3} =\ \)</div>	 
-			    	 <script type="text/javascript">
-			    	 	answer_space(1,1);
-			    	 </script>
-			    </div>
-		    	2. More mental calculation: also write the following without exponents by simplifying mentally, without using a calculator:<br />
-		    	<div style="height:40px; margin: 10px 10px 10px 10px;">
-		    		<!-- Question 2 -->
-		    		<div style="float: left; padding-top: 10px;">\((16)^{5/4} =\ \)</div>
-		    		<script type="text/javascript">
-			    		answer_space(2,1);
-			    	</script>
-		    	</div>
-		    	
-		    	3. Use the rules of exponents to simplify the following expression into the form \(cx^p\) (where <i>p</i> may be a rational number!)
-			<div style="height:40px; margin: 10px 10px 20px 10px;">
-			    	<!-- <div style="font-size: 170%;" >\(\frac{y^{q}(x^{r}y^{s})^{t}}{({u}x^{v}y^{w})^{z}}\)</div> -->
-			    	<div id="q3" style="float: left; font-size: 140%"></div>
-		    		<script type="text/javascript">
-			    		answer_space(3);
-			    	</script>
-		    	</div>
-                        
-                        4.
-                        
-                        5.
-                        
-                        6.
-		    	
-		    	<!-- Create questions -->
-		    	<script type="text/javascript">
-				createQ();
-			    </script>
+	    <form name="intpractice" action="">
+	    <div>
+		    1. Write the following without exponents by simplifying mentally, without using a calculator:<br />
+		    
+		    <div style="height:40px; margin: 10px 10px 10px 10px;">
+			<!-- Question 1 -->
+			    <div style="float: left; padding-top: 10px;"> \((8)^{4/3} =\ \)</div>	 
+			 <script type="text/javascript">
+				answer_space(1,1);
+			 </script>
 		    </div>
-		
-		    <div id="dialog" >
-			Score:
-			<div id="score">
-			</div>
-			<script>
-			    updateScore();
+		2. More mental calculation: also write the following without exponents by simplifying mentally, without using a calculator:<br />
+		<div style="height:40px; margin: 10px 10px 10px 10px;">
+			<!-- Question 2 -->
+			<div style="float: left; padding-top: 10px;">\((16)^{5/4} =\ \)</div>
+			<script type="text/javascript">
+				answer_space(2,1);
 			</script>
-			Question 1:<br /><input type="text" class="ansMess" id="ansTxt1" disabled = "disabled"/><br /><br />
-			Question 2:<br /><input type="text" class="ansMess" id="ansTxt2" disabled = "disabled"/><br /><br />
-			Question 3:<br /><input type="text" class="ansMess" id="ansTxt3" disabled = "disabled"/><br /><br />
-			<!--<button id="reset"> Reset Questions</button>-->
-			<button id="send_to_bb" onclick="send_score();"> Submit Score to Blackboard</button>
-		    </div>
-		    
-		    <input type="button" id= "checkAns" value="Check Answers" onclick="checkPracQ(this.form);"/><br />
-		    
-		    <!--Score:-->
-		    <!--<div id="score">-->
-		    <!--</div>-->
-		    <!--<!--<script>-->-->
-		    <!--<!--	updateScore();-->-->
-		    <!--<!--</script>-->-->
-		    <!---->
-		    <!--<button id="send_to_bb"> Submit Score to Blackboard</button>-->
+		</div>
+		
+		3. Use the rules of exponents to simplify the following expression into the form \(cx^p\) (where <i>p</i> may be a rational number!)
+		<div style="height:40px; margin: 10px 10px 20px 10px;">
+			<!-- Question 3 -->
+			<div id="q3" style="float: left;"></div>
+			<script type="text/javascript">
+				answer_space(3,4);
+				answer_space(3,2);
+ 			</script>
+		</div>
+		
+		4. Use the rules of exponents to simplify the following expression into the form: \(cx^py^q\)
+		<div style="height:40px; margin: 10px 10px 20px 10px;">
+			<!-- Question 4 -->
+			<div id="q4" style="float: left; font-size: 140%"></div>
+			<script type="text/javascript">
+				answer_space(4,4);
+				answer_space(4,2);
+				answer_space(4,3);
+ 			</script>
+		</div>
+		
+		5. Use the rules of exponents to simplify the following expression into the form: \(x^py^q\)
+		<div style="height:40px; margin: 10px 10px 20px 10px;">
+			<!-- Question 5 -->
+			<div id="q5" style="float: left; font-size: 140%;"></div>
+			<script type="text/javascript">
+				answer_space(5,2);
+				answer_space(5,3);
+ 			</script>
+		</div>
+		
+		
+		<!-- Create questions -->
+		<script type="text/javascript">
+			createQ();
+		    </script>
+	    </div>
+	    
+	    <div id="dialog" >
+		Score:
+		<div id="score">
+		</div>
+		<script>
+		    updateScore();
+		</script>
+		
+		Question 1:<br /><input type="text" class="ansMess" id="ansTxt1" disabled = "disabled"/><br /><br />
+		Question 2:<br /><input type="text" class="ansMess" id="ansTxt2" disabled = "disabled"/><br /><br />
+		Question 3:<br /><input type="text" class="ansMess" id="ansTxt3" disabled = "disabled"/><br /><br />
+		Question 4:<br /><input type="text" class="ansMess" id="ansTxt4" disabled = "disabled"/><br /><br />
+		Question 5:<br /><input type="text" class="ansMess" id="ansTxt5" disabled = "disabled"/><br /><br />
+		Question 6:<br /><input type="text" class="ansMess" id="ansTxt6" disabled = "disabled"/><br /><br />
+		<!--<button id="reset"> Reset Questions</button>-->
+		<button id="send_to_bb" onclick="send_score();"> Submit Score to Blackboard</button>
+	    </div>
+		
+	    <input type="button" id= "checkAns" value="Check Answers" onclick="checkPracQ(this.form);"/><br />
+		
+		<!--Score:-->
+		<!--<div id="score">-->
+		<!--</div>-->
+		<!--<!--<script>-->-->
+		<!--<!--	updateScore();-->-->
+		<!--<!--</script>-->-->
+		<!---->
+		<!--<button id="send_to_bb"> Submit Score to Blackboard</button>-->
 	    </form>
-		    <br /><a href="./index.html"> Return to Main</a>
+	    <br /><a href="./index.html"> Return to Main</a>
 	</div>
     </body>
 </html>
