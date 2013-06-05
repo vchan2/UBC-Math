@@ -36,18 +36,22 @@ function checkPrac3(f) {
         document.getElementById("ansTxt3").setAttribute("value", "Correct!  Try another practice problem!");
 	addPoint(1);
     } else {
+	var points = 1;
         var wrongAns = '';
-        if ( cVal != cAns ) { wrongAns = 'c'; }
+        if ( cVal != cAns ) { wrongAns = 'c'; points -= 0.5; }
         if ( pVal != pAns ) {  
 	    if ( wrongAns != '' ) {
 	        wrongAns = wrongAns + ', p';
 	    } else {
 	        wrongAns = 'p';
             }
+	    points -= 0.5;
         }
 	var string = "Not quite... check your value(s) for " + wrongAns;
         document.getElementById("ansTxt3").setAttribute("value", string);
-	addPoint(0.5);
+	if(points>0){
+	    addPoint(points);
+	}
     }
 }
 
