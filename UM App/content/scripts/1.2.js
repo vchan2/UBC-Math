@@ -3,6 +3,8 @@ function checkPracQ(f){
     checkPrac1(f);
     checkPrac2(f);
     checkPrac3(f);
+    checkPrac4(f);
+    checkPrac5(f);
     updateScore();
 }
 
@@ -31,12 +33,6 @@ function checkPrac3(f) {
 // deal with possible fractions in ans1
     var cVal = evalFrac(f.cAns3.value);
     var pVal = evalFrac(f.pAns3.value);
-
-    console.log("a: "+a);
-    console.log("d: "+d);
-    console.log("j: "+j);
-    console.log("cVal: "+cVal);
-    console.log("cAns: "+cAns);
     
     if ( cVal == cAns && pVal == pAns ) {
         document.getElementById("ansTxt3").setAttribute("value", "Correct!  Try another practice problem!");
@@ -70,7 +66,7 @@ function checkPrac4(f) {
     var cVal = evalFrac(f.cAns4.value);
     var pVal = evalFrac(f.pAns4.value);
     var qVal = evalFrac(f.qAns4.value);
-
+    
     if ( cVal == cAns && pVal == pAns && qVal == qAns ) {
         document.getElementById("ansTxt4").setAttribute("value", "Correct!  Try another practice problem!");
 	addPoint(1);
