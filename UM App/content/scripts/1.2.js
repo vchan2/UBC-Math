@@ -32,6 +32,12 @@ function checkPrac3(f) {
     var cVal = evalFrac(f.cAns3.value);
     var pVal = evalFrac(f.pAns3.value);
 
+    console.log("a: "+a);
+    console.log("d: "+d);
+    console.log("j: "+j);
+    console.log("cVal: "+cVal);
+    console.log("cAns: "+cAns);
+    
     if ( cVal == cAns && pVal == pAns ) {
         document.getElementById("ansTxt3").setAttribute("value", "Correct!  Try another practice problem!");
 	addPoint(1);
