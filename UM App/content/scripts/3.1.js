@@ -1,3 +1,10 @@
+function checkPracQ(f){
+    clearScore();
+    checkPrac1(f);
+    checkPrac2(f);
+    updateScore();
+}
+
 var xReg = /x/;  var yReg = /y/;
 
 function checkPrac1(f) {
@@ -7,7 +14,7 @@ function checkPrac1(f) {
     var inTerm = new Array(f.bAns1.value, f.cAns1.value);
 
     var errs = new String("[1] x^[2] y^[3] ( [4] + [5] )");
-
+    
 // easy stuff: did they get the right factored term?
     if ( (inCoef == '' && a != 1) || (inCoef != '' && inCoef != a) ) { 
         errs = errs.replace(/1/, "*"); 
@@ -31,9 +38,12 @@ function checkPrac1(f) {
 
     errs = errs.replace( /[0-9]/g, " " );
     if ( errs.match(/\*/) != null ) {
-        f.ansTxt1.value='Hmm...  Check "*"s: ' + errs;
+        var string = 'Hmm... Check "*"s: ' + errs;
+        document.getElementById("ansTxt1").setAttribute("value", string);
+	
     } else {
-        f.ansTxt1.value='Correct!  Try the next practice problem!';
+        document.getElementById("ansTxt1").setAttribute("value", "Correct!  Try another practice problem!");
+	addPoint(1);
     }
 }
 
@@ -152,8 +162,10 @@ function checkPrac2(f) {
 	errs = errs.replace(/[34]/g, "*");
     }
     if ( errs.match(/\*/) != null ) {
-        f.ansTxt2.value='Hmm... Check "*"s: ' + errs;
+	var string = 'Hmm... Check "*"s: ' + errs;
+        document.getElementById("ansTxt2").setAttribute("value", string);
     } else {
-        f.ansTxt2.value='Correct!  Click "Refresh" for more practice!';
+	document.getElementById("ansTxt2").setAttribute("value", "Correct!  Click \"Refresh\" for more practice!");
+	addPoint(1);
     }
 }

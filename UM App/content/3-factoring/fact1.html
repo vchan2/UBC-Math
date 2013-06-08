@@ -1,0 +1,396 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- Math Jax Configuration -->
+        <script type="text/javascript"src="./../common/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<!--jQuery-->
+	<script src= "../common/jquery-ui.custom/js/jquery-1.9.1.js"></script>
+	<link href="../common/jquery-ui.custom/css/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+	<script src="../common/jquery-ui.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
+        <!-- SCORM API Wrapper -->
+	<script type="text/javascript" src="../common/APIWrapper.js"></script>
+	
+	<!--Score Script-->
+	<script type="text/javascript">
+	    //Global,total and student Score
+	    var gScore = 0 ,totalScore = 0,studentScore = 0;
+	    
+	    function setTotal(t){
+		totalScore = t;
+	    }
+	    
+	    function addPoint(p){
+		console.log("adding point " + p);
+		gScore += p;
+	    }
+	    
+	    function reducePoint(p){
+		console.log("reducing point " + p);
+		gScore -= p;
+	    }
+	    
+	    function calcScore(){
+		console.log("total score: "+totalScore);
+		console.log("gScore: "+gScore);
+		if(gScore != undefined){
+		    studentScore = gScore/totalScore;   
+		}
+	    }
+	//    function getCalcScore(){
+	//	return studentScore;
+	//    }
+	    function clearScore(){
+		console.log("clearing bro");
+		gScore = 0;
+		studentScore = 0;
+	    }
+	    
+	    function updateScore(){
+		calcScore();
+		console.log("I am getting called bro and score is = "+studentScore);
+		document.getElementById("score").innerHTML = studentScore.toFixed(2);
+	    }
+	    function send_score(){
+			// Set Blackboard value
+			console.log("sending..."+studentScore.toFixed(2))
+			doSetValue("cmi.score.scaled",studentScore.toFixed(2));
+	    }
+	</script>
+	
+	<!--jQuery scripts-->
+	<script type="text/javascript">
+	    $(function(){
+		$("#dialog").dialog({
+		    autoOpen: false,
+		    show: {
+			    effect: "blind",
+			    duration: 1000
+		    },
+		    width: 500
+		});
+		
+		$("#checkAns").click(function(){
+		    $("#dialog").dialog("open");
+		});
+	
+		$(document).tooltip();
+	    });
+	</script>
+	
+	<!-- Initialization SCORM Script -->
+	<script type="text/javascript">
+		function loadPage(){
+			doInitialize();
+		}
+		
+		//function userName(){
+		//    var name = doGetValue ("cmi.learner_name");
+		//	if(name != ""){
+		//		document.getElementById("name").innerHTML = "Hello "+name+"!";
+		//	}
+		//}
+		
+		function unloadPage(){
+			doTerminate();
+		}
+	</script>
+	
+	<!-- Script to evaluate quiz -->
+	<script type="text/javascript">
+	    
+	    var a,b,c,d,g,h,j,k,m,n,o,p,q,r,s,t,u,v,w,z,aa,bb,cc;
+	    
+	    function randomize(){
+                // variables used = a,b,c,d,g,h,j,k,m,n,o,p,q,r,s,t,u,v,w,z,aa,bb,cc
+                // variables sums = (b,g,m),(c,j,p),(u,1,aa)
+                // variables products = (a,d,k),(a,h,n),(q,t,w),(s,t,z),(q,v,bb),(s,v,cc)
+                // variables not equal = (d,h),(q,s),(t,v)
+                // variables positive values = a,b,c,d,g,h,j,q,r,s,t,u,v
+                // variables max values = (a,3),(b,5),(c,5),(d,3),(g,4),(h,3),(j,4),(u,8),(q,4),(t,2),(s,4),(v,2)
+                // end restrictions
+                
+                var variables = new Array();
+                var random;
+                
+                random = 0;
+                    while (random <= 0){
+                        random = Math.floor(Math.random()*(6+6))-6;   
+                    }
+                o = random;
+                
+                // +
+                random = 0;
+                while (random <= 0){
+                    random = Math.floor(Math.random()*(6+6))-6;   
+                }
+                r = random;   // +
+                
+                // + ,max=3
+                for (var i = 0;i<3; i++ ){
+                    random = 0;
+                    while (random <= 0 || random >3){
+                        random = Math.floor(Math.random()*(6+6))-6;   
+                    }
+                    variables[i] = random;
+                }
+                a = variables[0];   // + , max=3
+                h = variables[1];   // + , max=3
+                d = variables[2];   // + , max=3 !=h
+                
+                if(Math.abs(d) == Math.abs(h)){
+                    random = 0;
+                    while (random <= 0 || random >3 || random == h){
+                        random = Math.floor(Math.random()*(6+6))-6;   
+                    }
+                    d = random;
+                }
+                
+                // + ,max=5
+                for (var i = 3;i<5; i++ ){
+                    random = 0;
+                    while (random <= 0 || random >5){
+                        random = Math.floor(Math.random()*(6+6))-6;   
+                    }
+                    variables[i] = random;
+                }
+                b = variables[3];   // + , max=5
+                c = variables[4];   // + , max=5
+                
+                // + ,max=4
+                for (var i = 5;i<9; i++ ){
+                    random = 0;
+                    while (random <= 0 || random >4){
+                        random = Math.floor(Math.random()*(6+6))-6;   
+                    }
+                    variables[i] = random;
+                }
+                g = variables[5];   // + , max=4
+                j = variables[6];   // + , max=4
+                q = variables[7];   // + , max=4 !=s
+                s = variables[8];   // + , max=4 
+                
+                if(Math.abs(q) == Math.abs(s)){
+                    random = 0;
+                    while (random <= 0 || random >4 || random == s){
+                        random = Math.floor(Math.random()*(6+6))-6;   
+                    }
+                    q = random;
+                }
+                
+                // +, max=8
+                random = 0;
+                while (random <= 0 || random >8){
+                    random = Math.floor(Math.random()*(6+6))-6;   
+                }
+                u = random;   // + , max=8
+                
+                // + ,max=2
+                for (var i = 9;i<11; i++ ){
+                    random = 0;
+                    while (random <= 0 || random >2){
+                        random = Math.floor(Math.random()*(6+6))-6;   
+                    }
+                    variables[i] = random;
+                }
+                v = variables[9];   // + , max=2
+                t = variables[10];   // + , max=2 !=v
+                
+                if(Math.abs(v) == Math.abs(t)){
+                    random = 0;
+                    while (random <= 0 || random >2 || random == t){
+                        random = Math.floor(Math.random()*(6+6))-6;   
+                    }
+                    v = random;
+                }
+                
+                //Sums and products
+                k = a*d;
+                m = b+g;
+                n = a*h;
+                p = c+j;   
+                w = q*t;
+                z = s*t;
+                aa = u+1;
+                bb = q*v;
+                cc = s*v;
+                    
+	    }
+	    
+	    function createQ(){
+		//Set variables for question
+		document.getElementById("q1").innerHTML ="\\("+k+"x^{"+m+"}y^{"+c+"}+"+n+"x^{"+b+"}y^{"+p+"}= \\  \\)";
+		document.getElementById("q2").innerHTML ="\\("+w+"x^{"+r+"}y^{"+u+"}+"+z+"y^{"+aa+"}+"+bb+"x^{"+r+"}+"+cc+"y= \\ \\)";
+	    }
+	    
+	    // Draw answer portion
+	    function answer_space(qNum,type,variable){
+                
+                switch (type) {
+                    case 1:
+                        document.write('<div style=\"float: left; padding-top: 10px;\"><input type=\"text\" id=\"'+variable+'Ans'+qNum+'\" name=\"'+variable+'Ans'+qNum+' \" style=\"width: 30px;\"/></div>');
+                        break;
+		    case 2:
+                        document.write('<div style=\"float: left; padding-top: 10px; margin-left:5px;\">\\(x\\)</div>');
+                        document.write('<div style=\"float: left; width: 40px; height: 30px; padding-bottom:10px;\"><input id=\"'+variable+'Ans'+qNum+'\"name=\"'+variable+'Ans'+qNum+'\" type=\"text\" style=\" width: 40px;\"/></div>');
+			break;
+                    case 3:
+                        document.write('<div style=\"float: left; padding-top: 10px; margin-left:8px;\">\\(y\\)</div>');
+                        document.write('<div style=\"float: left; width: 40px; height: 30px; padding-bottom:10px;\"><input id=\"'+variable+'Ans'+qNum+'\"name=\"'+variable+'Ans'+qNum+'\" type=\"text\" style=\" width: 40px;\"/></div>');
+                        break;
+                    case 4:
+                        document.write('<div style=\"float: left; padding-bottom: 10px; height: 30px; margin-left:7px; \">\\(x\\)</div>');
+                        break;
+                    case 5:
+                        document.write('<div style=\"float: left; padding-bottom: 10px; height: 30px; margin-left:7px; \"><input id=\"'+variable+'Ans'+qNum+'\"name=\"'+variable+'Ans'+qNum+'\" type=\"text\" style=\" width: 40px;\"/></div>');
+                        break;
+                }		
+	    }
+            
+            function symbol_space(symbol){
+                document.write('<div style=\"float: left; padding-top: 10px; margin-left:7px; margin-right:5px;\">\\('+symbol+'\\)</div>');
+            }
+	    
+	    // Run functions after loading
+	    window.onload = function(){
+		loadPage();
+		//document.getElementById("reset").onclick = randomize();
+		//document.getElementById("send_to_bb").onclick = send_score();
+	    };
+	    
+	</script>
+		<script type="text/javascript" src="../scripts/cr.js"></script>
+		<script type="text/javascript" src="../scripts/3.1.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+	
+        <title>UM Topic 3.1</title>
+    </head>
+    <body onbeforeunload="unloadPage()">
+	<script type="text/javascript">
+	   setTotal(2);
+	</script>
+	<div id="wrapper">
+		
+	    <h1>Factoring</h1>
+	    <hr />
+            <br />
+            When we <em>factor</em> we are applying the <em>distributive law</em> in reverse--reversing what we did when <em>multiplying</em> (which we did in the previous section). <!-- Use Hyperlink??-->
+            Note that we can always check our factoring by multiplying out our factored expression to see that we get what we started with.
+            <div class="def" style="height: 160px;">
+		<h1>Removing a Common Factor:</h1>
+		<p>
+                    If we remove a common factor from each of the terms in an expression we are reversing the distributive law:
+                </p>
+                <div class="eqn">
+		    \(ab+ac=a(b+c)\)
+		</div>
+                <br /><br />
+                <p>
+                    Note the following special cases:
+                </p>
+                <div class="eqn">
+                    \(-a-b=-(a+b)\)<br />
+                    \((a-b)=-(b-a)\)
+                </div>
+	    </div>
+            
+            <div class="example_box">
+                <strong>Examples</strong><br />
+                Note carefully which factors or expressions are common to each term and are factored out.<br />
+                <div class="ex" style="line-height: 35px;">
+                    <div style="margin-right: 5px; float: left;">1.</div>  <img src="../images/Factoring_1/3.1.e.1.gif" style = "padding-top: 5px;" /><br />
+                    <div style="margin-right: 5px; float: left;">2.</div>  <img src="../images/Factoring_1/3.1.e.2.gif" style = "padding-top: 5px;" /><br />
+                    <div style="margin-right: 5px; float: left;">3.</div>  <img src="../images/Factoring_1/3.1.e.3.gif" style = "padding-top: 5px;" /><br />
+                    <div style="margin-right: 5px; float: left;">4.</div>  <img src="../images/Factoring_1/3.1.e.4.gif" style = "padding-top: 5px;" /><br />
+                    <div style="margin-right: 5px; float: left;">5.</div>  <img src="../images/Factoring_1/3.1.e.5.gif" style = "padding-top: 5px;" />
+                </div>
+                (In particular, note that for the middle step in example four the expression \((2p+1)\) is that which is common and can be factored out.)
+            </div>
+            
+            <h2>Grouping Items</h2>
+            
+            Even though all the terms may not have a common factor, we can sometimes factor by first grouping the terms and then removing a common factor.<br />
+            <div class="example_box">
+                <strong>Examples</strong><br />
+                Be sure to notice which terms are grouped and why, and then which common factors we are able to take out.<br />
+                <div class="ex" style="line-height: 35px;">
+                    <div style="margin-right: 5px; float: left;">1.</div>  <img src="../images/Factoring_1/3.1.e.6.gif" style = "padding-top: 5px;" /><br />
+                    <div style="margin-right: 5px; float: left;">2.</div>  <img src="../images/Factoring_1/3.1.e.7.gif" style = "padding-top: 5px;" /><br />
+                    <div style="margin-right: 5px; float: left;">3.</div>  <img src="../images/Factoring_1/3.1.e.8.gif" style = "padding-top: 5px;" />
+                </div>
+            </div>
+            
+	    <!-- Randomize eqn values -->
+	    <script>
+	    	randomize();
+	    </script>
+	    
+	    <br /><strong>Practice</strong><br /><br />
+		    <form name="intpractice" action="">
+                        Be sure you've gone through each step in the examples above before doing these. Once you've worked them until you're sure
+                        that you understand them, go on to the next section. There are more problems of this type in the section test at the end of the section.<br />
+                        <br />
+                        Note that you can get new practice problems by clicking the "Refresh" button at the bottom of the practice set.
+                        <br /><br />
+                    <div>
+			    1. Factor the following as completely as possible into the indicated form. (In the parenthesized term, enter expressions like \(2x^3\) as 2 x^3,
+                            with no multiplication sign and indicating exponentiation with a caret.)
+			    
+			    <div id="question">
+			    	<!-- Question 1 -->
+				    <div id="q1" style="float: left; padding-top: 10px;"> </div>	 
+			    	 <script type="text/javascript">
+			    	 	answer_space(1,1,"a");
+                                        answer_space(1,2,"p");
+                                        answer_space(1,3,"q");
+                                        symbol_space("(");
+                                        answer_space(1,1,"b");
+                                        symbol_space("+");
+                                        answer_space(1,1,"c");
+                                        symbol_space(")");
+			    	 </script>
+			    </div>
+		    	2. Next, factor the following into a product of binomials as indicated. (For each of your answers, enter expressions like \(2x^3\) as 2 x^3,
+                            with no multiplication sign and indicating exponentiation with a caret.)
+		    	<div id="question">
+		    		<!-- Question 2 -->
+		    		<div id="q2" style="float: left; padding-top: 10px;"> </div>
+		    		<script type="text/javascript">
+			    		symbol_space("(");
+                                        answer_space(2,1,"a");
+                                        symbol_space("+");
+                                        answer_space(2,1,"b");
+                                        symbol_space(")");
+                                        symbol_space("(");
+                                        answer_space(2,1,"c");
+                                        symbol_space("+");
+                                        answer_space(2,1,"d");
+                                        symbol_space(")");
+			    	</script>
+		    	</div>
+		    	
+		    	<!-- Create questions -->
+		    	<script type="text/javascript">
+				createQ();
+			    </script>
+		    </div>
+		
+		    <div id="dialog" >
+			Score:
+			<div id="score">
+			</div>
+			<script>
+			    updateScore();
+			</script>
+			Question 1:<br /><input type="text" class="ansMess" id="ansTxt1" disabled = "disabled"/><br /><br />
+			Question 2:<br /><input type="text" class="ansMess" id="ansTxt2" disabled = "disabled"/><br /><br />
+			<!--<button id="reset"> Reset Questions</button>-->
+			<button id="send_to_bb" onclick="send_score();"> Submit Score to Blackboard</button>
+		    </div>
+		    
+		    <input type="button" id= "checkAns" value="Check Answers" onclick="checkPracQ(this.form);"/><br />
+	    </form>
+		    <br /><a href="./index.html"> Return to Main</a>
+	</div>
+    </body>
+</html>

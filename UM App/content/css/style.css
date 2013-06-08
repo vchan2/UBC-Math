@@ -21,6 +21,11 @@ h1 {
 	margin-bottom:20px;
         text-align: center;
 }
+
+h2 {
+	margin: 15px 0px 15px 0px;
+}
+
 #wrapper{
     margin-top: 20px;
     margin-left: 20px;
@@ -79,6 +84,10 @@ h1 {
         margin-left: 30px;
         margin-right: 30px;
     }
+.def p{
+	margin-left: 10px;
+	margin-bottom: 5px;
+}
 .def{
     background: #E3E3E3;
 }
@@ -86,9 +95,23 @@ h1 {
     background: #BAC0E3;
 }
 
+.example_box{
+	margin-left: 40px;
+	margin-top: 10px;
+}
+	.example_box .ex{
+		margin-top: 15px;
+		margin-left:  40px;
+	}
+
 #examples{
 	margin-top: 15px;
 	margin-left:  40px;
+}
+
+#question{
+	height:40px;
+	margin: 10px 10px 10px 10px;
 }
 
 #comments{
