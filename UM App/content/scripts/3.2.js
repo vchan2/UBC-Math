@@ -1,4 +1,11 @@
 // javascript for precalculus tutorial section 3.2
+function checkPracQ(f){
+    clearScore();
+    checkPrac1(f);
+    checkPrac2(f);
+    checkPrac3(f);
+    updateScore();
+}
 
 function checkPrac1(f) {
 // answer is (ax + b)^2, where it happens that b is always 1
@@ -13,9 +20,10 @@ function checkPrac1(f) {
         errs = pracError(errs, 'b');
     }
     if ( errs != '' ) {
-        f.ansTxt1.value = errs;
+        document.getElementById("ansTxt1").setAttribute("value", errs);
     } else {
-        f.ansTxt1.value = 'Correct!  Try the next practice problem!';
+        document.getElementById("ansTxt1").setAttribute("value", "Correct!  Try another practice problem!");
+	addPoint(1);
     }
     return 1;
 }
@@ -37,9 +45,10 @@ function checkPrac2(f) {
         errs = pracError(errs, 'n');
     }
     if ( errs != '' ) {
-        f.ansTxt2.value = errs;
+        document.getElementById("ansTxt2").setAttribute("value", errs);
     } else {
-        f.ansTxt2.value = 'Correct!  Try the next practice problem!';
+        document.getElementById("ansTxt2").setAttribute("value", "Correct!  Try another practice problem!");
+	addPoint(1);
     }
     return 1;
 }
@@ -62,7 +71,7 @@ function checkPrac3(f) {
         errs = 'Check your value(s) of n, which should be the same.';
     }
     if ( errs != '' ) {
-        f.ansTxt3.value = errs;
+        document.getElementById("ansTxt3").setAttribute("value", errs);
         return 1;
     } else {
         if ( hans != h ) {
@@ -75,9 +84,10 @@ function checkPrac3(f) {
 	    errs = pracError(errs, 'n');
 	}
 	if ( errs != '' ) {
-	    f.ansTxt3.value = errs;
+        document.getElementById("ansTxt3").setAttribute("value", errs);
 	} else {
-	    f.ansTxt3.value = 'Correct!  Click "refresh" for more practice!';
+	    document.getElementById("ansTxt3").setAttribute("value", "Correct!  Try another practice problem!");
+	    addPoint(1);
         }
     }
 }

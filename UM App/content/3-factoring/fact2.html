@@ -1,0 +1,341 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- Math Jax Configuration -->
+        <script type="text/javascript"src="./../common/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<!--jQuery-->
+	<script src= "../common/jquery-ui.custom/js/jquery-1.9.1.js"></script>
+	<link href="../common/jquery-ui.custom/css/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+	<script src="../common/jquery-ui.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
+        <!-- SCORM API Wrapper -->
+	<script type="text/javascript" src="../common/APIWrapper.js"></script>
+	
+	<!--Score Script-->
+	<script type="text/javascript">
+	    //Global,total and student Score
+	    var gScore = 0 ,totalScore = 0,studentScore = 0;
+	    
+	    function setTotal(t){
+		totalScore = t;
+	    }
+	    
+	    function addPoint(p){
+		console.log("adding point " + p);
+		gScore += p;
+	    }
+	    
+	    function reducePoint(p){
+		console.log("reducing point " + p);
+		gScore -= p;
+	    }
+	    
+	    function calcScore(){
+		console.log("total score: "+totalScore);
+		console.log("gScore: "+gScore);
+		if(gScore != undefined){
+		    studentScore = gScore/totalScore;   
+		}
+	    }
+	//    function getCalcScore(){
+	//	return studentScore;
+	//    }
+	    function clearScore(){
+		console.log("clearing bro");
+		gScore = 0;
+		studentScore = 0;
+	    }
+	    
+	    function updateScore(){
+		calcScore();
+		console.log("I am getting called bro and score is = "+studentScore);
+		document.getElementById("score").innerHTML = studentScore.toFixed(2);
+	    }
+	    function send_score(){
+			// Set Blackboard value
+			console.log("sending..."+studentScore.toFixed(2))
+			doSetValue("cmi.score.scaled",studentScore.toFixed(2));
+	    }
+	</script>
+	
+	<!--jQuery scripts-->
+	<script type="text/javascript">
+	    $(function(){
+		$("#dialog").dialog({
+		    autoOpen: false,
+		    show: {
+			    effect: "blind",
+			    duration: 1000
+		    },
+		    width: 500
+		});
+		
+		$("#checkAns").click(function(){
+		    $("#dialog").dialog("open");
+		});
+	
+		$(document).tooltip();
+	    });
+	</script>
+	
+	<!-- Initialization SCORM Script -->
+	<script type="text/javascript">
+		function loadPage(){
+			doInitialize();
+		}
+		
+		//function userName(){
+		//    var name = doGetValue ("cmi.learner_name");
+		//	if(name != ""){
+		//		document.getElementById("name").innerHTML = "Hello "+name+"!";
+		//	}
+		//}
+		
+		function unloadPage(){
+			doTerminate();
+		}
+	</script>
+	
+	<!-- Script to evaluate quiz -->
+	<script type="text/javascript">
+	    
+	    var a,b,c,d,g,h,j,k,m,n,o,p,q,r,s,t,u,v;
+	    
+	    function randomize(){
+                // variables used = a,b,c,d,g,h,j,k,m,n,o,p,q,r,s,t,u,v
+                // variables not equal = (c,g),(j,k)
+                // variables positive values = a,b,c,d,g,h,j,k,m,n,o,p,q,r,s,t,u,v
+                // variables max values = (a,4),(c,4),(d,4),(g,4),(h,4),(j,4),(k,4)
+                // variables sums = (c,g,q)
+                // variables products = (a,a,m),(a,2,n),(c,2,o),(d,2,p),(d,d,r),(g,2,s),(h,h,t),(j,2,u),(k,2,v)
+                // end restrictions
+                
+                var variables = new Array();
+                var random;
+                
+                //+ , max=4
+                for (var i = 0;i<7; i++ ){
+                    random = 0;
+                    while (random <= 0 || random >4){
+                        random = Math.floor(Math.random()*(6+6))-6;   
+                    }
+                    variables[i] = random;
+                }
+                
+                a = variables[0];   //max=4
+                c = variables[1];   //max=4
+                d = variables[2];   //max=4
+                g = variables[3];   //max=4
+                h = variables[4];   //max=4
+                j = variables[5];   //max=4
+                k = variables[6];   //max=4
+                
+                if(c == g){
+                    random = 0;
+                    while (random <= 0 || random >4 || random == g){
+                        random = Math.floor(Math.random()*(6+6))-6;   
+                    }
+                    c = random;
+                }
+                
+                if(j == k){
+                    random = 0;
+                    while (random <= 0 || random >4 || random == k){
+                        random = Math.floor(Math.random()*(6+6))-6;   
+                    }
+                    j = random;
+                }
+                
+                //+
+                //random = 0;
+                //while (random <= 0){
+                //    random = Math.floor(Math.random()*(6+6))-6;   
+                //}
+                b = 2;
+                
+                //Sums & Products
+                q = c+g;
+                m = a*a;
+                n = a*2;
+                o = c*2;
+                p = d*2;
+                r = d*d;
+                s = g*2;
+                t = h*h;
+                u = j*2;
+                v = k*2;
+	    }
+	    
+	    function createQ(){
+		//Set variables for question
+		document.getElementById("q1").innerHTML ="\\("+m+"x^{"+b+"}+"+n+"x+1= \\  \\)";
+		document.getElementById("q2").innerHTML ="\\(x^{"+o+"}-"+p+"x^{"+q+"}+"+r+"x^{"+s+"}= \\ \\)";
+                document.getElementById("q3").innerHTML ="\\("+t+"x^{"+u+"}-y^{"+v+"}= \\ \\)";
+	    }
+
+	    // Run functions after loading
+	    window.onload = function(){
+		loadPage();
+		//document.getElementById("reset").onclick = randomize();
+		//document.getElementById("send_to_bb").onclick = send_score();
+	    };
+	    
+	</script>
+	<script type="text/javascript" src="../common/answerMaker.js"></script>
+	<script type="text/javascript" src="../scripts/cr.js"></script>
+	<script type="text/javascript" src="../scripts/3.2.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+
+        <title>UM Topic 3.2</title>
+    </head>
+    <body onbeforeunload="unloadPage()">
+	<script type="text/javascript">
+	   setTotal(3);
+	</script>
+	<div id="wrapper">
+		
+	    <h1>Factoring Quadratics</h1>
+	    <hr />
+            <br />
+            One way to factor quadratics is to mentally multiply out the possible ways of factoring them.
+            We can do this because we know that when we multiply out the factors, we have to get the appropriate terms in the quadratic:<br />
+            <div id="eqn">
+                \(x^2-5x-6=(x+?)(x+?)\)
+            </div>
+            We know we have to have the "\(x\)"s to give the factor of \(x^2\) . Then we're looking for two numbers whose product is -6 and whose sum is -5.
+            By trying combinations of the possibilities to give the product -6 (-2,3; 2,-3; -1,6; 6,-1), we come up with the answer:<br />
+            <div id="eqn">
+                \(x^2-5x-6=(x-6)(x+1)\)
+            </div>
+            
+            <div class="example_box">
+                <strong>Examples</strong><br />
+                <div class="ex" style="line-height: 35px;">
+                    <div style="margin-right: 5px; float: left;">1.</div>  <img src="../images/Factoring_2/3.2.e.1.gif" style = "padding-top: 5px;" /><br />
+                    <div style="margin-right: 5px; float: left;">2.</div>  <img src="../images/Factoring_2/3.2.e.2.gif" style = "padding-top: 5px;" /><br />
+                    <div style="margin-right: 5px; float: left;">3.</div>  <img src="../images/Factoring_2/3.2.e.3.gif" style = "padding-top: 5px;" /><br />
+                </div>
+            </div>
+            
+            <h2>Perfect Squares and The Difference of Squares</h2>
+            
+            Recognition of the special producs in expanded form is useful in factoring: reversing the results in the <a href="./fact1.html">previous section</a>, we have the following rules.
+            
+             <div class="def" style="height: 160px;">
+		<h1>Special Products:</h1>
+                <div class="eqn">
+		    \(a^2+2ab+b^2=(a+b)^2\)<br />
+                    \(a^2-2ab+b^2=(a+b)^2\)<br />
+                    \(a^2-b^2=(a+b)(a-b)\)
+		</div>
+                <p>
+                   When we can see that terms in an expression we want to factor are squares, we look for these special cases.
+                   The difference of squares (special product 3) is especially useful.
+                </p>
+	    </div>
+            
+            <div class="example_box">
+                <strong>Examples</strong><br />
+                <div class="ex" style="line-height: 35px;">
+                    <div style="margin-right: 5px; float: left;">1.</div>  <img src="../images/Factoring_2/3.2.e.4.gif" style = "padding-top: 5px;" /><br />
+                    <div style="margin-right: 5px; float: left;">2.</div>  <img src="../images/Factoring_2/3.2.e.5.gif" style = "padding-top: 5px;" /><br />
+                    <div style="margin-right: 5px; float: left;">3.</div>  <img src="../images/Factoring_2/3.2.e.6.gif" style = "padding-top: 5px;" /><br />
+                    <div style="margin-right: 5px; float: left;">4.</div>  <img src="../images/Factoring_2/3.2.e.7.gif" style = "padding-top: 5px;" /><br />
+                    <div style="margin-right: 5px; float: left;">5.</div>  <img src="../images/Factoring_2/3.2.e.8.gif" style = "padding-top: 5px;" /><br />
+                </div>
+            </div>
+            Sometimes it is useful to substitute to more clearly see the quadratic form being factored. For example, consider \(z^{2/3}-z^{1/3}-6\). To see the quadratic, substitute \(u = z^{1/3}\) . Then
+            <div id="eqn">
+                \(z^{2/3}-z^{1/3}-6 = u^2-u-6=(u-3)(u+2)\)
+            </div>
+           Then rewrite this in terms of \(z\) using \(u =z^{1/3}\) :
+           <div id="eqn">
+                \(z^{2/3}-z^{1/3}-6 = (z^{1/3}-3)(z^{1/3}+2)\)
+            </div>
+            
+	    <!-- Randomize eqn values -->
+	    <script>
+	    	randomize();
+	    </script>
+	    
+	    <br /><strong>Practice</strong><br /><br />
+		    <form name="intpractice" action="">
+                        Before doing these practice problems make sure that you have explained each step in the examples above. Then work the practice problems until you are sure you understand them.
+                        Then go and get more practice by taking the <em>section test</em> at the end of this section.<br />
+                        <br />
+                        Note that you can get new practice problems by clicking the "Refresh" button at the bottom of the practice set.
+                        <br /><br />
+                    <div>
+			    1. Factor the following expression into the form: \((ax+b)^2\)
+			    
+			    <div id="question">
+			    	<!-- Question 1 -->
+				    <div id="q1" style="float: left; padding-top: 10px;"> </div>	 
+			    	 <script type="text/javascript">
+			    	 	symbol_space("(");
+                                        answer_space(1,1,"a");
+                                        symbol_space("x");
+                                        symbol_space("+");
+                                        answer_space(1,1,"b");
+                                        symbol_space(")^2");
+			    	 </script>
+			    </div>
+		    	2. Factor the following expression into the form: \((x^m-bx^n)^2\)
+		    	<div id="question">
+		    		<!-- Question 2 -->
+		    		<div id="q2" style="float: left; padding-top: 10px;"> </div>
+		    		<script type="text/javascript">
+			    		symbol_space("(");
+                                        answer_space(2,2,"p");
+                                        symbol_space("-");
+                                        answer_space(2,1,"a");
+                                        answer_space(2,2,"q");
+                                        symbol_space(")^2");
+			    	</script>
+		    	</div>
+                        3. Factor the following expression into the form: \((ax^m+y^n)(ax^m-y^n)\)
+		    	<div id="question">
+		    		<!-- Question 3 -->
+		    		<div id="q3" style="float: left; padding-top: 10px;"> </div>
+		    		<script type="text/javascript">
+			    		symbol_space("(");
+                                        answer_space(3,1,"a");
+                                        answer_space(3,2,"p");
+                                        symbol_space("+");
+                                        answer_space(3,3,"q");
+                                        symbol_space(")");
+                                        symbol_space("(");
+                                        answer_space(3,1,"b");
+                                        answer_space(3,2,"r");
+                                        symbol_space("-");
+                                        answer_space(3,3,"s");
+                                        symbol_space(")");
+			    	</script>
+		    	</div>
+		    	
+		    	<!-- Create questions -->
+		    	<script type="text/javascript">
+				createQ();
+			    </script>
+		    </div>
+		
+		    <div id="dialog" >
+			Score:
+			<div id="score">
+			</div>
+			<script>
+			    updateScore();
+			</script>
+			Question 1:<br /><input type="text" class="ansMess" id="ansTxt1" disabled = "disabled"/><br /><br />
+			Question 2:<br /><input type="text" class="ansMess" id="ansTxt2" disabled = "disabled"/><br /><br />
+                        Question 3:<br /><input type="text" class="ansMess" id="ansTxt3" disabled = "disabled"/><br /><br />
+			<!--<button id="reset"> Reset Questions</button>-->
+			<button id="send_to_bb" onclick="send_score();"> Submit Score to Blackboard</button>
+		    </div>
+		    
+		    <input type="button" id= "checkAns" value="Check Answers" onclick="checkPracQ(this.form);"/><br />
+	    </form>
+		    <br /><a href="./index.html"> Return to Main</a>
+	</div>
+    </body>
+</html>
