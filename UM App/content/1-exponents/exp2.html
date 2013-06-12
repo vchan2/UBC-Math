@@ -9,237 +9,21 @@
 	<link href="../common/jquery-ui.custom/css/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
 	<script src="../common/jquery-ui.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
         <!-- SCORM API Wrapper -->
-	<script type="text/javascript" src="../common/APIWrapper.js"></script>
-	
+	<script type="text/javascript" src="../common/SCORM_API_wrapper.js"></script>
 	<!--Score Script-->
-	<script type="text/javascript">
-	    //Global,total and student Score
-	    var gScore = 0 ,totalScore = 0,studentScore = 0;
-	    
-	    function setTotal(t){
-		totalScore = t;
-	    }
-	    
-	    function addPoint(p){
-		console.log("adding point " + p);
-		gScore += p;
-	    }
-	    
-	    function reducePoint(p){
-		console.log("reducing point " + p);
-		gScore -= p;
-	    }
-	    
-	    function calcScore(){
-		console.log("total score: "+totalScore);
-		console.log("gScore: "+gScore);
-		if(gScore != undefined){
-		    studentScore = gScore/totalScore;   
-		}
-	    }
-	//    function getCalcScore(){
-	//	return studentScore;
-	//    }
-	    function clearScore(){
-		console.log("clearing bro");
-		gScore = 0;
-		studentScore = 0;
-	    }
-	    
-	    function updateScore(){
-		calcScore();
-		console.log("I am getting called bro and score is = "+studentScore);
-		document.getElementById("score").innerHTML = studentScore.toFixed(2);
-	    }
-	    function send_score(){
-			// Set Blackboard value
-			console.log("sending..."+studentScore.toFixed(2))
-			doSetValue("cmi.score.scaled",studentScore.toFixed(2));
-	    }
-	</script>
-	
-	<!--jQuery scripts-->
-	<script type="text/javascript">
-	    $(function(){
-		$("#dialog").dialog({
-		    autoOpen: false,
-		    show: {
-			    effect: "blind",
-			    duration: 1000
-		    },
-		    width: 500
-		});
-		
-		$("#checkAns").click(function(){
-		    $("#dialog").dialog("open");
-		});
-	
-		$(document).tooltip();
-	    });
-	</script>
-	
-	<!-- Initialization SCORM Script -->
-	<script type="text/javascript">
-		function loadPage(){
-			doInitialize();
-		}
-		
-		//function userName(){
-		//    var name = doGetValue ("cmi.learner_name");
-		//	if(name != ""){
-		//		document.getElementById("name").innerHTML = "Hello "+name+"!";
-		//	}
-		//}
-		
-		function unloadPage(){
-			doTerminate();
-		}
-	</script>
-	
-	<!-- Script to evaluate quiz -->
-	<script type="text/javascript">
-	    // variables used = a,b,c,d,g,h,j,k,m,n,o,p,q,r,s,t,u,v,w,z,aa,bb,cc
-            // variables not equal to one = b,c,g,h,m,n,p,q,s,t,v,w,z,aa,bb,cc
-            // variables not divisible = (b,c),(g,h),(m,n),(p,q),(s,t),(v,w),(aa,z),(cc,bb)
-            // variables positive values = c,h,n,q,t,w,aa,cc
-            // variables max values = (c,8),(d,3),(h,8),(j,3),(r,4),(u,3)
-            // variables values = (u,1),(aa,3),(cc,2)
-            // end restrictions
-            
-	    var a,b,c,d,g,h,j,k,m,n,o,p,q,r,s,t,u,v,w,z,aa,bb,cc;
-	    
-	    function randomize(){
-		//var variables = new Array();
-		//    for (var i = 0;i<23; i++ ){
-		//	var random = 0;
-		//	while (random == 0){
-		//	    random = Math.floor(Math.random()*(6+6))-6;   
-		//	}
-		//	variables[i] = random;
-		//    }
-		
-		var random = Math.floor(Math.random()*(6+6))-6;  
-		while (random == 0){
-		    random = Math.floor(Math.random()*(6+6))-6;  
-		}
-		a = random; 		//None
-		 
-		var variables = new Array();
-		//Check that random != 1
-		for(var i=0; i<14;i++){
-		    random = 0;
-		    while(random == 0 || random == 1){
-			random = Math.floor(Math.random()*(6+6))-6; 
-		    }
-		    variables[i] = random;
-		}
-		
-		b = variables[0]; 		// !=1
-		g =variables[1];  		// !=1
-		m = variables[2]; 		// !=1
-		p = variables[3];		// !=1
-		s =variables[4]; 		// !=1
-		v = variables[5]; 		// !=1
-		z =variables[6]; 	 	// !=1
-		bb = variables[7];		// !=1
-		
-		//Positive variables
-		for(var i=8; i<14;i++){
-		    if(variables[i]<0){
-			variables[i] *= -1;
-		    }
-		}
-		c = variables[8]; 		// !=1 , + ,max =8
-		h = variables[9]; 		// !=1 , +
-		n =variables[10];  		// !=1 , +
-		q = variables[11];		 // !=1 , +
-		t = variables[12]; 		// !=1 , +
-		w = variables[13]; 		// !=1 , +
-		
-		//Fixed Numbers
-		u = 1;		//	   *********
-		aa = 3;		// !=1 , + *********
-		cc = 2;		// !=1 , + *********
-		
-		//No Restrictions
-		var variables2 = new Array();
-		for(var i =0; i<5; i++){
-		    random = 0;
-		    while (random == 0){
-			random = Math.floor(Math.random()*(6+6))-6;
-		    }
-		    variables2[i] = random;
-		}
-	        k = variables2[2];
-		o = variables2[3];
-		
-		//Restrict max values
-		if (variables2[1]>3) {
-		    random = 0;
-		    while (random == 0 || random >3){
-			random = Math.floor(Math.random()*(6+6))-6;
-		    }
-		    variables2[1] = random;
-
-		}
-		if (variables2[0]>3) {
-		    random = 0;
-		    while (random == 0 || random >3){
-			random = Math.floor(Math.random()*(6+6))-6;
-		    }
-		    variables2[0] = random;
-		}
-		if (variables2[4]>4) {
-		    random = 0;
-		    while (random == 0 || random >3){
-			random = Math.floor(Math.random()*(6+6))-6;
-		    }
-		    variables2[4] = random;
-		}
-		j = variables2[1]; //max = 3
-		d = variables2[0]; //max = 3
-		r = variables2[4]; //max = 4    
-	    }
-	    
-	    function createQ(){
-		//Set variables for question
-		document.getElementById("q3").innerHTML ="\\("+a+"x^{"+b+"/"+c+"}("+d+"x^{"+g+"/"+h+"})^{"+j+"}=\t{}\\)";
-		document.getElementById("q4").innerHTML ="\\(\\frac{"+k+"(x^{"+m+"/"+n+"}y^{"+o+"})^{"+p+"/"+q+"}}{("+r+"y^{"+s+"/"+t+"})}=\t{}\\)";	//u is used here
-		document.getElementById("q5").innerHTML = "\\(\\frac{x^{"+v+"/"+w+"}\\sqrt{x}y^{"+z+"/"+aa+"}}{x^{"+bb+"/"+cc+"}\\sqrt[3]{y}}= \t{}\\)";
-	    }
-	    
-	    // Draw answer portion
-	    function answer_space(qNum,type){
-                
-                switch (type) {
-                    case 1:
-                        document.write('<div style=\"float: left; padding-top: 10px;\"><input type=\"text\" id=\"iAns'+qNum+'\" name=\"iAns'+qNum+' \" style=\"width: 30px;\"/></div>');
-                        break;
-		    case 2:
-                        document.write('<div style=\"float: left; padding-top: 10px;\">\\(x\\)</div>');
-                        document.write('<div style=\"float: left; width: 40px; height: 30px; padding-bottom:10px;\"><input id=\"pAns'+qNum+'\"name = \"pAns'+qNum+'\" type=\"text\" style=\" width: 40px;\"/></div>');
-			break;
-                    case 3:
-                        document.write('<div style=\"float: left; padding-top: 10px;\">\\(y\\)</div>');
-                        document.write('<div style=\"float: left; width: 40px; height: 30px; padding-bottom:10px;\"><input id=\"qAns'+qNum+'\"name = "qAns'+qNum+'\" type=\"text\" style=\" width: 40px;\"/></div>');
-                        break;
-		    case 4:
-                        document.write('<div style=\"float: left; padding-top: 10px;\"><input type=\"text\" id=\"cAns'+qNum+'\" name=\"cAns'+qNum+' \" style=\"width: 30px;\"/></div>');
-                        break;
-                }		
-	    }
-	    
-	    // Run functions after loading
-	    window.onload = function(){
-		loadPage();
-		//document.getElementById("reset").onclick = randomize();
-		//document.getElementById("send_to_bb").onclick = send_score();
-	    };
-	    
-	</script>
+	<script type="text/javascript" src="../common/score.js"></script>
+	<!--jQuery dialog box-->
+	<script type="text/javascript" src="../common/dialog.js"></script>
+	<!-- SCORM Initialization Script -->
+	<script type="text/javascript" src="../common/SCORM_init.js"></script>
+	<!-- Script to create random variables and questions -->
+	<script type="text/javascript" src="../scripts/random_variables/ra1.2.js"></script>
+	<!--Create Answer Space-->
 	<script type="text/javascript" src="../common/answerMaker.js"></script>
+	<!--Question Evaluation-->
 	<script type="text/javascript" src="../scripts/cr.js"></script>
 	<script type="text/javascript" src="../scripts/1.2.js"></script>
+	<!--Style Sheet-->
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 
         <title>UM Topic 1.2</title>
@@ -350,7 +134,7 @@
 			<!-- Question 1 -->
 			    <div style="float: left; padding-top: 10px;"> \((8)^{4/3} =\ \)</div>	 
 			 <script type="text/javascript">
-				answer_space(1,1);
+				answer_space(1,1,"i");
 			 </script>
 		    </div>
 		2. More mental calculation: also write the following without exponents by simplifying mentally, without using a calculator:<br />
@@ -358,7 +142,7 @@
 			<!-- Question 2 -->
 			<div style="float: left; padding-top: 10px;">\((16)^{5/4} =\ \)</div>
 			<script type="text/javascript">
-				answer_space(2,1);
+				answer_space(2,1,"i");
 			</script>
 		</div>
 		
@@ -367,8 +151,8 @@
 			<!-- Question 3 -->
 			<div id="q3" style="float: left;"></div>
 			<script type="text/javascript">
-				answer_space(3,4);
-				answer_space(3,2);
+				answer_space(3,1,"c");
+				answer_space(3,2,"p");
  			</script>
 		</div>
 		
@@ -377,9 +161,9 @@
 			<!-- Question 4 -->
 			<div id="q4" style="float: left; font-size: 140%"></div>
 			<script type="text/javascript">
-				answer_space(4,4);
-				answer_space(4,2);
-				answer_space(4,3);
+				answer_space(4,1,"c");
+				answer_space(4,2,"p");
+				answer_space(4,3,"q");
  			</script>
 		</div>
 		
@@ -388,8 +172,8 @@
 			<!-- Question 5 -->
 			<div id="q5" style="float: left; font-size: 140%;"></div>
 			<script type="text/javascript">
-				answer_space(5,2);
-				answer_space(5,3);
+				answer_space(5,2,"p");
+				answer_space(5,3,"q");
  			</script>
 		</div>
 		

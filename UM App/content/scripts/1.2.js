@@ -61,7 +61,10 @@ function checkPrac4(f) {
     var cAns = roundTo( k*1./Math.pow(r,u), mathPrecision );
     var pAns = roundTo( (m/n)*(p/q), mathPrecision );
     var qAns = roundTo( o*(p/q)-(s/t)*u, mathPrecision );
-
+    console.log("c: "+cAns);
+    console.log("p: "+pAns);
+    console.log("q: "+qAns);
+    
 // deal with possible fractions
     var cVal = evalFrac(f.cAns4.value);
     var pVal = evalFrac(f.pAns4.value);

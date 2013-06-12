@@ -1,3 +1,8 @@
+//**********************************************************
+// Script to initialize SCORM communication with LMS
+//
+//**********************************************************
+
 var scorm = pipwerks.SCORM;
 var lmsConnected = false;
 

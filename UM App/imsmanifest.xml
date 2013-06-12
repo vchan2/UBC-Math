@@ -8,18 +8,54 @@
   </metadata>
   <organizations default="ORG-4CB65FB1-3843-4E98-53F6-C8F7A541B8ED">
     <organization identifier="ORG-4CB65FB1-3843-4E98-53F6-C8F7A541B8ED" structure="hierarchical" adlcp:sharedDataGlobalToSystem="true">
-      <title>Organization</title>
-      <item identifier="ITEM-99B7556C-07B1-F016-0A03-30680B79221F" isvisible="true">
+      <title>UM App Test</title>
+      <item identifier="ITEM-5C6E9400-8550-55E1-2750-A972F7AA92BF" isvisible="true">
         <title>1-Exponents</title>
-        <item identifier="ITEM-4DF55CB3-8804-F055-86A9-4CF5769D75BD" isvisible="true" identifierref="RES-553E6584-2F39-4302-799B-C8FD7E491565">
+        <item identifier="ITEM-C97A904D-B26E-2F04-66FD-715514A814AD" isvisible="true" identifierref="RES-D97E596B-CA13-239A-B6A0-CE1BB25CE07C">
           <title>UM Topic 1.1</title>
+        </item>
+        <item identifier="ITEM-71BDACC0-2743-6E12-6C0C-1DB52E8EFD1C" isvisible="true" identifierref="RES-F6032FE0-F3BF-EC94-D695-93AA67CA47EA">
+          <title>UM Topic 1.2</title>
+        </item>
+        <item identifier="ITEM-145055F9-EADC-8801-32D3-37E4674838C7" isvisible="true" identifierref="RES-FC659634-49E6-205D-2B46-9B2CEA38D2CF">
+          <title>UM Topic 1.3</title>
+        </item>
+      </item>
+      <item identifier="ITEM-0DA7F3CB-2CA3-0F25-A20E-1C72E2A8B14F" isvisible="true">
+        <title>2-Multiplying</title>
+        <item identifier="ITEM-86D55191-E234-F366-785A-A3B8D9ABFF10" isvisible="true" identifierref="RES-977F9CA5-D95B-EAC9-090C-9E8B07EFCC2C">
+          <title>UM Topic 2.1</title>
+        </item>
+      </item>
+      <item identifier="ITEM-2B166490-3D3E-0C27-A713-F162E65A65C5" isvisible="true">
+        <title>3-Factoring</title>
+        <item identifier="ITEM-7A839CA2-B91B-E74F-200B-B95BA488C1DE" isvisible="true" identifierref="RES-EEC0774A-C3E7-9FB7-C95E-A6EC870A8F30">
+          <title>UM Topic 3.1</title>
+        </item>
+        <item identifier="ITEM-9FC62A3E-619A-F59C-A4EA-B99E00A33735" isvisible="true" identifierref="RES-CEFD2118-4B6F-9A0C-A31F-375AAF46B2BA">
+          <title>UM Topic 3.2</title>
         </item>
       </item>
     </organization>
   </organizations>
   <resources>
-    <resource identifier="RES-553E6584-2F39-4302-799B-C8FD7E491565" type="webcontent" href="content/1-exponents/index.html">
-      <file href="content/1-exponents/index.html" />
+    <resource identifier="RES-F6032FE0-F3BF-EC94-D695-93AA67CA47EA" type="webcontent" href="content/1-exponents/exp2.html">
+      <file href="content/1-exponents/exp2.html" />
+    </resource>
+    <resource identifier="RES-D97E596B-CA13-239A-B6A0-CE1BB25CE07C" type="webcontent" href="content/1-exponents/exp1.html">
+      <file href="content/1-exponents/exp1.html" />
+    </resource>
+    <resource identifier="RES-FC659634-49E6-205D-2B46-9B2CEA38D2CF" type="webcontent" href="content/1-exponents/exp3.html">
+      <file href="content/1-exponents/exp3.html" />
+    </resource>
+    <resource identifier="RES-977F9CA5-D95B-EAC9-090C-9E8B07EFCC2C" type="webcontent" href="content/2-multiplying/mult1.html">
+      <file href="content/2-multiplying/mult1.html" />
+    </resource>
+    <resource identifier="RES-EEC0774A-C3E7-9FB7-C95E-A6EC870A8F30" type="webcontent" href="content/3-factoring/fact1.html">
+      <file href="content/3-factoring/fact1.html" />
+    </resource>
+    <resource identifier="RES-CEFD2118-4B6F-9A0C-A31F-375AAF46B2BA" type="webcontent" href="content/3-factoring/fact2.html">
+      <file href="content/3-factoring/fact2.html" />
     </resource>
   </resources>
 </manifest>
