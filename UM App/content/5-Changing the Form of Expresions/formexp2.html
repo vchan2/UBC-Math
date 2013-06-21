@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- Math Jax Configuration -->
+        <script type="text/javascript"src="../common/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<!--jQuery-->
+	<script src= "../common/jquery-ui.custom/js/jquery-1.9.1.js"></script>
+	<link href="../common/jquery-ui.custom/css/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+	<script src="../common/jquery-ui.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<!-- SCORM API Wrapper -->
+	<script type="text/javascript" src="../common/SCORM_API_wrapper.js"></script>
+	<!--jQuery dialog box-->
+	<script type="text/javascript" src="../common/dialog.js"></script>
+	<!-- SCORM Initialization Script (Pipwerks)-->
+	<!--<script type="text/javascript" src="common/SCORM_init.js"></script>-->
+	<!-- Script to create random variables and questions -->
+	<script type="text/javascript" src="../scripts/random_variables/ra5.2.js"></script>
+	<!--Create Answer Space-->
+	<script type="text/javascript" src="../common/answerMaker.js"></script>
+	<!--Question Evaluation-->
+	<script type="text/javascript" src="../scripts/cr.js"></script>
+	<script type="text/javascript" src="../scripts/5.2.js"></script>
+	<!--Style Sheet-->
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	
+        <title>UM Topic 5.2</title>
+    </head>
+    <body onbeforeunload="unloadPage()">
+	<div id="wrapper">
+	    <div id="title">
+		<h1>Changing the Form of Expressions</h1>
+		<hr />
+	    </div>
+	    <h2>Completing the Square</h2>
+            <p>
+		We've already seen one way of changing the form of a quadratic, by factoring<!--Hyperlink??--> . This works especially well
+		when a quadratic factors into a <em>perfect square</em>, as shown below.
+	    </p>
+	    <div class="eqn">
+		$$x^2+2nx+n^2=(x+n)^2$$
+	    </div>
+	    <p>
+		If the quadratic isn't a perfect square, we can still rewrite it by <em>completing the square</em> to rewrite it in terms of a perfect square term and another one:
+	    </p>
+	    <div class="eqn">
+		$$ax^2+bx+c=a(x-h)^2+k$$
+	    </div>
+	    <p>
+		To do this, we must find the number n that we saw in the perfect square. Note that the coefficient of \(x\) there is two times \(n\). Therefore, we can find \(n\) by dividing the coefficient of the \(x\) term by 2. Once we know \(n\),
+		we know that the constant term in the perfect square must be \(n\)-squared. This is the rule for completing the square, below.
+	    </p>
+	    
+	    <div class="def">
+		<h1>Completing the Square:</h1>
+		<p>
+		    To complete the square in the expression
+		</p>
+		<div class="eqn">
+		    $$x^2+bx+c$$
+		</div>
+		<p>
+		    divide the coefficient of \(x\) by two to get (b/2), then add and subtract this squared, and then factor it:
+		</p>
+		<div class="eqn">
+		    $$x^2+bx+c =x^2+bx+\left(\frac{b^2}{4}-\frac{b^2}{4}+c\right)$$
+		    $$\qquad \qquad \  = \left(x^2 + bx + \frac{b^2}{4}\right)-\frac{b^2}{4}+c$$
+		    $$\qquad \qquad \  = \left(x + \frac{b}{2}\right)^2-\frac{b^2}{4}+c$$
+		</div>
+		<p>
+		    To complete the square for
+		</p>
+		<div class="eqn">
+		    $$ax^2+bx+c$$
+		</div>
+		<p>
+		    first factor out \(a\) and then complete the square.
+		</p>
+	    </div>
+
+            <div class="example_box">
+                <strong>Examples</strong><br />
+                Note for each what the term b is, and how we add and subtract to get a perfect square.
+                <div class="ex" style="line-height: 35px;">
+                    <div style="margin-right: 5px; float: left;">1. Rewrite:</div><br />  <img src="../images/Changing_Expressions_2/5.2.e.1.gif" style = "padding-top: 5px;" /><br />
+		    In the form:<br />
+		    <img src="../images/Changing_Expressions_2/5.2.e.2.gif" style = "padding-top: 5px;" /><br />
+		    <img src="../images/Changing_Expressions_2/5.2.e.3.gif" style = "padding-top: 5px;" /><br />
+                    <div style="margin-right: 5px; float: left;">2. Complete the square:</div><br />  <img src="../images/Changing_Expressions_2/5.2.e.4.gif" style = "padding-top: 5px;" /><br />
+		    Factor out the 5:<br />
+		    <img src="../images/Changing_Expressions_2/5.2.e.5.gif" style = "padding-top: 5px;" /><br />
+		    Then complete the square:<br />
+		    <img src="../images/Changing_Expressions_2/5.2.e.6.gif" style = "padding-top: 5px;" /><br />
+		    Thus: <br />
+		    <img src="../images/Changing_Expressions_2/5.2.e.7.gif" style = "padding-top: 5px;" />
+		    
+                </div>
+            </div>
+	    
+	    <h2>The Quadratic Formula</h2>
+	    <p>
+		The quadratic formula, giving the general solution for the zeros of
+	    </p>
+	    <div class="eqn">
+		\(r(x) = ax^2+bx+c\)
+	    </div>
+	    <p>
+		with \(a\) not zero, is found by completing the square. Zeros are where \(r(x)=0\), so we have:
+	    </p>
+	    <div class="eqn">
+		$$ax^2+bx+c=0,\quad or$$
+		$$a\left(x^2+\frac{b}{a}x+\frac{c}{a}\right)=0,\quad a\neq 0, so$$
+		$$x^2+\frac{b}{a}x+\frac{c}{a}=0$$
+	    </div>
+	    <p>
+		Then to complete the square we add and subtract \(\left(\frac{1}{2} \frac{b}{a}\right)^2 = \left(\frac{b}{2a}\right)^2 = \frac{b^2}{4a^2}\):
+	    </p>
+	    <div class="eqn">
+		$$x^2+\frac{b}{a}x+\frac{b^2}{4a^2}-\frac{b^2}{4a^2}+\frac{c}{a}=0, \quad or$$
+		$$\left(x^2+\frac{b}{a}x+\frac{b^2}{4a^2}\right)-\frac{b^2}{4a^2}+\frac{c}{a}=0, \quad so$$
+		$$\left(x+\frac{b}{2a}\right)^2-\frac{b^2-4ac}{4a^2}=0$$
+	    </div>
+            <p>
+		(the last term in this last step is because \(-\frac{b^2}{4a^2}+\frac{c}{a}=-\frac{b^2}{4a^2}+\frac{4ac}{4a^2} = -\frac{b^2-4ac}{4a^2}\). Then:
+	    </p>
+	    <div class="eqn">
+		$$\left(x+\frac{b}{2a}\right)^2=\frac{b^2-4ac}{4a^2}, \quad so$$
+		$$\left(x+\frac{b}{2a}\right)=\pm \sqrt{\frac{b^2-4ac}{4a^2}}$$
+		$$\qquad \qquad \ =\pm \frac{\sqrt{b^2-4ac}}{2a}, \quad and$$
+		$$\qquad \qquad x =-\frac{b}{2a} \pm \frac{\sqrt{b^2-4ac}}{2a}$$
+		$$\qquad \qquad x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$$
+	    </div>
+	    <!-- Randomize eqn values -->
+	    <script>
+	    	randomize();
+	    </script>
+	    
+	    <div class="practice">
+		<h2>Practice</h2>
+		<form name="intpractice" action="">
+			      Be sure you've gone through each step in the examples above before doing these. Once you've worked them until you're sure that you understand them, go on to the next section.
+			      There are more problems of this type in the section test at the end of the section.<br />
+			      <br />
+				Note that you can get new practice problems by clicking the "Refresh" button at the bottom of the practice set.
+			      <br /><br />
+			    <div>
+				    1. Rewrite the following in the form: \(a(x-h)^2+k\)
+				    <div id="question">
+					<!-- Question 1 -->
+					<div id="q1" style="float: left; padding-top: 10px;"> </div>	 
+					     <script type="text/javascript">
+						answer_space(1,1,"a");
+						symbol_space("(");
+						symbol_space("x -");
+						answer_space(1,1,"b");
+						symbol_space(")^2+");
+						answer_space(1,1,"c");
+					     </script>
+				    </div>
+				    2. Rewrite the following in the same form: \(a(x-h)^2+k\)
+				    <div id="question">
+					    <!-- Question 2 -->
+					    <div id="q2" style="float: left; padding-top: 10px;"> </div>
+					    <script type="text/javascript">
+						answer_space(2,1,"a");
+						symbol_space("(x -");
+						answer_space(2,1,"b");
+						symbol_space(")^2+");
+						answer_space(2,1,"c");
+					    </script>
+				    </div>
+			    
+				    <!-- Create questions -->
+				    <script type="text/javascript">
+				    createQ();
+				</script>
+			    </div>
+			
+			<input type="button" id= "checkAns" value="Check Answers" onclick="checkPracQ(this.form);"/><br />
+		</form>
+	    </div>
+	    
+	    <div id="dialog" >
+			Question 1:<br /><input type="text" class="ansMess" id="ansTxt1" disabled = "disabled"/><br /><br />
+			Question 2:<br /><input type="text" class="ansMess" id="ansTxt2" disabled = "disabled"/><br /><br />
+	    </div>
+		    <br /><a href="./index.html"> Return to Main</a>
+	</div>
+    </body>
+</html>

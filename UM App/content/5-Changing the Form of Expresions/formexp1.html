@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- Math Jax Configuration -->
+        <script type="text/javascript"src="../common/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<!--jQuery-->
+	<script src= "../common/jquery-ui.custom/js/jquery-1.9.1.js"></script>
+	<link href="../common/jquery-ui.custom/css/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+	<script src="../common/jquery-ui.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<!-- SCORM API Wrapper -->
+	<script type="text/javascript" src="../common/SCORM_API_wrapper.js"></script>
+	<!--jQuery dialog box-->
+	<script type="text/javascript" src="../common/dialog.js"></script>
+	<!-- SCORM Initialization Script (Pipwerks)-->
+	<!--<script type="text/javascript" src="common/SCORM_init.js"></script>-->
+	<!-- Script to create random variables and questions -->
+	<script type="text/javascript" src="../scripts/random_variables/ra5.1.js"></script>
+	<!--Create Answer Space-->
+	<script type="text/javascript" src="../common/answerMaker.js"></script>
+	<!--Question Evaluation-->
+	<script type="text/javascript" src="../scripts/cr.js"></script>
+	<script type="text/javascript" src="../scripts/5.1.js"></script>
+	<!--Style Sheet-->
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	
+        <title>UM Topic 5.1</title>
+    </head>
+    <body onbeforeunload="unloadPage()">
+	<div id="wrapper">
+	    <div id="title">
+		<h1>Changing the Form of Expressions</h1>
+		<hr />
+	    </div>
+	    
+	    <h2>Rearranging Coefficients and Exponents</h2>
+	    <p>
+		Often changing in the coefficients or exponents of an expression will be sufficient to give it a new and more useful form. This is illustrated by the following examples.
+	    </p>
+            <div class="example_box">
+                <strong>Examples</strong><br />
+                Note for each example how we have rearranged the coefficients of the problem, and what exponents we have rewritten.<br />
+                <div class="ex" style="line-height: 35px;">
+                    <div style="margin-right: 5px; float: left;">1.</div>  <img src="../images/Changing_Expressions_1/5.1.e.1.gif" style = "padding-top: 5px;" /><br />
+                    <div style="margin-right: 5px; float: left;">2.</div>  <img src="../images/Changing_Expressions_1/5.1.e.2.gif" style = "padding-top: 5px;" /><br />
+                    <div style="margin-right: 5px; float: left;">3.</div>  <img src="../images/Changing_Expressions_1/5.1.e.3.gif" style = "padding-top: 5px;" /><br />
+                    <div style="margin-right: 5px; float: left;">4.</div>  <img src="../images/Changing_Expressions_1/5.1.e.4.gif" style = "padding-top: 5px;" /><br />
+                    <div style="margin-right: 5px; float: left;">5.</div>  <img src="../images/Changing_Expressions_1/5.1.e.5.gif" style = "padding-top: 5px;" />
+                </div>
+            </div>
+            
+	    <!-- Randomize eqn values -->
+	    <script>
+	    	randomize();
+	    </script>
+	    
+	    <div class="practice">
+		<h2>Practice</h2>
+		<form name="intpractice" action="">
+			      Be sure you've gone through each step in the examples above before doing these. Once you've worked them until you're sure that you understand them, go on to the next section.
+			      There are more problems of this type in the section test at the end of the section.<br />
+			      <br />
+				Note that you can get new practice problems by clicking the "Refresh" button at the bottom of the practice set.
+			      <br /><br />
+			    <div>
+				    1. Rewrite the following expression in the form: \(ab^x\)
+				    <div id="question">
+					<!-- Question 1 -->
+					<div id="q1" style="float: left; padding-top: 10px;"> </div>	 
+					     <script type="text/javascript">
+						answer_space(1,1,"a");
+						answer_space(1,1,"b");
+						symbol_space("^x");
+					     </script>
+				    </div>
+				    2. Rewrite the following expression in the form: \(ax^m+bx^n\)
+				    <div id="question">
+					    <!-- Question 2 -->
+					    <div id="q2" style="float: left; padding-top: 10px; font-size: 140%;"> </div>
+					    <script type="text/javascript">
+						answer_space(2,1,"a");
+						answer_space(2,2,"p");
+						symbol_space("+");
+						answer_space(2,1,"b");
+						answer_space(2,2,"q");
+					    </script>
+				    </div>
+			    
+				    <!-- Create questions -->
+				    <script type="text/javascript">
+				    createQ();
+				</script>
+			    </div>
+			
+			<input type="button" id= "checkAns" value="Check Answers" onclick="checkPracQ(this.form);"/><br />
+		</form>
+	    </div>
+	    
+	    <div id="dialog" >
+			Question 1:<br /><input type="text" class="ansMess" id="ansTxt1" disabled = "disabled"/><br /><br />
+			Question 2:<br /><input type="text" class="ansMess" id="ansTxt2" disabled = "disabled"/><br /><br />
+			<!--<button id="reset"> Reset Questions</button>-->
+			<button id="send_to_bb" onclick="send_score();"> Submit Score to Blackboard</button>
+	    </div>
+		    <br /><a href="./index.html"> Return to Main</a>
+	</div>
+    </body>
+</html>

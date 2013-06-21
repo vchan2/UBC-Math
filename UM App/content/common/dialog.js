@@ -8,9 +8,9 @@ $(function(){
         autoOpen: false,
         show: {
                 effect: "blind",
-                duration: 1000
+                duration: 600
         },
-        width: 500
+        width: 520
     });
     
     $("#checkAns").click(function(){
