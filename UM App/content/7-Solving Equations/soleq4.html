@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- Math Jax Configuration -->
+        <script type="text/javascript"src="common/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<!--jQuery-->
+	<script src= "common/jquery-ui.custom/js/jquery-1.9.1.js"></script>
+	<link href="common/jquery-ui.custom/css/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+	<script src="common/jquery-ui.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<!-- SCORM API Wrapper -->
+	<script type="text/javascript" src="common/SCORM_API_wrapper.js"></script>
+	<!--jQuery dialog box-->
+	<script type="text/javascript" src="common/dialog.js"></script>
+	<!-- SCORM Initialization Script (Pipwerks)-->
+	<!--<script type="text/javascript" src="common/SCORM_init.js"></script>-->
+	<!-- Script to create random variables and questions -->
+	<script type="text/javascript" src="scripts/random_variables/ra3.1.js"></script>
+	<!--Create Answer Space-->
+	<script type="text/javascript" src="common/answerMaker.js"></script>
+	<!--Question Evaluation-->
+	<script type="text/javascript" src="scripts/cr.js"></script>
+	<script type="text/javascript" src="scripts/3.1.js"></script>
+	<!--Style Sheet-->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	
+        <title>UM Topic Template</title>
+    </head>
+    <body onbeforeunload="unloadPage()">
+	<div id="wrapper">
+	    <div id="title">
+		<h1>Topic Template!!!</h1>
+		<hr />
+	    </div>
+            When we <em>factor</em> we are applying the <em>distributive law</em> in reverse--reversing what we did when <em>multiplying</em> (which we did in the previous section). <!-- Use Hyperlink??-->
+            Note that we can always check our factoring by multiplying out our factored expression to see that we get what we started with.
+	    
+	    <div class="def">
+		<h1>Definition Title:</h1>
+		<p>
+		    This is a description block.
+		</p>
+		<p>
+		    The following is an equation block:
+		</p>
+		<div class="eqn">
+                    \(-a-b=-(a+b)\)<br />
+                    \((a-b)=-(b-a)\)
+                </div>
+	    </div>
+
+            <div class="example_box">
+                <strong>Examples</strong><br />
+                Note carefully which factors or expressions are common to each term and are factored out.<br />
+                <div class="ex" style="line-height: 35px;">
+                    <div style="margin-right: 5px; float: left;">1.</div>  <img src="images/Factoring_1/3.1.e.1.gif" style = "padding-top: 5px;" /><br />
+                    <div style="margin-right: 5px; float: left;">2.</div>  <img src="images/Factoring_1/3.1.e.2.gif" style = "padding-top: 5px;" /><br />
+                    <div style="margin-right: 5px; float: left;">3.</div>  <img src="images/Factoring_1/3.1.e.3.gif" style = "padding-top: 5px;" /><br />
+                    <div style="margin-right: 5px; float: left;">4.</div>  <img src="images/Factoring_1/3.1.e.4.gif" style = "padding-top: 5px;" /><br />
+                    <div style="margin-right: 5px; float: left;">5.</div>  <img src="images/Factoring_1/3.1.e.5.gif" style = "padding-top: 5px;" />
+                </div>
+                (In particular, note that for the middle step in example four the expression \((2p+1)\) is that which is common and can be factored out.)
+            </div>
+	    
+	    <h2>Subtitle</h2>
+	    <p>
+		More information!!!
+	    </p>
+            
+	    <!-- Randomize eqn values -->
+	    <script>
+	    	randomize();
+	    </script>
+	    
+	    <div class="practice">
+		<h2>Practice</h2>
+		<form name="intpractice" action="">
+			      Be sure you've gone through each step in the examples above before doing these. Once you've worked them until you're sure
+			      that you understand them, go on to the next section. There are more problems of this type in the section test at the end of the section.<br />
+			      <br />
+				Note that you can get new practice problems by clicking the "Refresh" button at the bottom of the practice set.
+			      <br /><br />
+			    <div>
+				    1. Factor the following as completely as possible into the indicated form. (In the parenthesized term, enter expressions like \(2x^3\) as 2 x^3,
+				    with no multiplication sign and indicating exponentiation with a caret.)
+				    <div id="question">
+					<!-- Question 1 -->
+					<div id="q1" style="float: left; padding-top: 10px;"> </div>	 
+					     <script type="text/javascript">
+						    answer_space(1,1,"a");
+						answer_space(1,2,"p");
+						answer_space(1,3,"q");
+						symbol_space("(");
+						answer_space(1,1,"b");
+						symbol_space("+");
+						answer_space(1,1,"c");
+						symbol_space(")");
+					     </script>
+				    </div>
+				    2. Next, factor the following into a product of binomials as indicated. (For each of your answers, enter expressions like \(2x^3\) as 2 x^3,
+				    with no multiplication sign and indicating exponentiation with a caret.)
+				    <div id="question">
+					    <!-- Question 2 -->
+					    <div id="q2" style="float: left; padding-top: 10px;"> </div>
+					    <script type="text/javascript">
+						    symbol_space("(");
+						answer_space(2,1,"a");
+						symbol_space("+");
+						answer_space(2,1,"b");
+						symbol_space(")");
+						symbol_space("(");
+						answer_space(2,1,"c");
+						symbol_space("+");
+						answer_space(2,1,"d");
+						symbol_space(")");
+					    </script>
+				    </div>
+			    
+				    <!-- Create questions -->
+				    <script type="text/javascript">
+				    createQ();
+				</script>
+			    </div>
+			
+			<input type="button" id= "checkAns" value="Check Answers" onclick="checkPracQ(this.form);"/><br />
+		</form>
+	    </div>
+	    
+	    <div id="dialog" >
+			Question 1:<br /><input type="text" class="ansMess" id="ansTxt1" disabled = "disabled"/><br /><br />
+			Question 2:<br /><input type="text" class="ansMess" id="ansTxt2" disabled = "disabled"/><br /><br />
+			<!--<button id="reset"> Reset Questions</button>-->
+			<button id="send_to_bb" onclick="send_score();"> Submit Score to Blackboard</button>
+	    </div>
+		    <br /><a href="./index.html"> Return to Main</a>
+	</div>
+    </body>
+</html>
