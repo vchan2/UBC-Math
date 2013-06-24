@@ -1,4 +1,8 @@
 // javascript for precalculus tutorial section 7.2
+function checkPracQ(f){
+    checkPrac1(f);
+    checkPrac2(f);
+}
 
 function checkPrac1(f) {
 // answer is (k-j-a+bg)/(1-bc-bd-h)
@@ -6,9 +10,9 @@ function checkPrac1(f) {
     var corr = roundTo((k-j-a-b*d*g)/(1-b*c-b*d-h), mathPrecision);
 
     if ( aans != corr ) {
-        f.ansTxt1.value = 'Not correct; try again!';
+        document.getElementById("ansTxt1").setAttribute("value", 'Not correct; try again!');
     } else {
-        f.ansTxt1.value = 'Correct!  Try the next practice problem!';
+        document.getElementById("ansTxt1").setAttribute("value", "Correct!  Try another practice problem!");
     }
     return 1;
 }
@@ -20,9 +24,9 @@ function checkPrac2(f) {
                        mathPrecision);
 
     if ( aans != corr ) {
-        f.ansTxt2.value = 'Not correct; try again!';
+        document.getElementById("ansTxt2").setAttribute("value", 'Not correct; try again!');
     } else {
-        f.ansTxt2.value = 'Correct!  Click "Refresh" for more practice!';
+        document.getElementById("ansTxt2").setAttribute("value", "Correct!  Try another practice problem!");
     }
     return 1;
 }
