@@ -1,4 +1,8 @@
 // javascript for precalculus tutorial section 7.4
+function checkPracQ(f){
+    checkPrac1(f);
+    checkPrac2(f);
+}
 
 function checkPrac1(f) {
 // answers are x=-c and b/a, unless b/a makes the denominator
@@ -41,9 +45,9 @@ function checkPrac1(f) {
         }
     }
     if ( errs != '' ) {
-        f.ansTxt1.value = errs;
+        document.getElementById("ansTxt1").setAttribute("value", errs);
     } else {
-        f.ansTxt1.value = 'Correct!  Try the next practice problem!';
+        document.getElementById("ansTxt1").setAttribute("value", "Correct!  Try another practice problem!");
     }
     return 1;
 }
@@ -70,9 +74,9 @@ function checkPrac2(f) {
         }
     }
     if ( errs != '' ) {
-        f.ansTxt2.value = errs;
+        document.getElementById("ansTxt2").setAttribute("value", errs);
     } else {
-        f.ansTxt2.value = 'Correct!  Click "Refresh" for more practice!';
+	document.getElementById("ansTxt2").setAttribute("value", "Correct!  Click \"Refresh\" for more practice!");
     }
     return 1;
 }

@@ -3,26 +3,26 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <!-- Math Jax Configuration -->
-        <script type="text/javascript"src="common/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript"src="../common/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 	<!--jQuery-->
-	<script src= "common/jquery-ui.custom/js/jquery-1.9.1.js"></script>
-	<link href="common/jquery-ui.custom/css/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
-	<script src="common/jquery-ui.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src= "../common/jquery-ui.custom/js/jquery-1.9.1.js"></script>
+	<link href="../common/jquery-ui.custom/css/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+	<script src="../common/jquery-ui.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
 	<!-- SCORM API Wrapper -->
-	<script type="text/javascript" src="common/SCORM_API_wrapper.js"></script>
+	<script type="text/javascript" src="../common/SCORM_API_wrapper.js"></script>
 	<!--jQuery dialog box-->
-	<script type="text/javascript" src="common/dialog.js"></script>
+	<script type="text/javascript" src="../common/dialog.js"></script>
 	<!-- SCORM Initialization Script (Pipwerks)-->
 	<!--<script type="text/javascript" src="common/SCORM_init.js"></script>-->
 	<!-- Script to create random variables and questions -->
-	<script type="text/javascript" src="scripts/random_variables/ra3.1.js"></script>
+	<script type="text/javascript" src="../scripts/random_variables/ra7.6.js"></script>
 	<!--Create Answer Space-->
-	<script type="text/javascript" src="common/answerMaker.js"></script>
+	<script type="text/javascript" src="../common/answerMaker.js"></script>
 	<!--Question Evaluation-->
-	<script type="text/javascript" src="scripts/cr.js"></script>
-	<script type="text/javascript" src="scripts/3.1.js"></script>
+	<script type="text/javascript" src="../scripts/cr.js"></script>
+	<script type="text/javascript" src="../scripts/7.6.js"></script>
 	<!--Style Sheet-->
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
 	
         <title>UM Topic Template</title>
     </head>
@@ -86,33 +86,25 @@
 				    <div id="question">
 					<!-- Question 1 -->
 					<div id="q1" style="float: left; padding-top: 10px;"> </div>	 
-					     <script type="text/javascript">
-						    answer_space(1,1,"a");
-						answer_space(1,2,"p");
-						answer_space(1,3,"q");
-						symbol_space("(");
-						answer_space(1,1,"b");
-						symbol_space("+");
-						answer_space(1,1,"c");
-						symbol_space(")");
-					     </script>
-				    </div>
+					<br /><br /><br />
+					<script type="text/javascript">
+					   symbol_space("\\Rightarrow Answer(s)\\ (leave\\ one\\ blank\\ if\\ there\\ is\\ only\\ one):\\ x= ");
+					   answer_space(1,1,"a");
+					   symbol_space("and\\ y= ");
+					   answer_space(1,1,"b");
+					</script>
+				    </div><br />
 				    2. Next, factor the following into a product of binomials as indicated. (For each of your answers, enter expressions like \(2x^3\) as 2 x^3,
 				    with no multiplication sign and indicating exponentiation with a caret.)
 				    <div id="question">
 					    <!-- Question 2 -->
 					    <div id="q2" style="float: left; padding-top: 10px;"> </div>
+					    <br /> <br /><br /><br />
 					    <script type="text/javascript">
-						    symbol_space("(");
+						symbol_space("\\Rightarrow Answer(s)\\ (leave\\ one\\ blank\\ if\\ there\\ is\\ only\\ one):\\ x= ");
 						answer_space(2,1,"a");
-						symbol_space("+");
+						symbol_space("and\\ y= ");
 						answer_space(2,1,"b");
-						symbol_space(")");
-						symbol_space("(");
-						answer_space(2,1,"c");
-						symbol_space("+");
-						answer_space(2,1,"d");
-						symbol_space(")");
 					    </script>
 				    </div>
 			    
@@ -126,7 +118,7 @@
 		</form>
 	    </div>
 	    
-	    <div id="dialog" >
+	    <div id="dialog" title = "Answer Check">
 			Question 1:<br /><input type="text" class="ansMess" id="ansTxt1" disabled = "disabled"/><br /><br />
 			Question 2:<br /><input type="text" class="ansMess" id="ansTxt2" disabled = "disabled"/><br /><br />
 			<!--<button id="reset"> Reset Questions</button>-->

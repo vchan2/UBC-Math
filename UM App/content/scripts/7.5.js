@@ -1,4 +1,9 @@
 // javascript for precalculus tutorial section 7.5
+function checkPracQ(f){
+    checkPrac1(f);
+    checkPrac2(f);
+}
+
 
 function checkPrac1(f) {
 // answer is (ln(d/a)-c)/b
@@ -7,9 +12,9 @@ function checkPrac1(f) {
     corr = roundTo((Math.log(d/a)-c)/b,3);
 
     if (aans != corr) {
-        f.ansTxt1.value = 'Incorrect.  Try again!';
+        document.getElementById("ansTxt1").setAttribute("value", 'Incorrect.  Try again!');
     } else {
-        f.ansTxt1.value = 'Correct!  Try the next practice problem!';
+        document.getElementById("ansTxt1").setAttribute("value", "Correct!  Try another practice problem!");
     }
     return 1;
 }
@@ -21,9 +26,9 @@ function checkPrac2(f) {
     corr = roundTo(Math.log(j/g)*Math.LOG10E/(h-k),3);
 
     if (aans != corr) {
-        f.ansTxt2.value = 'Incorrect.  Try again!';
+        document.getElementById("ansTxt2").setAttribute("value", 'Incorrect.  Try again!');
     } else {
-        f.ansTxt2.value = 'Correct!  Click "Refresh" or more practice!';
+        document.getElementById("ansTxt2").setAttribute("value", "Correct!  Try another practice problem!");
     }
     return 1;
 }
