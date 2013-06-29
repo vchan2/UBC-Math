@@ -63,6 +63,23 @@ function randomize(){
     }
     j = random; //+, max=3
     
+    if(m==q){
+	random = 0;
+	while (random <= 0 || random>4 || random == q){
+	    random = Math.floor(Math.random()*(6+6))-6;   
+	}
+	m = random;
+    }
+    
+    if(j==k){
+	random = 0;
+	while (random <= 0 || random>4 || random == k){
+	    random = Math.floor(Math.random()*(6+6))-6;   
+	}
+	j = random;
+    }
+    
+    
     //Products
     k = j*q;
     p = k*m;
@@ -75,5 +92,5 @@ function randomize(){
 function createQ(){
     //Set variables for question
     document.getElementById("q1").innerHTML ="\\(\\begin{align} &"+a+"x + "+b+"y = "+c+"\\\\ &x + "+d+"y = "+g+"\\end{align}\\)";
-    document.getElementById("q2").innerHTML ="\\(\\begin{align} &"+n+"x + "+j+"y = "+p+"\\\\ &y - x^2 = "+q+"x\\end{align}\\)";
+    document.getElementById("q2").innerHTML ="\\(\\begin{align} &"+n+"x + "+j+"y = -"+p+"\\\\ &y - x^2 = "+q+"x\\end{align}\\)";
 }

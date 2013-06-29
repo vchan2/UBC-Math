@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- Math Jax Configuration -->
+        <script type="text/javascript"src="../common/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<!--jQuery-->
+	<script src= "../common/jquery-ui.custom/js/jquery-1.9.1.js"></script>
+	<link href="../common/jquery-ui.custom/css/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+	<script src="../common/jquery-ui.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<!-- SCORM API Wrapper -->
+	<script type="text/javascript" src="../common/SCORM_API_wrapper.js"></script>
+	<!--jQuery dialog box-->
+	<script type="text/javascript" src="../common/dialog.js"></script>
+	<!-- SCORM Initialization Script (Pipwerks)-->
+	<!--<script type="text/javascript" src="common/SCORM_init.js"></script>-->
+	<!-- Script to create random variables and questions -->
+	<script type="text/javascript" src="../scripts/random_variables/ra8.2.js"></script>
+	<!--Create Answer Space-->
+	<script type="text/javascript" src="../common/answerMaker.js"></script>
+	<!--Question Evaluation-->
+	<script type="text/javascript" src="../scripts/cr.js"></script>
+	<script type="text/javascript" src="../scripts/8.2.js"></script>
+	<!--Style Sheet-->
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	
+        <title>UM Topic 8.2</title>
+    </head>
+    <body onbeforeunload="unloadPage()">
+	<div id="wrapper">
+	    <div id="title">
+		<h1>Checking Sign of Expressions and Solving Nonlinear Inequalities</h1>
+		<hr />
+	    </div>
+	    <h2>Checking the Sign of an Expression</h2>
+	    <p>
+		When an expression is a product or a quotient, we can determine the sign of the expression on an interval by looking at the sign of each factor over the interval.
+	    </p>
+            <div class="example_box">
+                <strong>Examples</strong><br />
+                For each expression, we determine the values of x (the independent variable) which make it positive, negative, zero, or undefined.<br />
+                <div class="ex" style="line-height: 35px;">
+                    <div style="margin-right: 5px; float: left;">1.</div>  <img src="../images/Solving_Inequalities_2/8.2.e.1.gif" style = "padding-top: 5px;" /><br />
+                    <div style="margin-right: 5px; float: left; margin-left: 20px;">The expression \(e^{-x}\) is always positive, and \((4-x)^2\) is positive for any value \(x\) except \(x=4\), where it equals zero. Therefore,</div><br />
+			<img src="../images/Solving_Inequalities_2/8.2.e.1c.gif" style = "padding-top: 5px; margin-left: 20px;" /><br />
+		    <div style="margin-right: 5px; float: left;">2.</div>  <img src="../images/Solving_Inequalities_2/8.2.e.2.gif" style = "padding-top: 5px;" /><br />
+		    <div style="margin-right: 5px; float: left; margin-left: 20px; line-height: 20px;">
+			The expression will be zero when \(x=-1\) or \(x=7\). Therefore product can change sign at \(x=-1\) or \(x=7\).
+			We check the sign of the expression by looking at the sign of each factor over the intervals established by dividing the number line at these points.
+			It will be positive when both factors have the same sign.
+		    </div><br />
+		    $$
+		    \begin{array}{c|c|c}	    
+			(-)(-) & (+)(-) & (+)(+)\\
+			\hline
+		    \end{array}\\
+		    \qquad \quad -1\qquad \quad 7\qquad \quad x
+		    $$
+		    <div style="margin-right: 5px; float: left; margin-left: 20px; line-height: 20px;">
+			<em>Be sure it is clear how the different (+) and (-) factors are calculated in the figure above!</em> (If it isn't obvious, check below, following the answer.) Therefore,
+		    </div><br />
+			<img src="../images/Solving_Inequalities_2/8.2.e.2a.gif" style = "padding-top: 5px; margin-left: 20px;" /><br />
+		    <div style="margin-right: 5px; float: left; margin-left: 20px; line-height: 20px;">
+			Ok, how did we find the (+) and (-) factors? If \(x\lt-1\), the factor (x+1) must be negative. Thus in the left-most section of the number line, the first term is (-). Similarly,
+			if \(x \lt -1\), the factor (x-7) is also negative. If \(-1 \lt x \lt 7\), the factor \((x+1)\) is positive, so the first factor for that section of the number line is (+). But in this case
+			\((x-7)\) is still negative, so the second is (-). And so on.
+		    </div><br />
+		    <div style="margin-right: 5px; float: left;">3.</div>  <img src="../images/Solving_Inequalities_2/8.2.e.3.gif" style = "padding-top: 5px;" /><br />
+		    <div style="margin-right: 5px; float: left; margin-left: 20px; line-height: 20px;">
+			A fraction is zero when its numerator is zero, so this expression is zero if \(r=-5/2\). The values \(r=1\) and \(r=3\) make the fraction undefined because the denominator is zero there.
+			We divide the number line at each of these points and check the sign of each factor on each interval. This gives:
+		    </div><br />
+		    $$
+		    \begin{array}{c|c|c|c}	    
+			\frac{(-)}{(-)(-)} & \frac{(+)}{(-)(-)} & \frac{(+)}{(+)(-)} & \frac{(+)}{(+)(+)}\\
+			\hline
+		    \end{array}\\
+		    \quad \quad -5/2\qquad \quad 1\qquad \quad 3 \qquad \quad r
+		    $$
+		    <div style="margin-right: 5px; float: left; margin-left: 20px; line-height: 20px;">
+			Thus,
+		    </div><br />
+			<img src="../images/Solving_Inequalities_2/8.2.e.3e.gif" style = "padding-top: 5px; margin-left: 20px;" /><br />
+		    <div style="margin-right: 5px; float: left;">4.</div>  <img src="../images/Solving_Inequalities_2/8.2.e.4.gif" style = "padding-top: 5px;" /><br />
+		    <div style="margin-right: 5px; float: left; margin-left: 20px; line-height: 20px;">
+			The expression is zero if \(y=-2\). It is not defined if \(y\) is less than -2, because we cannot take the square root of a negative number.
+			Furthermore, it is not defined when \(y=0\), because of the zero in the denominator. The radical is always positive (where defined), so the numerator is positive.
+			Because the cube of a negative number is negative, we can visualize the signs on each of the intervals as shown below. 
+		    </div><br />
+		    $$
+		    \begin{array}{c|c|c}	    
+			Undefined & \frac{(+)}{(-)} & \frac{(+)}{(+)} \\
+			\hline
+		    \end{array}\\
+		    \qquad \qquad -2\quad \quad 0\qquad y 
+		    $$
+		    <div style="margin-right: 5px; float: left; margin-left: 20px; line-height: 20px;">
+			Therefore,
+		    </div><br />
+			<img src="../images/Solving_Inequalities_2/8.2.e.4c.gif" style = "padding-top: 5px; margin-left: 20px;" /><br />
+                </div>
+            </div>
+	    
+	    <h2>Solving Nonlinear Inequalities by Factoring</h2>
+	    <p>
+		We can often solve polynomial and rational inequalities by starting out the same way we would with an equation and the using a number line to find the intervals on which the inequality holds.
+		However, remember to be <em>careful when using operations that can reverse the inequality</em>.
+	    </p>
+	    
+	    <div class="example_box">
+                <strong>Examples</strong><br />
+                For each expression, we solve the inequality.<br />
+                <div class="ex" style="line-height: 35px;">
+                    <div style="margin-right: 5px; float: left;">1.</div>  <img src="../images/Solving_Inequalities_2/8.2.e.5.gif" style = "padding-top: 5px;" /><br />
+                    <div style="margin-right: 5px; float: left; margin-left: 20px; line-height: 20px;">
+			The left hand side equals zero for \(x=0\), \(x=-3\) and \(x=1\). To solve the inequality we want to select the x-values for which the left hand side is negative.
+			We check signs over the four intervals created by marking \(x=0\), -3 and 1.
+		    </div><br />
+		    $$
+		    \begin{array}{c|c|c|c}	    
+			(-)(-)(-) & (-)(+)(-) & (+)(+)(-) & (+)(+)(+)\\
+			\hline
+		    \end{array}\\
+		    \qquad \quad -3\qquad \qquad 0\qquad \qquad 1 \qquad \qquad x
+		    $$
+		    <div style="margin-right: 5px; float: left; margin-left: 20px;">
+			So
+		    </div><br />
+			<img src="../images/Solving_Inequalities_2/8.2.e.5a.gif" style = "padding-top: 5px; margin-left: 40px;" /><br />
+		    <div style="margin-right: 5px; float: left; margin-left: 20px;">
+			And therefore
+		    </div><br />
+			<img src="../images/Solving_Inequalities_2/8.2.e.5b.gif" style = "padding-top: 5px; margin-left: 40px;" /><br />
+		    <div style="margin-right: 5px; float: left;">2.</div>  <img src="../images/Solving_Inequalities_2/8.2.e.6.gif" style = "padding-top: 5px;" /><br />
+		    <div style="margin-right: 5px; float: left; margin-left: 20px; line-height: 20px;">
+			First, put zero on the right and combine fractions on the left:
+		    </div><br />
+			<img src="../images/Solving_Inequalities_2/8.2.e.6a.gif" style = "padding-top: 5px; margin-left: 40px;" /><br />
+		    <div style="margin-right: 5px; float: left; margin-left: 20px; line-height: 20px;">
+			We want this quotient to be positive, so the numerator and denominator must have the same sign. Notice that \(q\) cannot equal 2.
+			Because it is a squared term, the numerator is never negative, and the denominator is positive if \(2-q \gt 0\), which is \(q \lt 2\).
+			However, the numerator is zero if \(q=1\), so this must be excluded. Therefore
+		    </div><br />
+			<img src="../images/Solving_Inequalities_2/8.2.e.6b.gif" style = "padding-top: 5px; margin-left: 40px;" /><br />
+                </div>
+            </div>
+	    
+	    
+	    <!-- Randomize eqn values -->
+	    <script>
+	    	randomize();
+	    </script>
+	    
+	    <div class="practice">
+		<h2>Practice</h2>
+		<form name="intpractice" action="">
+			      Be sure you've gone through each step in the examples above before doing these. Once you've worked them until you're sure
+			      that you understand them, go on to the next section. There are more problems of this type in the section test at the end of the section.<br />
+			      <br />
+				Note that you can get new practice problems by clicking the "Refresh" button at the bottom of the practice set.
+			      <br /><br />
+			    <div>
+				    1. Solve for \(x\):
+				    <div id="question">
+					<!-- Question 1 -->
+					<div id="q1" style="float: left; padding-top: 10px;"> </div>
+					<br /><br />
+					<script type="text/javascript">
+					   symbol_space("\\Rightarrow Ans\\ 1:");
+					   answer_space(1,1,"a");
+					   symbol_space("\\lt x \\lt");
+					   answer_space(1,1,"b");
+					   symbol_space("\\Rightarrow Ans\\ 2:\\ x \\lt");
+					   answer_space(1,1,"c");
+					   symbol_space("or\\ x\\gt");
+					   answer_space(1,1,"d");
+					</script>
+				    </div>
+				    2. Solve for \(x\):
+				    <div id="question">
+					    <!-- Question 2 -->
+					    <div id="q2" style="float: left; padding-top: 10px;"> </div>
+					    <br /><br />
+					    <script type="text/javascript">
+						symbol_space("\\Rightarrow Answer:");
+						answer_space(2,1,"a");
+						symbol_space("\\lt x \\lt");
+						answer_space(2,1,"b");
+						symbol_space("\\ and\\ ");
+						answer_space(2,1,"c");
+						symbol_space("\\lt");
+						answer_space(2,1,"d");
+					    </script>
+				    </div>
+			    
+				    <!-- Create questions -->
+				    <script type="text/javascript">
+				    createQ();
+				</script>
+			    </div>
+			
+			<input type="button" id= "checkAns" value="Check Answers" onclick="checkPracQ(this.form);"/><br />
+		</form>
+	    </div>
+	    
+	    <div id="dialog" title = "Answer Check">
+			Question 1:<br /><input type="text" class="ansMess" id="ansTxt1" disabled = "disabled"/><br /><br />
+			Question 2:<br /><input type="text" class="ansMess" id="ansTxt2" disabled = "disabled"/><br /><br />
+	    </div>
+		    <br /><a href="./index.html"> Return to Main</a>
+	</div>
+    </body>
+</html>

@@ -1,4 +1,7 @@
 // javascript for precalculus tutorial section 8.3
+function checkPracQ(f){
+    checkPrac1(f);
+}
 
 function checkPrac1(f) {
 // answer is 0 < x < min(b/a, c) and x > max(b/a, c)
@@ -44,9 +47,9 @@ function checkPrac1(f) {
 	}
     }
     if ( errs == '' ) {
-        f.ansTxt1.value = 'Correct!  Click "Refresh" for more practice!';
+        document.getElementById("ansTxt1").setAttribute("value", "Correct!  Try another practice problem!");
     } else {
-        f.ansTxt1.value = errs;
+        document.getElementById("ansTxt1").setAttribute("value", errs);
     }
     return 1;
 }

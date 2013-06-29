@@ -1,4 +1,9 @@
 // javascript for precalculus tutorial section 8.1
+function checkPracQ(f){
+    checkPrac1(f);
+    checkPrac2(f);
+}
+
 
 function checkPrac1(f) {
 // answer is x < (dg-h-bc)/(a-b-d), or >, depending on if a-b-d > 0 or < 0
@@ -38,9 +43,10 @@ function checkPrac1(f) {
     }
 
     if ( errs == '' ) {
-        f.ansTxt1.value = 'Correct!  Try the other practice problem!';
+	document.getElementById("ansTxt1").setAttribute("value", 'Correct!  Try the other practice problem!');
+	
     } else {
-        f.ansTxt1.value = errs;
+	document.getElementById("ansTxt1").setAttribute("value", errs);
     }
     return 1;
 }
@@ -68,9 +74,9 @@ function checkPrac2(f) {
     }
 
     if ( errs == '' ) {
-        f.ansTxt2.value = 'Correct!  Click "Refresh" for more practice!';
+	document.getElementById("ansTxt2").setAttribute("value", 'Correct!  Click "Refresh" for more practice!');
     } else {
-        f.ansTxt2.value = errs;
+	document.getElementById("ansTxt2").setAttribute("value", errs);
     }
     return 1;
 }

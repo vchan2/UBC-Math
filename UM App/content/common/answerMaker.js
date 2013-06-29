@@ -13,7 +13,7 @@ function answer_space(qNum,type,variable){
     
     switch (type) {
         case 1:
-            document.write('<div style=\"float: left; padding-top: 10px;\"><input type=\"text\" id=\"'+variable+'Ans'+qNum+'\" name=\"'+variable+'Ans'+qNum+' \" style=\"width: 30px;\"/></div>');
+            document.write('<div style=\"float: left; padding-top: 10px;\"><input type=\"text\" id=\"'+variable+'Ans'+qNum+'\" name=\"'+variable+'Ans'+qNum+' \" style=\"width: 40px;\"/></div>');
             break;
         case 2:
             document.write('<div style=\"float: left; padding-top: 10px; margin-left:5px;\">\\(x\\)</div>');

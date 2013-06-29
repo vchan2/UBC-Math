@@ -1,4 +1,8 @@
 // javascript for precalculus tutorial section 8.2
+function checkPracQ(f){
+    checkPrac1(f);
+    checkPrac2(f);
+}
 
 function checkPrac1(f) {
 // answer is a<x<b
@@ -27,9 +31,9 @@ function checkPrac1(f) {
         }
     }
     if ( errs != '' ) {
-        f.ansTxt1.value = errs;
+	document.getElementById("ansTxt1").setAttribute("value", errs);
     } else {
-        f.ansTxt1.value = 'Correct!  Try the next practice problem.';
+	document.getElementById("ansTxt1").setAttribute("value", 'Correct!  Try the next practice problem.');
     }
     return 1;
 }
@@ -56,9 +60,10 @@ function checkPrac2(f) {
     }
     errs = errs.replace( /[0-9]/g, " " );
     if ( errs.match(/\*/) != null ) {
-        f.ansTxt2.value='Hmm...  Check "*"s: ' + errs;
+        var string ='Hmm...  Check "*"s: ' + errs;
+	document.getElementById("ansTxt2").setAttribute("value", string);
     } else {
-        f.ansTxt2.value='Correct!  Click "Refresh" for more practice!';
+	document.getElementById("ansTxt2").setAttribute("value", 'Correct!  Click "Refresh" for more practice!');
     }
     return 1;
 }
