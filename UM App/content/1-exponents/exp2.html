@@ -40,7 +40,7 @@
 	    <br />The natural definition for exponentiation as an abbreviation for multiplication holds for positive integers only. We've already chosen definitions for negative and zero exponents
             (as shown on the <a href="./exp1.html">integer exponent page</a>) which are consistent with our rules for exponents. For example, that \(a\) to the 0 equals 1 makes sense with the multiplication of exponents rule:<br />
 	    <div id="eqn">
-		    \(a^na^0=a^{n+0}=a^n\)
+		    $$a^na^0=a^{n+0}=a^n$$
 	    </div>
 	    so, looking at the first and last entries in the equalities, a to the 0 must be one.<br />
 	    <br />
@@ -49,62 +49,104 @@
             
             <em>Fractional exponents</em> are defined as roots, which makes sense from the rule for powers of powers:<br />
             <div id="eqn">
-                \((a^{1/2})^2=a^{2/2}=a^1=a,\) so \((a^{1/2})^2=a \)
+                $$(a^{1/2})^2=a^{2/2}=a^1=a,\ so\; (a^{1/2})^2=a$$
             </div>
             Is it obvious that the 1/2 power of \(a\) is therefore the square root of \(a\)? Take the square root of both sides of the right-most equation above:
             <div id="eqn">
-                \((a^{1/2}) = \sqrt{a}\)
+                $$(a^{1/2}) = \sqrt{a}$$
             </div>
             Another way of thinking about this is that the 1/\(n\)th power of \(a\) is the number which when raised to the \(n\)gives \(a\)--which is just the \(n\)th root of \(a\).<br />
              
-            <div class="comment" style="height: 200px;">
+            <div class="comment">
 		<h1>Definition of Roots:</h1>
 		<div class="eqn" style="margin-left: 70px; line-height: 25px;">
 		    For positive numbers \(a\)<br />
-		    <div style="margin-left: 20px;">
-			\(\sqrt{a}\) is the positive number whose square is \(a\): e.g.,<br />
-			\(\sqrt[n]{a}\) is the positive number whose \(n\)th power is \(a\): e.g.,<br />
-		    </div>
+		    <table class="def_table">
+			<tr>
+			    <td>
+				\(\sqrt{a}\) is the positive number whose square is \(a\): e.g.,
+			    </td>
+			    <td>
+				\(\sqrt{49} = 7\)
+			    </td>
+			</tr>
+			<tr>
+			    <td>
+				\(\sqrt[n]{a}\) is the positive number whose \(n\)th power is \(a\): e.g.,
+			    </td>
+			    <td>
+				\(\sqrt[3]{125} = 5\)
+			    </td>
+			</tr>
+		    </table>
 		    For negative numbers \(a\)<br />
-		    <div style="margin-left: 20px;">
-			\(\sqrt{a}\) is the negative number whose \(n\)th power is \(a\) if \(n\) is odd: e.g.,<br />
-			\(\sqrt[n]{a}\) is not a real number if \(a\) is negative and \(n\) is even: e.g.,<br />
-		    </div>
-		</div>
-		<div id="explanation" style="line-height: 25px;">
-		    <br />
-		    \(\sqrt{49} = 7\)<br \>
-		    \(\sqrt[3]{125} = 5\)<br \><br />
-		    \(\sqrt[3]{-8} = -2\)<br \>
-		    \(\sqrt{-8} =\ ?\)
+		    <table class="def_table">
+			<tr>
+			    <td>
+				\(\sqrt{a}\) is the negative number whose \(n\)th power is \(a\) if \(n\) is odd: e.g.,
+			    </td>
+			    <td>
+				\(\sqrt[3]{-8} = -2\)
+			    </td>
+			</tr>
+			<tr>
+			    <td>
+				\(\sqrt[n]{a}\) is not a real number if \(a\) is negative and \(n\) is even: e.g.,
+			    </td>
+			    <td>
+				\(\sqrt{-8} =\ ?\)
+			    </td>
+			</tr>
+		    </table>
 		</div>
 	    </div>
 
             Because fractional exponents are defined as roots, we have the definitions below. The rules for fractional exponents are the same as those for <a href="./exp1.html">integer exponents</a>. Thus we have: <br />
             
-            <div class="def" style="height: 240px;">
+            <div class="def">
                 <h1>Definitions:</h1>
-		<div class="eqn" style="margin-left: 70px; line-height: 25px;">
-			\(a^{1/n}=\sqrt[n]{a}\)<br />
-			\(a^{m/n}=\sqrt[n]{a^m}=(\sqrt[n]{a})^m\)<br />
-		</div>
-		<div id="explanation" style="line-height: 25px;">
-		    (\(a\) must be non-negative if \(n\) is even)<br \>
-		    (\(a^m\) must be non-negative if \(n\) is even)
-		</div>
+		<table class="def_table">
+		    <tr>
+			<td>
+			    \(a^{1/n}=\sqrt[n]{a}\)
+			</td>
+			<td>
+			    (\(a\) must be non-negative if \(n\) is even)
+			</td>
+		    </tr>
+		    <tr>
+			<td>
+			    \(a^{m/n}=\sqrt[n]{a^m}=(\sqrt[n]{a})^m\)
+			</td>
+			<td>
+			    (\(a^m\) must be non-negative if \(n\) is even)
+			</td>
+		    </tr>
+		</table>
+
 		<h1>Rules for Fractional Exponents</h1>
-		<div class="eqn" style="line-height: 25px;">
+		<p>
 		    The rules for integer exponents for multiplying, dividing and raising exponentials to powers all
-		    apply for fractional exponents. In particular, we have<br />
-		    <div style="margin-left: 40px; float: left;">
-			\((ab)^{1/n}=a^{1/n}b^{1/n}=\sqrt[n]{a}\sqrt[n]{b}=\sqrt[n]{ab}\)<br />
-			\((\frac{a}{b})^{1/n}=\frac{a^{1/n}}{b^{1/n}}=\frac{\sqrt[n]{a}}{\sqrt[n]{b}}=\sqrt[n]{\frac{a}{b}}\)<br />
-		    </div>
-		    <div id="explanation" style="line-height: 25px;">
-		        (the root of a product is the product of the roots)<br />
-		        (the root of a quotient if the quotient of the roots)
-		    </div>
-		</div>
+		    apply for fractional exponents. In particular, we have
+		</p>
+		<table class="def_table">
+		    <tr>
+			<td>
+			    \((ab)^{1/n}=a^{1/n}b^{1/n}=\sqrt[n]{a}\sqrt[n]{b}=\sqrt[n]{ab}\)
+			</td>
+			<td>
+			    (the root of a product is the product of the roots)
+			</td>
+		    </tr>
+		    <tr>
+			<td>
+			    \((\frac{a}{b})^{1/n}=\frac{a^{1/n}}{b^{1/n}}=\frac{\sqrt[n]{a}}{\sqrt[n]{b}}=\sqrt[n]{\frac{a}{b}}\)
+			</td>
+			<td>
+			    (the root of a quotient if the quotient of the roots)
+			</td>
+		    </tr>
+		</table>
             </div>
             
             <strong>Examples</strong><br />

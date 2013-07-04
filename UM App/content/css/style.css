@@ -95,6 +95,7 @@ table.def_table td {
 .example_box{
 	margin-left: 40px;
 	margin-top: 10px;
+	margin-bottom: 50px;
 }
 	.example_box .ex{
 		margin-top: 15px;
@@ -108,7 +109,7 @@ table.def_table td {
 
 #question{
 	height:40px;
-	margin: 10px 10px 40px 10px;
+	margin: 10px 10px 60px 10px;
 }
 
 .div_line{

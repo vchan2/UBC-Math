@@ -17,5 +17,5 @@ $(function(){
         $("#dialog").dialog("open");
     });
 
-    $(document).tooltip();
+    //$(document).tooltip();
 });
