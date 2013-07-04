@@ -1,50 +1,64 @@
 //**********************************************************
-// Script to create random variables and questions for Topic 7.6
+// Script to create random variables and questions for Topic 12.1
 //
 //**********************************************************
-// variables used = a,b,c,m,o,p,q
-// variables positive values = b,m,o,p
-// variables not equal to one = o
-// variables max values = (b,1),(m,4),(o,3)
-// variables products = (m,m,a),(o,o,c),(1,o,q),(m,o,p)
-// variables sums = (p,1,p)
+// variables used = a,b,c,d,g,h,j,k
+// variables not equal to one = a,b,d,g,h
+// variables positive values = b,c,d,j
 // end restrictions
 
-var a,b,c,m,o,p,q;
+var a,b,c,d,g,h,j,k;
 	    
 function randomize(){
     
+    var variables = new Array();
     var random;
     
-//    random = 0;
-//    while (random <= 0 || random>1){
-//	random = Math.floor(Math.random()*(6+6))-6;   
-//    }
-    b = 1; //+, max=1
-    
     random = 0;
-    while (random <= 0 || random>4){
+    while (random == 0){
 	random = Math.floor(Math.random()*(6+6))-6;   
     }
-    m = random; //+, max=4
+    k = random;
     
-    random = 0;
-    while (random <= 1 || random>3){
-	random = Math.floor(Math.random()*(6+6))-6;   
+    for (var i = 0;i<2; i++ ){
+	random = 0;
+	while (random <= 1){
+	    random = Math.floor(Math.random()*(6+6))-6;   
+	}
+	variables[i] = random;
     }
-    o = random; //+, !=1, max=3
+    b = variables[0]; //!=1, +
+    d = variables[1]; //!=1, +
     
-    //Products
-    a = m*m;
-    c = o*o;
-    q = 1*o;
-    p = m*o;
+    for (var i = 2;i<5; i++ ){
+	random = 0;
+	while (random == 0 || random == 1){
+	    random = Math.floor(Math.random()*(6+6))-6;   
+	}
+	variables[i] = random;
+    }
+    a = variables[2]; //!=1
+    g = variables[3]; //!=1
+    h = variables[4]; //!=1
     
-    //Sums
-    p = p+1; //+
+    for (var i = 5;i<7; i++ ){
+	random = 0;
+	while (random <= 0){
+	    random = Math.floor(Math.random()*(6+6))-6;   
+	}
+	variables[i] = random;
+    }
+    c = variables[5]; // +
+    j = variables[6]; // +
+    
 }
 
 function createQ(){
     //Set variables for question
-    document.getElementById("q1").innerHTML ="\\("+p+"\\sqrt{x}-"+q+" \\lt "+m+"x\\)";
+    document.getElementById("q1").innerHTML ="if \\(\\; f(x) = "+a+"x + "+b+"\\)";
+    document.getElementById("q2").innerHTML ="\\(f(x) = "+c+"x^2 + "+d+"x\\)";
+    document.getElementById("q2a").innerHTML ="\\(\\frac{f("+g+" + h) - f("+g+")}{h}\\)";
+    document.getElementById("q3").innerHTML ="\\(f(x) = "+h+"x + "+j+"\\)";
+    document.getElementById("q3a").innerHTML ="\\(\\frac{f("+k+"x)}{"+k+"x}\\)";
+    document.getElementById("q3b").innerHTML ="\\(\\frac{f("+k+"x)}{"+k+"x}\\)";
 }

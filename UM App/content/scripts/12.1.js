@@ -1,13 +1,18 @@
 // javascript for precalculus tutorial section 11.1
+function checkPracQ(f){
+    checkPrac1(f);
+    checkPrac2(f);
+    checkPrac3(f);
+}
 
 function checkPrac1(f) {
 // answer is a
     var aans = f.aAns1.value;
 
     if ( aans != a ) {
-        f.ansTxt1.value = "That's not quite right; try again.";
+	document.getElementById("ansTxt1").setAttribute("value", "That's not quite right; try again.");
     } else {
-        f.ansTxt1.value = "Correct!  Try the next problem!";
+	document.getElementById("ansTxt1").setAttribute("value", 'Correct!  Try the next practice problem!');
     }
     return 1;
 }
@@ -31,9 +36,9 @@ function checkPrac2(f) {
     }
 
     if ( errs != '' ) {
-        f.ansTxt2.value = errs;
+        document.getElementById("ansTxt2").setAttribute("value", errs);
     } else {
-        f.ansTxt2.value = 'Correct!  Try the next problem!';
+        document.getElementById("ansTxt2").setAttribute("value", 'Correct!  Try the next practice problem!');
     }
     return 1;
 }
@@ -64,9 +69,9 @@ function checkPrac3(f) {
     }
 
     if ( errs == '' ) {
-        f.ansTxt3.value = 'Correct!  Click "Refresh" for more practice';
+	document.getElementById("ansTxt3").setAttribute("value", 'Correct!  Click "Refresh" for more practice');
     } else {
-        f.ansTxt3.value = errs;
+	document.getElementById("ansTxt3").setAttribute("value", errs);
     }
     return 1;
 }

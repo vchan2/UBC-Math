@@ -1,4 +1,9 @@
 // javascript for precalculus tutorial section 11.1
+function checkPracQ(f){
+    checkPrac1(f);
+    checkPrac2(f);
+    checkPrac3(f);
+}
 
 function checkPrac1(f) {
 // answers are (0,b) and (-b/a,0)
@@ -47,9 +52,9 @@ function checkPrac1(f) {
     }
 
     if ( errs != '' ) {
-        f.ansTxt1.value = errs;
+	document.getElementById("ansTxt1").setAttribute("value", errs);
     } else {
-        f.ansTxt1.value = 'Correct!  Try the next practice problem!';
+	document.getElementById("ansTxt1").setAttribute("value", 'Correct!  Try the next practice problem!');
     }
     return 1;
 }
@@ -123,9 +128,9 @@ function checkPrac2(f) {
     }
 
     if ( errs != '' ) {
-        f.ansTxt2.value = errs;
+	document.getElementById("ansTxt2").setAttribute("value", errs);
     } else {
-        f.ansTxt2.value = 'Correct!  Try the next practice problem!';
+	document.getElementById("ansTxt2").setAttribute("value", 'Correct!  Try the next practice problem!');
     }
     return 1;
 }
@@ -176,9 +181,9 @@ function checkPrac3(f) {
     }
 
     if ( errs != '' ) {
-        f.ansTxt3.value = errs;
+	document.getElementById("ansTxt3").setAttribute("value", errs);
     } else {
-        f.ansTxt3.value = 'Correct!  Click "Refresh" for more practice!';
+	document.getElementById("ansTxt3").setAttribute("value", 'Correct!  Click "Refresh" for more practice!');
     }
     return 1;
 }
