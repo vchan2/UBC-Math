@@ -1,0 +1,367 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- Math Jax Configuration -->
+        <script type="text/javascript"src="../common/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<!--jQuery-->
+	<script src= "../common/jquery-ui.custom/js/jquery-1.9.1.js"></script>
+	<link href="../common/jquery-ui.custom/css/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+	<script src="../common/jquery-ui.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<!--jQuery dialog box-->
+	<script type="text/javascript" src="../common/dialog.js"></script>
+	<!-- Script to create random variables and questions -->
+	<script type="text/javascript" src="../scripts/random_variables/ra12.1.js"></script>
+	<!--Create Answer Space-->
+	<script type="text/javascript" src="../common/answerMaker.js"></script>
+	<!--Question Evaluation-->
+	<script type="text/javascript" src="../scripts/cr.js"></script>
+	<script type="text/javascript" src="../scripts/12.1.js"></script>
+	<!--Style Sheet-->
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	
+        <title>UM Topic 12.1</title>
+    </head>
+    <body onbeforeunload="unloadPage()">
+	<div id="wrapper">
+	    <div id="title">
+		<h1>Composition of Functions and Substituting</h1>
+		<hr />
+	    </div>
+	    <p>
+		There are many ways of combining functions to creat more complicated functions.
+		We can combine them using algebraic operations (adding, subtracting, multiplying, and dividing), and can substitute one function into another to create a composition.
+	    </p>
+            
+	    <h2>Combinations</h2>
+	    <p>
+		We can combine functions by adding, subtracting, multiplying or dividing.
+	    </p>
+	    <div class="example_box">
+                <strong>Examples</strong><br />
+                <div class="ex" style="line-height: 35px;">
+                    <div style="margin-right: 5px;">Let</div>
+			<img src="../images/12.1/12.1.e.1.gif" style = "margin-left: 40px; padding-top: 5px;" /><br />
+                    <div style="margin-right: 5px;">Then</div>
+			<table class="def_table">
+			    <tr>
+				<td>
+				    \(2g(x)+f(x) =\)
+				</td>
+				<td>
+				    "twice sin(x) plus the quadratic"
+				</td>
+				<td>
+				    \(= 2\sin(x)+(3+x^2)\)
+				</td>
+			    </tr>
+			    <tr>
+				<td>
+				    \(1 + \frac{f(x)}{g(x)}\quad =\)
+				</td>
+				<td>
+				    "one plus the quotient of the quadratic and sin(x)"
+				</td>
+				<td>
+				    \(= 1 + \frac{(3 +x^2)}{\sin(x)}\)
+				</td>
+			    </tr>
+			</table>
+                </div>
+            </div>
+	    
+	    <h2>Compositions</h2>
+	    <p>
+		If we substitute one function into another, we can generate functions in which one function can be thought of as "inside" the other.
+	    </p>
+	    <div class="example_box">
+                <strong>Examples</strong><br />
+                <div class="ex" style="line-height: 35px;">
+                    <div style="margin-right: 5px;">Let</div>
+			<img src="../images/12.1/12.1.e.1.gif" style = "margin-left: 40px; padding-top: 5px;" /><br />
+                    <div style="margin-right: 5px;">Then</div>
+			<table class="def_table">
+			    <tr>
+				<td>
+				    \(f(g(x)) =\)
+				</td>
+				<td>
+				    "three plus the square of sin(x)"
+				</td>
+				<td>
+				    \(= 3 + (\sin(x))^2\)
+				</td>
+			    </tr>
+			    <tr>
+				<td>
+				    \g(f(x)) =\)
+				</td>
+				<td>
+				    "the sine of the quadratic"
+				</td>
+				<td>
+				    \(= \sin(3 + x^2)\)
+				</td>
+			    </tr>
+			</table>
+                </div>
+            </div>
+	    
+	    <h3><i>Simple Substitutions</i></h3>
+	    <p>
+		When we are using the function notation \(f(x)\) and something other than the independent variable alone appears in the parentheses, we are being asked to form a new function by substitution.
+	    </p>
+	    <div class="example_box">
+                <strong>Examples</strong><br />
+                <div class="ex" style="line-height: 35px;">
+		    <table class="def_table">
+			<tr>
+			    <td>
+				<img src="../images/12.1/12.1.e.3a.gif" style = "padding-top: 5px;" /><br />
+			    </td>
+			    <td>
+				think: \(f(\ )=\sqrt{(\ ) + 1} \)
+			    </td>
+			</tr>
+			<tr>
+			    <td>
+				<img src="../images/12.1/12.1.e.3c.gif" style = "padding-top: 5px;" /><br />
+			    </td>
+			    <td>
+				the inside function is (\(x^3\))
+			    </td>
+			</tr>
+			<tr>
+			    <td>
+				<img src="../images/12.1/12.1.e.3e.gif" style = "padding-top: 5px;" /><br />
+			    </td>
+			    <td>
+				the inside function is (\(2x\))
+			    </td>
+			</tr>
+			<tr>
+			    <td>
+				<img src="../images/12.1/12.1.e.3f.gif" style = "padding-top: 5px;" /><br />
+			    </td>
+			    <td>
+				the inside function is (\(-x\))
+			    </td>
+			</tr>
+			<tr>
+			    <td>
+				<img src="../images/12.1/12.1.e.3g.gif" style = "padding-top: 5px;" /><br />
+			    </td>
+			    <td>
+				the inside function is (\(x+h\))
+			    </td>
+			</tr>
+		    </table>
+                </div>
+            </div>
+	    
+	    <div class="comment">
+		<h1>Common Errors</h1>
+		<p>
+		    Do not confuse substitution with performing algebraic operations on the function itself. The letters and symbols may be the same, but the meaning is very different.
+		</p>
+		<h1>Example</h1>
+		<p>
+		    Even though \(f(3x)\) and \(3f(x)\) each contain the letter \(f\), the number 3 and the letter \(x\), they describe different operations:
+		</p>
+		<table class="def_table">
+		    <tr>
+			<td>
+			    if \(f(x) = x^2 + 4\)
+			</td>
+			<td>
+			    think \(f(\ )= (\ )^2 + 4\)
+			</td>
+		    </tr>
+		    <tr>
+			<td>
+			    \(f(3x) = (3x)^2 + 4\)
+			</td>
+			<td>
+			    substitute \(3x\) into \(f\)
+			</td>
+		    </tr>
+		    <tr>
+			<td>
+			    \(3f(x) = 3(x^2 + 4)\)
+			</td>
+			<td>
+			    multiply \(f\) by 3
+			</td>
+		    </tr>
+		</table>
+		<p>
+		    Similarly:
+		</p>
+		<table class="def_table">
+		    <tr>
+			<td>
+			    if \(g(x) = \cos(x)\)
+			</td>
+			<td>
+			    think \(f(\ ) = \cos(\ )\)
+			</td>
+		    </tr>
+		    <tr>
+			<td>
+			    \(g(x^2) = \cos(x^2)\)
+			</td>
+			<td>
+			    the cosine of (x squared)
+			</td>
+		    </tr>
+		    <tr>
+			<td>
+			    \((g(x))^2 = (\cos(x))^2\)
+			</td>
+			<td>
+			    the square of (cosine of \(x\))
+			</td>
+		    </tr>
+		</table>
+		<p>
+		    And
+		</p>
+		<table class="def_table">
+		    <tr>
+			<td>
+			    if \(f(x) = \frac{1}{x}\)
+			</td>
+			<td>
+			    think \(f(\ )= \frac{1}{(\ )}\)
+			</td>
+		    </tr>
+		    <tr>
+			<td>
+			    \(f(x+h) = \frac{1}{x+h}\)
+			</td>
+			<td>
+			    the reciprocal of \((x + h)\)
+			</td>
+		    </tr>
+		    <tr>
+			<td>
+			    \(f(x) + h = \frac{1}{x} + h\)
+			</td>
+			<td>
+			    \(f(x)\) plus the constant \(h\)
+			</td>
+		    </tr>
+		</table>
+	    </div>
+	    
+	    <h3><i>Notational Conventions</i></h3>
+	    <p>
+		There are times when it is customary to omit parentheses when writing certain functions.
+	    </p>
+	    <div class="def">
+		<div class="eqn">
+                    \(\sin x^2 \qquad means\qquad \sin(x^2)\)<br />
+                    \(\sin^2x \qquad means\qquad (\sin(x))^2\)<br />
+		    \(\ln x^4 \qquad means\qquad \ln(x^4)\)
+                </div>
+	    </div>
+
+	    <h3><i>Difference Quotients</i></h3>
+	    <p>
+		One common operation which requires both the composition and the combination of functions comes up in the calculation of slope, where we have:
+	    </p>
+	    <div class="eqn">
+		$$ \frac{difference\ in\ y-values}{difference\ in\ x-values} = \frac{f(x+h) - f(x)}{(x+h) - x} = \frac{f(x+h) - f(x)}{h} $$
+	    </div>
+	    <p>
+		The expression
+	    </p>
+	    <div class="eqn">
+		$$ \frac{f(x + h) - f(x)}{h} $$
+	    </div>
+	    <p>
+		is called a difference quotient.
+	    </p>
+            <div class="example_box">
+                <strong>Examples</strong><br />
+                <div class="ex" style="line-height: 35px;">
+                    <div style="margin-right: 5px;">Let</div>
+			<img src="../images/12.1/12.1.e.7a.gif" style = "margin-left: 40px; padding-top: 5px;" /><br />
+                    <div style="margin-right: 5px;">Find and simplify the difference quotient.</div>
+			<img src="../images/12.1/12.1.e.7b.gif" style = "margin-left:40px; padding-top: 5px;" />
+                </div>
+                In problems like this, be careful to form the composition \(f(x+h)\) correctly, and be sure that the minus sign in the numerator is applied to the entire function \(f(x)\).
+            </div>
+            
+	    <!-- Randomize eqn values -->
+	    <script>
+	    	randomize();
+	    </script>
+	    
+	    <div class="practice">
+		<h2>Practice</h2>
+		<form name="intpractice" action="">
+			      Be sure you've gone through each step in the examples above before doing these. Once you've worked them until you're sure
+			      that you understand them, go on to the next section. There are more problems of this type in the section test at the end of the section.<br />
+			      <br />
+				Note that you can get new practice problems by clicking the "Refresh" button at the bottom of the practice set.
+			      <br /><br />
+			    <div>
+				    1. Find and simplify the difference quotient<br />
+				    <img src="../images/12.1/12.1.r.5.gif" style = "margin-left:40px; padding-top: 5px;" />
+				    <div id="question">
+					<!-- Question 1 -->
+					<div id="q1" style="padding-top: 10px;"> </div><br />
+					<img src="../images/12.1/12.1.r.5.gif" style = "float: left; padding-top: 5px;" />
+					<script type="text/javascript">
+					    symbol_space("=\\ ");
+					    answer_space(1,1,"a");
+					</script>
+				    </div>
+				    2. If
+				    <div id="question">
+					    <!-- Question 2 -->
+					    <div id="q2"> </div>
+					    Find the difference quotient<br />
+					    <div id="q2a" style="padding-top: 10px; float: left; font-size: 140%;"> </div>
+					    <script type="text/javascript">
+						symbol_space("=\\ ");
+						answer_space(2,1,"a");
+						symbol_space("h +");
+						answer_space(2,1,"b");
+					    </script>
+				    </div>
+				    3. If <span id="q3"></span>, find and simplify
+				    <div id="question">
+					    <!-- Question 2 -->
+					    <div id="q3a" style="font-size: 140%"> </div>
+					    Into the form: \(a + bx^m\)<br />
+					    <div id="q3b" style="float: left; padding-top: 10px; font-size:  140%;"> </div>
+					    <script type="text/javascript">
+						symbol_space("=\\ ");
+						answer_space(3,1,"a");
+						symbol_space(" +");
+						answer_space(3,1,"b");
+						answer_space(3,2,"p");
+					    </script>
+				    </div>
+				    
+				    <!-- Create questions -->
+				    <script type="text/javascript">
+				    createQ();
+				</script>
+			    </div>
+			
+			<input type="button" id= "checkAns" value="Check Answers" onclick="checkPracQ(this.form);"/><br />
+		</form>
+	    </div>
+	    
+	    <div id="dialog" title = "Answer Check">
+			Question 1:<br /><input type="text" class="ansMess" id="ansTxt1" disabled = "disabled"/><br /><br />
+			Question 2:<br /><input type="text" class="ansMess" id="ansTxt2" disabled = "disabled"/><br /><br />
+			Question 3:<br /><input type="text" class="ansMess" id="ansTxt3" disabled = "disabled"/>
+	    </div>
+		    <br /><a href="./index.html"> Return to Main</a>
+	</div>
+    </body>
+</html>

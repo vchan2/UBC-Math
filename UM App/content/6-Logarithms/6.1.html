@@ -1,0 +1,261 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- Math Jax Configuration -->
+        <script type="text/javascript"src="../common/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<!--jQuery-->
+	<script src= "../common/jquery-ui.custom/js/jquery-1.9.1.js"></script>
+	<link href="../common/jquery-ui.custom/css/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+	<script src="../common/jquery-ui.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<!--jQuery dialog box-->
+	<script type="text/javascript" src="../common/dialog.js"></script>
+	<!-- Script to create random variables and questions -->
+	<script type="text/javascript" src="../scripts/random_variables/ra6.1.js"></script>
+	<!--Create Answer Space-->
+	<script type="text/javascript" src="../common/answerMaker.js"></script>
+	<!--Question Evaluation-->
+	<script type="text/javascript" src="../scripts/cr.js"></script>
+	<script type="text/javascript" src="../scripts/6.1.js"></script>
+	<!--Style Sheet-->
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	
+        <title>UM Topic 6.1</title>
+    </head>
+    <body onbeforeunload="unloadPage()">
+	<div id="wrapper">
+	    <div id="title">
+		<h1>Logarithms</h1>
+		<hr />
+	    </div>
+            <p>
+		We write the logarithm with base 10 as log(x) and that with base e as ln(x).
+		These are just the inverse functions for the corresponding exponentials, so that
+	    </p>
+	    <div class="eqn">
+		if \(y=log(x)\) then \(10^y = x\)<br />
+		if \(y=ln(x)\) then \(e^y = x\)
+	    </div>
+	    <p>
+		In words, <em>log(x) is the exponent of 10 that gives x</em>, and <em>ln(x) is the exponent of e that gives x</em>, that is,
+	    </p>
+	    <div class="eqn">
+		$$10^{log(x)} = x\ and\ e^{ln(x)}=x$$
+	    </div>
+	    <p>
+		All logarithm functions have some useful properties:
+	    </p>
+	    <div class="def">
+		<h1>Properties of Logarithms:</h1>
+		<p>
+		    (M and N are positive.)
+		</p>
+		<div class="eqn">
+                    <table class="def_table">
+			<tr>
+			    <td>
+				\(log(MN)=log(M)+log(N)\)
+			    </td>
+			    <td>
+				\(ln(MN)=ln(M)+ln(N)\)
+			    </td>
+			    <td>
+				Logarithm of a Product
+			    </td>
+			</tr>
+			<tr>
+			    <td>
+				\(log(\frac{M}{N})=log(M)-log(N)\)
+			    </td>
+			    <td>
+				\(ln(\frac{M}{N})=ln(M)-ln(N)\)
+			    </td>
+			    <td>
+				Logarithm of a Quotient
+			    </td>
+			</tr>
+			<tr>
+			    <td>
+				\(log(M^p)=p\ log(M)\)
+			    </td>
+			    <td>
+				\(ln(M^p)=p\ ln(M)\) 
+			    </td>
+			    <td>
+				Logarithm of a Power
+			    </td>
+			</tr>
+			<tr>
+			    <td>
+				\(log(1)=0\)
+			    </td>
+			    <td>
+				\(ln(1)=0\) 
+			    </td>
+			    <td>
+				Logarithm of a +1
+			    </td>
+			</tr>
+			<tr>
+			    <td>
+				\(log(10)=1\)
+			    </td>
+			    <td>
+				\(ln(e)=1\) 
+			    </td>
+			    <td>
+				Logarithm of a Base
+			    </td>
+			</tr>
+		    </table>
+                </div>
+	    </div>
+
+	    <div class="comment">
+		<p>
+		    <strong>Be careful</strong> not to make the mistake of trying to use these properties when they do not apply.
+		    None of the following forms can be rewritten using the properties above.
+		</p>
+		<table class="def_table">
+		    <tr>
+			<td>
+			    \(log(M+N)\)
+			</td>
+			<td>
+			    \(ln(M+N)\)
+			</td>
+			<td>
+			    No rules for the logarithm of a sum
+			</td>
+		    </tr>
+		    <tr>
+			<td>
+			    \(\frac{log(M)}{log(N)}\)
+			</td>
+			<td>
+			    \(\frac{ln(M)}{ln(N)}\)
+			</td>
+			<td>
+			    No rules for the quotient of 6.1
+			</td>
+		    </tr>
+		</table>
+	    </div>
+	    <h2>Relationship Between Logarithms and Exponentials</h2>
+	    </h2>
+	    <p>
+		These follow from the definition of the 6.1 as the inverse functions for the corresponding exponential functions.
+	    </p>
+	    <div class="def">
+		<h1>Logarithms and Exponentials:</h1>
+		<table class="def_table">
+		    <tr>
+			<td>
+			    \(log(N)=x \Leftarrow\Rightarrow 10^x=N\)
+			</td>
+			<td>
+			    \(ln(N)=x \Leftarrow\Rightarrow e^x=N\)
+			</td>
+		    </tr>
+		    <tr>
+			<td>
+			    \(log(10^x)=x\)
+			</td>
+			<td>
+			    \(ln(e^x)=x\)
+			</td>
+		    </tr>
+		    <tr>
+			<td>
+			    \(10^{log(x)}=x\)
+			</td>
+			<td>
+			    \(e^{ln(x)}=x\)
+			</td>
+		    </tr>
+		</table>
+	    </div>
+            <div class="example_box">
+                <strong>Examples</strong><br />
+                For each of these, note what properties of 6.1 are being used.<br />
+                <div class="ex" style="line-height: 35px;">
+                    <div style="margin-right: 5px; float: left;">1.</div>  <img src="../images/6.1/6.1.e.1.gif" style = "padding-top: 5px;" /> (The power of 10 needed to get 10,000 is 4)<br />
+                    <div style="margin-right: 5px; float: left;">2.</div>  <img src="../images/6.1/6.1.r.12.gif" style = "padding-top: 5px;" /> (The power of \(e\) needed to get 1 is 0)<br />
+		    <div style="margin-right: 5px; float: left;">3.</div>  <img src="../images/6.1/6.1.e.2a.gif" style = "padding-top: 5px;" /> means <img src="../images/6.1/6.1.e.2b.gif" style = "padding-top: 5px;" /><br />
+		    <div style="margin-right: 5px; float: left;">4.</div>  <img src="../images/6.1/6.1.e.3a.gif" style = "padding-top: 5px;" /> means <img src="../images/6.1/6.1.e.3b.gif" style = "padding-top: 5px;" /><br />
+		    <div style="margin-right: 5px; float: left;">5.</div>  <img src="../images/6.1/6.1.e.4a.gif" style = "padding-top: 5px;" /> means <img src="../images/6.1/6.1.e.4b.gif" style = "padding-top: 5px;" /><br />
+		    <div style="margin-right: 5px; float: left;">6.</div>  <img src="../images/6.1/6.1.e.5a.gif" style = "padding-top: 5px;" /> means <img src="../images/6.1/6.1.e.5b.gif" style = "padding-top: 5px;" /><br />
+		    <div style="margin-right: 5px; float: left;">7.</div>  <img src="../images/6.1/6.1.e.6.gif" style = "padding-top: 5px;" /><br />
+		    <div style="margin-right: 5px; float: left;">8.</div>  <img src="../images/6.1/6.1.e.7.gif" style = "padding-top: 5px;" /><br />
+		    <div style="margin-right: 5px; float: left;">9.</div>  <img src="../images/6.1/6.1.e.8.gif" style = "padding-top: 5px;" /><br />
+		    <div style="margin-right: 5px; float: left;">10.</div>  <img src="../images/6.1/6.1.e.9.gif" style = "padding-top: 5px;" /><br />
+		    <div style="margin-right: 5px; float: left;">11.</div>  <img src="../images/6.1/6.1.e.10.gif" style = "padding-top: 5px;" />
+                </div>
+            </div>
+            
+	    <!-- Randomize eqn values -->
+	    <script>
+	    	randomize();
+	    </script>
+	    
+	    <div class="practice">
+		<h2>Practice</h2>
+		<form name="intpractice" action="">
+			      Be sure you've gone through each step in the examples above before doing these. Once you've worked them until you're sure
+			      that you understand them, go on to the next section. There are more problems of this type in the section test at the end of the section.<br />
+			      <br />
+				Note that you can get new practice problems by clicking the "Refresh" button at the bottom of the practice set.
+			      <br /><br />
+			    <div>
+				    1. Rewrite the following expression in the form: \(a+b\ ln(x)\)
+				    <div id="question">
+					<!-- Question 1 -->
+					<div id="q1" style="float: left; font-size: 140%;"> </div>	 
+					     <script type="text/javascript">
+						answer_space(1,1,"a");
+						symbol_space("+");
+						answer_space(1,1,"b");
+						symbol_space("ln(x)");
+					     </script>
+				    </div>
+				    2. Rewrite the following expression in the form: \(ln(c)\)
+				    <div id="question">
+					    <!-- Question 2 -->
+					    <div id="q2" style="float: left; padding-top: 10px;"> </div>
+					    <script type="text/javascript">
+						symbol_space("ln(");
+						answer_space(2,1,"a");
+						symbol_space(")");
+					    </script>
+				    </div>
+				    3. Rewrite the following expression in the form: \(a+b\ log(x)\)
+				    <div id="question">
+					    <!-- Question 2 -->
+					    <div id="q3" style="float: left; padding-top: 10px;"> </div>
+					    <script type="text/javascript">
+						answer_space(3,1,"a");
+						symbol_space("+");
+						answer_space(3,1,"b");
+						symbol_space("log(x)");
+					    </script>
+				    </div>
+			    
+				    <!-- Create questions -->
+				    <script type="text/javascript">
+				    createQ();
+				</script>
+			    </div>
+			
+			<input type="button" id= "checkAns" value="Check Answers" onclick="checkPracQ(this.form);"/><br />
+		</form>
+	    </div>
+	    
+	    <div id="dialog" title = "Answer Check">
+			Question 1:<br /><input type="text" class="ansMess" id="ansTxt1" disabled = "disabled"/><br /><br />
+			Question 2:<br /><input type="text" class="ansMess" id="ansTxt2" disabled = "disabled"/><br /><br />
+			Question 3:<br /><input type="text" class="ansMess" id="ansTxt3" disabled = "disabled"/><br /><br />
+	    </div>
+		    <br /><a href="./index.html"> Return to Main</a>
+	</div>
+    </body>
+</html>

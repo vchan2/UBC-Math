@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- Math Jax Configuration -->
+        <script type="text/javascript"src="../common/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<!--jQuery-->
+	<script src= "../common/jquery-ui.custom/js/jquery-1.9.1.js"></script>
+	<link href="../common/jquery-ui.custom/css/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+	<script src="../common/jquery-ui.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<!--jQuery dialog box-->
+	<script type="text/javascript" src="../common/dialog.js"></script>
+	<!-- Script to create random variables and questions -->
+	<script type="text/javascript" src="../scripts/random_variables/ra11.1.js"></script>
+	<!--Create Answer Space-->
+	<script type="text/javascript" src="../common/answerMaker.js"></script>
+	<!--Question Evaluation-->
+	<script type="text/javascript" src="../scripts/cr.js"></script>
+	<script type="text/javascript" src="../scripts/11.1.js"></script>
+	<!--Style Sheet-->
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	
+        <title>UM Topic 11.1</title>
+    </head>
+    <body onbeforeunload="unloadPage()">
+	<div id="wrapper">
+	    <div id="title">
+		<h1>Combining Evaluation, Graphing and Solving</h1>
+		<hr />
+	    </div>
+	    <p>
+		We can use our understanding of functions and our knowledge of the shapes of curves to evaluate some of the key coordinates on graphs.
+	    </p>
+            
+	    <h2>Intercepts</h2>
+	    <p>
+		We usually want to label the intercepts of our graphs when we make a sketch. The y-intercept will have a zero as its first \(x\) coordinate:
+		(0, ), and any \(x\)-intercept will have a zero as its second \(y\) coordinate: ( ,0). To decide on the missing coordinates we can think in the following way:
+	    </p>
+	    <div class="def">
+		<h1>Intercepts:</h1>
+		<table class="def_table">
+		    <tr>
+			<td>
+			    The coordinates of the \(y\)-intercept are
+			</td>
+			<td>
+			    (\(0\),the \(y\)-value corresponding to \(x=0\))
+			</td>
+		    </tr>
+		    <tr>
+			<td>
+			    The coordinates of any \(x\)-intercept(s) are
+			</td>
+			<td>
+			    (any \(x\)-value making \(y=0\),\(0\))
+			</td>
+		    </tr>
+		</table>
+	    </div>
+            <div class="example_box">
+                <strong>Examples</strong><br />
+                <div class="ex" style="line-height: 35px;">
+                    <div style="margin-right: 5px; float: left;">Fill in the missing coordinates:</div><br />
+			<img src="../images/11.1/11.1.e.1.gif" style = "padding-top: 5px;" /><br />
+		    <div style="margin-right: 5px; float: left;">To solve this problem we first fill in what we know without any calculations: </div><br />
+			<img src="../images/11.1/11.1.e.1a.gif" style = "padding-top: 5px;" /><br />
+		    <div style="margin-right: 5px;">
+			The \(y\)-intercept is<br />
+			\((0,(0)^3)+1)=(0,1)\)<br />
+			and the \(x\)-intercept will be<br />
+			\((solution\ of\ x^3+1=0, 0)\)<br />
+			The value \(x=-1\) will make \(x^3+1=0\), so the \(x\)-intecept in (-1,0):
+		    </div>
+			<img src="../images/11.1/11.1.e.1e.gif" style = "padding-top: 5px;" /><br />
+                </div>
+            </div>
+	    
+	    <h2>Intersections</h2>
+	    <p>
+		When two graphs intersect, the point of intersection lies on both graphs, so the coordinates of the point of intersection will satisfy both of the equations which led to theses graphs.
+		We need to solve the equations simultaneously, to find the coordinates of the intersection.
+	    </p>
+	    <div class="example_box">
+                <strong>Examples</strong><br />
+                <div class="ex" style="line-height: 35px;">
+                    <div style="margin-right: 5px; float: left;">1. Fill in the missing coordinates:</div><br />
+			<img src="../images/11.1/11.1.e.2a.gif" style = "padding-top: 5px;" /><br />
+		    <div style="margin-right: 5px; float: left;">We solve the equations simultaneously by setting them equal to one another: </div><br />
+			<img src="../images/11.1/11.1.e.2b.gif" style = "padding-top: 5px;" /><br />
+		    <div style="margin-right: 5px; line-height: 15px;">
+			Thus the \(x\)-coordinates of the two points of intersection are \(x=2\) and \(x=-1\).
+			To get the corresponding \(y\)-coordinates we use either equation to find \(y(-1)=0\) and \(y(2)=3\). The graphs intersect at \((-1,0)\) and \((2,3)\):
+		    </div>
+			<img src="../images/11.1/11.1.e.2c.gif" style = "padding-top: 5px;" /><br />
+		    <div style="margin-right: 5px; float: left;">2. Fill in the missing coordinates:</div><br />
+			<img src="../images/11.1/11.1.e.3a.gif" style = "padding-top: 5px;" /><br />
+		    <div style="margin-right: 5px; float: left; line-height: 15px;">
+			The sine function completes one full cycle between \(x=0\) and \(x=2\pi\), so the right-hand point has coordinates \((2\pi,0)\).
+			The graph reaches its highest value one quarter of the way through the cycle, at \(x=\frac{\pi}{2}\). Since \(sin(\frac{\pi}{2})=1\), the coordinates of the left-hand point are \((\frac{\pi}{2},1)\):
+		    </div><br />
+			<img src="../images/11.1/11.1.e.3c.gif" style = "padding-top: 5px;" /><br />
+		    <div style="margin-right: 5px; line-height: 15px;">
+			(See also section 14, especially topic 1, common graphs to memorize and topic 2, key function values, for more information on the sine function.)
+		    </div>
+                </div>
+            </div>
+            
+	    <!-- Randomize eqn values -->
+	    <script>
+	    	randomize();
+	    </script>
+	    
+	    <div class="practice">
+		<h2>Practice</h2>
+		<form name="intpractice" action="">
+			      Be sure you've gone through each step in the examples above before doing these. Once you've worked them until you're sure
+			      that you understand them, go on to the next section. There are more problems of this type in the section test at the end of the section.<br />
+			      <br />
+				Note that you can get new practice problems by clicking the "Refresh" button at the bottom of the practice set.
+			      <br /><br />
+			    <div>
+				    1.The graph of the line <span id="q1"></span> is shown below. Find the coordinates of the points P and Q:
+				    <div id="question">
+					<img src="../images/11.1/11.1.p.1.gif" style = "padding-top: 5px;" /><br />
+					     <script type="text/javascript">
+						symbol_space("P = (")
+						answer_space(1,1,"a");
+						symbol_space(",");
+						answer_space(1,1,"b");
+						symbol_space(")");
+					     </script>
+					     <br /><br/>
+					     <script type="text/javascript">
+						symbol_space("Q = (")
+						answer_space(1,1,"c");
+						symbol_space(",");
+						answer_space(1,1,"d");
+						symbol_space(")");
+					     </script>
+				    </div>
+				    2. The graph of the parabola:
+				    <div id="question">
+					    <!-- Question 2 -->
+					    <div id="q2" style="padding-top: 10px; margin-bottom: 10px;"> </div>
+					    is shown below. Find the coordinates of the points P, Q and R.
+					    <br />
+					    <img src="../images/11.1/11.1.p.2.gif" style = "padding-top: 5px;" /><br />
+					    <script type="text/javascript">
+						symbol_space("P = (")
+						answer_space(2,1,"a");
+						symbol_space(",");
+						answer_space(2,1,"b");
+						symbol_space(")");
+					     </script>
+					     <br /><br/>
+					     <script type="text/javascript">
+						symbol_space("Q = (")
+						answer_space(2,1,"c");
+						symbol_space(",");
+						answer_space(2,1,"d");
+						symbol_space(")");
+					     </script>
+					     <br /><br/>
+					     <script type="text/javascript">
+						symbol_space("R = (")
+						answer_space(2,1,"e");
+						symbol_space(",");
+						answer_space(2,1,"f");
+						symbol_space(")");
+					     </script>
+				    </div>
+				    3. The graphs of the parabola:
+				    <div id="question">
+					    <!-- Question 2 -->
+					    <div id="q3" style="padding-top: 10px; margin-bottom: 10px;"> </div>
+					    and line
+					    <br />
+					    <div id="q3a" style="padding-top: 10px; margin-bottom: 10px;"> </div>
+					    are shown in the graph below. Find the indicated points P and Q.
+					    <br />
+					    <img src="../images/11.1/11.1.p.3.gif" style = "padding-top: 5px;" /><br />
+					    <script type="text/javascript">
+						symbol_space("P = (")
+						answer_space(3,1,"a");
+						symbol_space(",");
+						answer_space(3,1,"b");
+						symbol_space(")");
+					     </script>
+					     <br /><br/>
+					     <script type="text/javascript">
+						symbol_space("Q = (")
+						answer_space(3,1,"c");
+						symbol_space(",");
+						answer_space(3,1,"d");
+						symbol_space(")");
+					     </script>
+				    </div>
+				    <!-- Create questions -->
+				    <script type="text/javascript">
+				    createQ();
+				</script>
+			    </div>
+			
+			<input type="button" id= "checkAns" value="Check Answers" onclick="checkPracQ(this.form);"/><br />
+		</form>
+	    </div>
+	    
+	    <div id="dialog" title = "Answer Check">
+			Question 1:<br /><input type="text" class="ansMess" id="ansTxt1" disabled = "disabled"/><br /><br />
+			Question 2:<br /><input type="text" class="ansMess" id="ansTxt2" disabled = "disabled"/><br /><br />
+			Question 3:<br /><input type="text" class="ansMess" id="ansTxt3" disabled = "disabled"/>
+	    </div>
+		    <br /><a href="./index.html"> Return to Main</a>
+	</div>
+    </body>
+</html>

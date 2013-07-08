@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- Math Jax Configuration -->
+        <script type="text/javascript"src="../common/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<!--jQuery-->
+	<script src= "../common/jquery-ui.custom/js/jquery-1.9.1.js"></script>
+	<link href="../common/jquery-ui.custom/css/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+	<script src="../common/jquery-ui.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<!--jQuery dialog box-->
+	<script type="text/javascript" src="../common/dialog.js"></script>
+	<!-- Script to create random variables and questions -->
+	<script type="text/javascript" src="../scripts/random_variables/ra7.2.js"></script>
+	<!--Create Answer Space-->
+	<script type="text/javascript" src="../common/answerMaker.js"></script>
+	<!--Question Evaluation-->
+	<script type="text/javascript" src="../scripts/cr.js"></script>
+	<script type="text/javascript" src="../scripts/7.2.js"></script>
+	<!--Style Sheet-->
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	
+        <title>UM Topic 7.2</title>
+    </head>
+    <body onbeforeunload="unloadPage()">
+	<div id="wrapper">
+	    <div id="title">
+		<h1>Solving Linear Equations</h1>
+		<hr />
+	    </div>
+            <p>
+		To solve a <em>linear equation</em>, clear any parentheses and isolate the variable.
+		Recall that a linear equation only involves the independent variable (x) to the first power (that, is, it has no terms like \(x^2\), 1/x, sin(x), etc.).
+	    </p>
+	    <div class="example_box">
+                <strong>Examples</strong><br />
+                Before looking at how these are solved, be sure it is clear why they are linear. Then check that you see the algebraic steps in clearing the parentheses and isolating the variable.<br />
+                <div class="ex" style="line-height: 35px;">
+                    <div style="margin-right: 5px; float: left;">1. Solve for \(x\):</div><br />
+			<img src="../images/7.2/7.2.e.1a.gif" style = "padding-top: 5px; margin-left: 20px;" /><br />
+		    <div style="margin-right: 5px; float: left;">2. Solve for \(q\):</div><br />
+			<img src="../images/7.2/7.2.e.2a.gif" style = "padding-top: 5px; margin-left: 20px;" /><br />
+                </div>
+            </div>
+            
+	    <!-- Randomize eqn values -->
+	    <script>
+	    	randomize();
+	    </script>
+	    
+	    <div class="practice">
+		<h2>Practice</h2>
+		<form name="intpractice" action="">
+			      Be sure you've gone through each step in the examples above before doing these. Once you've worked them until you're sure that you understand them,
+			      go on to the next section. There are more problems of this type in the section test at the end of the section.<br />
+			      <br />
+				Note that you can get new practice problems by clicking the "Refresh" button at the bottom of the practice set.
+			      <br /><br />
+			    <div>
+				    1. Solve for \(x\):
+				    <div id="question">
+					<!-- Question 1 -->
+					<div id="q1" style="float: left; padding-top: 10px;"> </div>	 
+					     <br /><br />
+					     <script type="text/javascript">
+						symbol_space("\\Rightarrow Answer:\\ x= ");
+						answer_space(1,1,"a");
+					     </script>
+				    </div>
+				    2. Solve for \(x\):
+				    <div id="question">
+					    <!-- Question 2 -->
+					    <div id="q2" style="float: left; padding-top: 10px;"> </div>
+					    <br /><br />
+					    <script type="text/javascript">
+						symbol_space("\\Rightarrow Answer:\\ x= ");
+						answer_space(2,1,"a");
+					    </script>
+				    </div>
+			    
+				    <!-- Create questions -->
+				    <script type="text/javascript">
+				    createQ();
+				</script>
+			    </div>
+			
+			<input type="button" id= "checkAns" value="Check Answers" onclick="checkPracQ(this.form);"/><br />
+		</form>
+	    </div>
+	    
+	    <div id="dialog" title = "Answer Check" >
+			Question 1:<br /><input type="text" class="ansMess" id="ansTxt1" disabled = "disabled"/><br /><br />
+			Question 2:<br /><input type="text" class="ansMess" id="ansTxt2" disabled = "disabled"/><br /><br />
+	    </div>
+		    <br /><a href="./index.html"> Return to Main</a>
+	</div>
+    </body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- Math Jax Configuration -->
+        <script type="text/javascript"src="../common/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<!--jQuery-->
+	<script src= "../common/jquery-ui.custom/js/jquery-1.9.1.js"></script>
+	<link href="../common/jquery-ui.custom/css/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+	<script src="../common/jquery-ui.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<!--jQuery dialog box-->
+	<script type="text/javascript" src="../common/dialog.js"></script>
+	<!-- Script to create random variables and questions -->
+	<script type="text/javascript" src="../scripts/random_variables/ra14.3.js"></script>
+	<!--Create Answer Space-->
+	<script type="text/javascript" src="../common/answerMaker.js"></script>
+	<!--Question Evaluation-->
+	<script type="text/javascript" src="../scripts/cr.js"></script>
+	<script type="text/javascript" src="../scripts/14.3.js"></script>
+	<!--Style Sheet-->
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	
+        <title>UM Topic 14.3</title>
+    </head>
+    <body onbeforeunload="unloadPage()">
+	<div id="wrapper">
+	    <div id="title">
+		<h1>Key Formulas to Memorize</h1>
+		<hr />
+	    </div>
+            <h2>Trigonometric Identities</h2>
+	    <img src="../images/14.3/14.3.r.1.gif" style = "padding-top: 5px; margin-left: 100px;" />
+	    
+	    <h2>Geometric Formulas</h2>
+	    <table class="def_table">
+		<tr>
+		    <td>Area of a Circle</td>
+		    <td>\(A = \pi r^2\)</td>
+		    <td>r = radius</td>
+		</tr>
+		<tr>
+		    <td>Circumference of a Circle</td>
+		    <td>\(C = 2\pi r\)</td>
+		    <td>r = radius</td>
+		</tr>
+		<tr>
+		    <td>Area of a Rectangle</td>
+		    <td>\(A = lw\)</td>
+		    <td>l = length, w = width</td>
+		</tr>
+		<tr>
+		    <td>Perimeter of a Rectangle</td>
+		    <td>\(P = 2l + 2w\)</td>
+		    <td>l = length, w = width</td>
+		</tr>
+		<tr>
+		    <td>Area of a Triangle</td>
+		    <td>\(A = \frac{1}{2}bh\)</td>
+		    <td>b = base, h = height</td>
+		</tr>
+		<tr>
+		    <td>Volume of a Rectangular Solid</td>
+		    <td>\(V = lhw\)</td>
+		    <td>l = length, w = width, h = height</td>
+		</tr>
+		<tr>
+		    <td>Volume of a Right Circular Cylinder</td>
+		    <td>\(V = \pi r^2 h\)</td>
+		    <td>r = radius, h =height</td>
+		</tr>
+		<tr>
+		    <td>Volume of a Right Circular Cone</td>
+		    <td>\(V = \frac{1}{3}\pi r^2 h\)</td>
+		    <td>r = radius, h = height</td>
+		</tr>
+		<tr>
+		    <td>Volume of a Sphere</td>
+		    <td>\(V = \frac{4}{3} \pi r^3\)</td>
+		    <td>r = radius</td>
+		</tr>
+	    </table>
+	    
+	    <h2>Distance and Slope</h2>
+	    <img src="../images/14.3/14.3.r.11.gif" style = "padding-top: 5px; margin-left: 100px;" /><br />
+	    <img src="../images/14.3/14.3.r.12.gif" style = "padding-top: 5px; margin-left: 100px;" /><br />
+	    <img src="../images/14.3/14.3.r.12a.gif" style = "padding-top: 5px; margin-left: 100px;" />
+            
+	    <!-- Randomize eqn values -->
+	    <script>
+	    	randomize();
+	    </script>
+	    
+	    <div class="practice">
+		<h2>Practice</h2>
+		<form name="intpractice" action="">
+			      We're just memorizing formulas again: before doing the practice problems, go back and be sure that you've got the formulas for the trigonometric identities, geometric forms, and distances and slope memorized.
+			      Then do the following. You should be able to do these without having to go up and refer to the formulas above.<br />
+			      <br />
+				Note that you can get new practice problems by clicking the "Refresh" button at the bottom of the practice set.
+				For each of the following, enter  as "pi". (So to enter 4\(\pi\), type "4pi" -- <em>not</em> "4(pi)" or "4*pi".) Enter any undefined result by typing "undef". Use the notation "sqrt(x)" to indicate the square root of x.
+			      <br /><br />
+			    <div>
+				    1. Find the area and circumference of a circle of <span id="q1"></span>:
+				    <div style ="margin: 10px 10px 10px 20px;">
+					<!-- Question 1 --> 
+					Area = <input type="text" name="cirarea" style="width: 40px;"><br />
+					Circumference = <input type="text" name="circirc" style="width: 40px;">
+				    </div>
+				    2. Find the area and perimeter of a rectangle with <span id="q2"></span>:
+				    <div style ="margin: 10px 10px 10px 20px;">
+					<!-- Question 2 --> 
+					Area = <input type="text" name="recarea" style="width: 40px;"><br />
+					Perimeter = <input type="text" name="reccirc" style="width: 40px;">
+				    </div>
+				    3. Find the area of a triangle with <span id="q3"></span>:
+				    <div style ="margin: 10px 10px 10px 20px;">
+					<!-- Question 3 --> 
+					Area = <input type="text" name="triarea" style="width: 40px;">
+				    </div>
+				    4. Find the volume of a right circular cone with <span id="q4"></span>:
+				    <div style ="margin: 10px 10px 10px 20px;">
+					<!-- Question 4 --> 
+					Volume = <input type="text" name="conevol" style="width: 40px;">
+				    </div>
+				    5. Find the volume of a right circular cylinder with <span id="q5"></span>:
+				    <div style ="margin: 10px 10px 10px 20px;">
+					<!-- Question 5 --> 
+					Volume = <input type="text" name="cylivol" style="width: 40px;">
+				    </div>
+				    6. Find the volume of a sphere of <span id="q6"></span>:
+				    <div style ="margin: 10px 10px 10px 20px;">
+					<!-- Question 6 --> 
+					Volume = <input type="text" name="sphevol" style="width: 40px;">
+				    </div>
+				    7. Find the distance between and the slope of the line joining the <span id="q7"></span>:
+				    <div style ="margin: 10px 10px 10px 20px;">
+					<!-- Question 7 --> 
+					Distance = <input type="text" name="distance" style="width: 40px;"><br />
+					Slope = <input type="text" name="slope" style="width: 40px;">
+				    </div>
+				    8. Find the distance between and the slope of the line joining the <span id="q8"></span>:
+				    <div style ="margin: 10px 10px 10px 20px;">
+					<!-- Question 8 --> 
+					Distance = <input type="text" name="distance2" style="width: 40px;"><br />
+					Slope = <input type="text" name="slope2" style="width: 40px;">
+				    </div>
+			    
+				    <!-- Create questions -->
+				    <script type="text/javascript">
+				    createQ();
+				</script>
+			    </div>
+			
+			<input type="button" id= "checkAns" value="Check Answers" onclick="checkPracQ(this.form);"/><br />
+		</form>
+	    </div>
+	    
+	    <div id="dialog" title = "Answer Check">
+			Question 1:<br /><input type="text" class="ansMess" id="ansTxt1" disabled = "disabled"/><br /><br />
+			Question 2:<br /><input type="text" class="ansMess" id="ansTxt2" disabled = "disabled"/><br /><br />
+			Question 3:<br /><input type="text" class="ansMess" id="ansTxt3" disabled = "disabled"/><br /><br />
+			Question 4:<br /><input type="text" class="ansMess" id="ansTxt4" disabled = "disabled"/><br /><br />
+			Question 5:<br /><input type="text" class="ansMess" id="ansTxt5" disabled = "disabled"/><br /><br />
+			Question 6:<br /><input type="text" class="ansMess" id="ansTxt6" disabled = "disabled"/><br /><br />
+			Question 7:<br /><input type="text" class="ansMess" id="ansTxt7" disabled = "disabled"/><br /><br />
+			Question 8:<br /><input type="text" class="ansMess" id="ansTxt8" disabled = "disabled"/>
+	    </div>
+		    <br /><a href="./index.html"> Return to Main</a>
+	</div>
+    </body>
+</html>

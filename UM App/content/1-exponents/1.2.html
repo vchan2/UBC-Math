@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- Math Jax Configuration -->
+        <script type="text/javascript"src="./../common/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<!--jQuery-->
+	<script src= "../common/jquery-ui.custom/js/jquery-1.9.1.js"></script>
+	<link href="../common/jquery-ui.custom/css/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+	<script src="../common/jquery-ui.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<!--jQuery dialog box-->
+	<script type="text/javascript" src="../common/dialog.js"></script>
+	<!-- Script to create random variables and questions -->
+	<script type="text/javascript" src="../scripts/random_variables/ra1.2.js"></script>
+	<!--Create Answer Space-->
+	<script type="text/javascript" src="../common/answerMaker.js"></script>
+	<!--Question Evaluation-->
+	<script type="text/javascript" src="../scripts/cr.js"></script>
+	<script type="text/javascript" src="../scripts/1.2.js"></script>
+	<!--Style Sheet-->
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+
+        <title>UM Topic 1.2</title>
+    </head>
+    <body onbeforeunload="unloadPage()">
+	<div id="wrapper">
+		
+	    <h1>Radicals (Roots) and Fractional Exponents</h1>
+	    <hr />
+	    
+	    <br />The natural definition for exponentiation as an abbreviation for multiplication holds for positive integers only. We've already chosen definitions for negative and zero exponents
+            (as shown on the <a href="./exp1.html">integer exponent page</a>) which are consistent with our rules for exponents. For example, that \(a\) to the 0 equals 1 makes sense with the multiplication of exponents rule:<br />
+	    <div id="eqn">
+		    $$a^na^0=a^{n+0}=a^n$$
+	    </div>
+	    so, looking at the first and last entries in the equalities, a to the 0 must be one.<br />
+	    <br />
+            <h2>Rational (fractional) Exponents</h2>
+            <br />
+            
+            <em>Fractional exponents</em> are defined as roots, which makes sense from the rule for powers of powers:<br />
+            <div id="eqn">
+                $$(a^{1/2})^2=a^{2/2}=a^1=a,\ so\; (a^{1/2})^2=a$$
+            </div>
+            Is it obvious that the 1/2 power of \(a\) is therefore the square root of \(a\)? Take the square root of both sides of the right-most equation above:
+            <div id="eqn">
+                $$(a^{1/2}) = \sqrt{a}$$
+            </div>
+            Another way of thinking about this is that the 1/\(n\)th power of \(a\) is the number which when raised to the \(n\)gives \(a\)--which is just the \(n\)th root of \(a\).<br />
+             
+            <div class="comment">
+		<h1>Definition of Roots:</h1>
+		<div class="eqn" style="margin-left: 70px; line-height: 25px;">
+		    For positive numbers \(a\)<br />
+		    <table class="def_table">
+			<tr>
+			    <td>
+				\(\sqrt{a}\) is the positive number whose square is \(a\): e.g.,
+			    </td>
+			    <td>
+				\(\sqrt{49} = 7\)
+			    </td>
+			</tr>
+			<tr>
+			    <td>
+				\(\sqrt[n]{a}\) is the positive number whose \(n\)th power is \(a\): e.g.,
+			    </td>
+			    <td>
+				\(\sqrt[3]{125} = 5\)
+			    </td>
+			</tr>
+		    </table>
+		    For negative numbers \(a\)<br />
+		    <table class="def_table">
+			<tr>
+			    <td>
+				\(\sqrt{a}\) is the negative number whose \(n\)th power is \(a\) if \(n\) is odd: e.g.,
+			    </td>
+			    <td>
+				\(\sqrt[3]{-8} = -2\)
+			    </td>
+			</tr>
+			<tr>
+			    <td>
+				\(\sqrt[n]{a}\) is not a real number if \(a\) is negative and \(n\) is even: e.g.,
+			    </td>
+			    <td>
+				\(\sqrt{-8} =\ ?\)
+			    </td>
+			</tr>
+		    </table>
+		</div>
+	    </div>
+
+            Because fractional exponents are defined as roots, we have the definitions below. The rules for fractional exponents are the same as those for <a href="./exp1.html">integer exponents</a>. Thus we have: <br />
+            
+            <div class="def">
+                <h1>Definitions:</h1>
+		<table class="def_table">
+		    <tr>
+			<td>
+			    \(a^{1/n}=\sqrt[n]{a}\)
+			</td>
+			<td>
+			    (\(a\) must be non-negative if \(n\) is even)
+			</td>
+		    </tr>
+		    <tr>
+			<td>
+			    \(a^{m/n}=\sqrt[n]{a^m}=(\sqrt[n]{a})^m\)
+			</td>
+			<td>
+			    (\(a^m\) must be non-negative if \(n\) is even)
+			</td>
+		    </tr>
+		</table>
+
+		<h1>Rules for Fractional Exponents</h1>
+		<p>
+		    The rules for integer exponents for multiplying, dividing and raising exponentials to powers all
+		    apply for fractional exponents. In particular, we have
+		</p>
+		<table class="def_table">
+		    <tr>
+			<td>
+			    \((ab)^{1/n}=a^{1/n}b^{1/n}=\sqrt[n]{a}\sqrt[n]{b}=\sqrt[n]{ab}\)
+			</td>
+			<td>
+			    (the root of a product is the product of the roots)
+			</td>
+		    </tr>
+		    <tr>
+			<td>
+			    \((\frac{a}{b})^{1/n}=\frac{a^{1/n}}{b^{1/n}}=\frac{\sqrt[n]{a}}{\sqrt[n]{b}}=\sqrt[n]{\frac{a}{b}}\)
+			</td>
+			<td>
+			    (the root of a quotient if the quotient of the roots)
+			</td>
+		    </tr>
+		</table>
+            </div>
+            
+            <strong>Examples</strong><br />
+            As always, as you go through these be sure that you can explain each step of each example.
+            <div id="examlpes">
+                1. <img src="../images/1.2/expratex01.gif" style = "padding-top: 5px;" /><br />
+		2. <img src="../images/1.2/expratex02.gif" style = "padding-top: 5px;" /><br />
+		3. <img src="../images/1.2/expratex03.gif" style = "padding-top: 5px;" />
+            </div>
+	    <!-- Randomize eqn values -->
+	    <script>
+	    	randomize();
+	    </script>
+	    
+	    <br /><strong>Practice</strong><br />
+	    
+	    Before doing these practice problems, make sure that you can explain every step in the examples above.
+            You should be sure that you work the practice problems until you are sure you understand them. When you
+            get to the end of the section there are more practice problems on the <em>section test</em>.<br /><br />
+            
+            Note that you can get new practice problems (for #3-5) by clicking the "Refresh" button at the bottom of the practice set.
+	    <form name="intpractice" action="">
+	    <div>
+		    1. Write the following without exponents by simplifying mentally, without using a calculator:<br />
+		    
+		    <div style="height:40px; margin: 10px 10px 10px 10px;">
+			<!-- Question 1 -->
+			    <div style="float: left; padding-top: 10px;"> \((8)^{4/3} =\ \)</div>	 
+			 <script type="text/javascript">
+				answer_space(1,1,"i");
+			 </script>
+		    </div>
+		2. More mental calculation: also write the following without exponents by simplifying mentally, without using a calculator:<br />
+		<div style="height:40px; margin: 10px 10px 10px 10px;">
+			<!-- Question 2 -->
+			<div style="float: left; padding-top: 10px;">\((16)^{5/4} =\ \)</div>
+			<script type="text/javascript">
+				answer_space(2,1,"i");
+			</script>
+		</div>
+		
+		3. Use the rules of exponents to simplify the following expression into the form \(cx^p\) (where <i>p</i> may be a rational number!)
+		<div style="height:40px; margin: 10px 10px 20px 10px;">
+			<!-- Question 3 -->
+			<div id="q3" style="float: left;"></div>
+			<script type="text/javascript">
+				answer_space(3,1,"c");
+				answer_space(3,2,"p");
+ 			</script>
+		</div>
+		
+		4. Use the rules of exponents to simplify the following expression into the form: \(cx^py^q\)
+		<div style="height:40px; margin: 10px 10px 20px 10px;">
+			<!-- Question 4 -->
+			<div id="q4" style="float: left; font-size: 140%"></div>
+			<script type="text/javascript">
+				answer_space(4,1,"c");
+				answer_space(4,2,"p");
+				answer_space(4,3,"q");
+ 			</script>
+		</div>
+		
+		5. Use the rules of exponents to simplify the following expression into the form: \(x^py^q\)
+		<div style="height:40px; margin: 10px 10px 20px 10px;">
+			<!-- Question 5 -->
+			<div id="q5" style="float: left; font-size: 140%;"></div>
+			<script type="text/javascript">
+				answer_space(5,2,"p");
+				answer_space(5,3,"q");
+ 			</script>
+		</div>
+		
+		
+		<!-- Create questions -->
+		<script type="text/javascript">
+			createQ();
+		    </script>
+	    </div>
+	    
+	    <div id="dialog" title = "Answer Check">
+		Question 1:<br /><input type="text" class="ansMess" id="ansTxt1" disabled = "disabled"/><br /><br />
+		Question 2:<br /><input type="text" class="ansMess" id="ansTxt2" disabled = "disabled"/><br /><br />
+		Question 3:<br /><input type="text" class="ansMess" id="ansTxt3" disabled = "disabled"/><br /><br />
+		Question 4:<br /><input type="text" class="ansMess" id="ansTxt4" disabled = "disabled"/><br /><br />
+		Question 5:<br /><input type="text" class="ansMess" id="ansTxt5" disabled = "disabled"/><br /><br />
+	    </div>
+		
+	    <input type="button" id= "checkAns" value="Check Answers" onclick="checkPracQ(this.form);"/><br />
+		
+	    </form>
+	    <br /><a href="./index.html"> Return to Main</a>
+	</div>
+    </body>
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- Math Jax Configuration -->
+        <script type="text/javascript"src="../common/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<!--jQuery-->
+	<script src= "../common/jquery-ui.custom/js/jquery-1.9.1.js"></script>
+	<link href="../common/jquery-ui.custom/css/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+	<script src="../common/jquery-ui.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<!--jQuery dialog box-->
+	<script type="text/javascript" src="../common/dialog.js"></script>
+	<!--Create Answer Space-->
+	<script type="text/javascript" src="../common/answerMaker.js"></script>
+	<!--Question Evaluation-->
+	<script type="text/javascript" src="../scripts/cr.js"></script>
+	<script type="text/javascript" src="../scripts/14.2.js"></script>
+	<!--Style Sheet-->
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	
+        <title>UM Topic 14.2</title>
+    </head>
+    <body onbeforeunload="unloadPage()">
+	<div id="wrapper">
+	    <div id="title">
+		<h1>Key Function Values to Memorize</h1>
+		<hr />
+	    </div>
+	    <p>
+		Power, logarithmic, and trigonometric functions have characteristic values which you should memorize. In addition to these, you should also remember the important constants:
+	    </p>
+	    <img src="../images/14.2/14.2.r.1.gif" style = "padding-top: 5px; margin-left: 100px;" />
+	    <h2>Integer Powers</h2>
+	    <img src="../images/14.2/14.2.r.2.gif" style = "padding-top: 5px; margin-left: 100px;" />
+	    <h2>Key Logarithm Values</h2>
+	    <div class="eqn">
+		\(\qquad \log 1 =0 \qquad \log (10) = 1 \qquad \ln 1 =0 \qquad \ln(e) = 1\)
+	    </div>
+	    <h2>Key Trigonometric Values</h2>
+	    <img src="../images/14.2/14.2.r.3.gif" style = "padding-top: 5px; margin-left: 100px;" />
+
+	    <div class="practice">
+		<h2>Practice</h2>
+		<form name="intpractice" action="">
+			      Be sure you've looked through all of the values above before doing these. Of course, because we're just memorizing, these are just like flashcards: fill in each value, then click "check" to see if you're right.
+			      <br /><br />
+			    <div>
+				    1. Powers of integers:
+				    <div id="question">
+					<!-- Question 1 -->
+					<table class="def_table">
+					    <!--can change class!!!-->
+					    <tr>
+						<td><em><i>Find </i></em></td>
+						<td><em><i>Answer</i></em></td>
+						<td><em><i>Find</i></em></td>
+						<td><em><i>Answer</i></em></td>
+					    </tr>
+					    <tr>
+						<td>
+						    \(2^2\)
+						</td>
+						<td>
+						    <input type="text" name="i1" style="width: 40px;">
+						</td>
+						<td>
+						    \(2^3\)
+						</td>
+						<td>
+						    <input type="text" name="i2" style="width: 40px;">
+						</td>
+					    </tr>
+					    <tr>
+						<td>
+						    \(2^4\)
+						</td>
+						<td>
+						    <input type="text" name="i3" style="width: 40px;">
+						</td>
+						<td>
+						    \(2^5\)
+						</td>
+						<td>
+						    <input type="text" name="i4" style="width: 40px;">
+						</td>
+					    </tr>
+					    <tr>
+						<td>
+						    \(3^2\)
+						</td>
+						<td>
+						    <input type="text" name="i5" style="width: 40px;">
+						</td>
+						<td>
+						    \(3^3\)
+						</td>
+						<td>
+						    <input type="text" name="i6" style="width: 40px;">
+						</td>
+					    </tr>
+					    <tr>
+						<td>
+						    \(3^4\)
+						</td>
+						<td>
+						    <input type="text" name="i7" style="width: 40px;">
+						</td>
+						<td>
+						    \(4^2\)
+						</td>
+						<td>
+						    <input type="text" name="i8" style="width: 40px;">
+						</td>
+					    </tr>
+					    <tr>
+						<td>
+						    \(4^3\)
+						</td>
+						<td>
+						    <input type="text" name="i9" style="width: 40px;">
+						</td>
+						<td>
+						    \(5^2\)
+						</td>
+						<td>
+						    <input type="text" name="i10" style="width: 40px;">
+						</td>
+					    </tr>
+					    <tr>
+						<td>
+						    \(5^3\)
+						</td>
+						<td>
+						    <input type="text" name="i11" style="width: 40px;">
+						</td>
+						<td>
+						    \(6^2\)
+						</td>
+						<td>
+						    <input type="text" name="i12" style="width: 40px;">
+						</td>
+					    </tr>
+					    <tr>
+						<td>
+						    \(7^2\)
+						</td>
+						<td>
+						    <input type="text" name="i13" style="width: 40px;">
+						</td>
+						<td>
+						    \(8^2\)
+						</td>
+						<td>
+						    <input type="text" name="i14" style="width: 40px;">
+						</td>
+					    </tr>
+					    <tr>
+						<td>
+						    \(9^2\)
+						</td>
+						<td>
+						    <input type="text" name="i15" style="width: 40px;">
+						</td>
+						<td>
+						    \(10^2\)
+						</td>
+						<td>
+						    <input type="text" name="i16" style="width: 40px;">
+						</td>
+					    </tr>
+					    <tr>
+						<td>
+						    \(10^3\)
+						</td>
+						<td>
+						    <input type="text" name="i17" style="width: 40px;">
+						</td>
+						<td>
+						    \(10^4\)
+						</td>
+						<td>
+						    <input type="text" name="i18" style="width: 40px;">
+						</td>
+					    </tr>
+					    <tr>
+						<td>
+						    \(11^2\)
+						</td>
+						<td>
+						    <input type="text" name="i19" style="width: 40px;">
+						</td>
+						<td>
+						    \(12^2\)
+						</td>
+						<td>
+						    <input type="text" name="i20" style="width: 40px;">
+						</td>
+					   </tr>
+					</table>
+				    </div>
+				    2. Trigonometric values (enter "undef" for undefined values, and enter square roots as "sqrt": the square root of 2 would be "sqrt(2)"):
+				    <div class="question">
+					<table class="def_table">
+					    <!--can change class!!!-->
+					    <tr>
+						<td><em><i>Find </i></em></td>
+						<td><em><i>Answer</i></em></td>
+						<td><em><i>Find</i></em></td>
+						<td><em><i>Answer</i></em></td>
+					    </tr>
+					    <tr>
+						<td>
+						    \(\cos(0)\)
+						</td>
+						<td>
+						    <input type="text" name="t1" style="width: 40px;">
+						</td>
+						<td>
+						    \(\cos(\frac{\pi}{6})\)
+						</td>
+						<td>
+						    <input type="text" name="t2" style="width: 40px;">
+						</td>
+					    </tr>
+					    <tr>
+						<td>
+						    \(\cos(\frac{\pi}{4})\)
+						</td>
+						<td>
+						    <input type="text" name="t3" style="width: 40px;">
+						</td>
+						<td>
+						    \(\cos(\frac{\pi}{3})\)
+						</td>
+						<td>
+						    <input type="text" name="t4" style="width: 40px;">
+						</td>
+					    </tr>
+					    <tr>
+						<td>
+						    \(\cos(\frac{\pi}{2})\)
+						</td>
+						<td>
+						    <input type="text" name="t5" style="width: 40px;">
+						</td>
+						<td>
+						    \(\cos(\pi)\)
+						</td>
+						<td>
+						    <input type="text" name="t6" style="width: 40px;">
+						</td>
+					    </tr>
+					    <tr>
+						<td>
+						    \(\cos(\frac{3\pi}{2})\)
+						</td>
+						<td>
+						    <input type="text" name="t7" style="width: 40px;">
+						</td>
+						<td>
+						    \(\cos(2\pi)\)
+						</td>
+						<td>
+						    <input type="text" name="t8" style="width: 40px;">
+						</td>
+					    </tr>
+					    <tr>
+						<td>
+						    \(\sin(0)\)
+						</td>
+						<td>
+						    <input type="text" name="t9" style="width: 40px;">
+						</td>
+						<td>
+						    \(\sin(\frac{\pi}{6})\)
+						</td>
+						<td>
+						    <input type="text" name="t10" style="width: 40px;">
+						</td>
+					    </tr>
+					    <tr>
+						<td>
+						    \(\sin(\frac{\pi}{4})\)
+						</td>
+						<td>
+						    <input type="text" name="t11" style="width: 40px;">
+						</td>
+						<td>
+						    \(\sin(\frac{\pi}{3})\)
+						</td>
+						<td>
+						    <input type="text" name="t12" style="width: 40px;">
+						</td>
+					    </tr>
+					    <tr>
+						<td>
+						    \(\sin(\frac{\pi}{2})\)
+						</td>
+						<td>
+						    <input type="text" name="t13" style="width: 40px;">
+						</td>
+						<td>
+						    \(\sin(\pi)\)
+						</td>
+						<td>
+						    <input type="text" name="t14" style="width: 40px;">
+						</td>
+					    </tr>
+					    <tr>
+						<td>
+						    \(\sin(\frac{3\pi}{2})\)
+						</td>
+						<td>
+						    <input type="text" name="t15" style="width: 40px;">
+						</td>
+						<td>
+						    \(\sin(2\pi)\)
+						</td>
+						<td>
+						    <input type="text" name="t16" style="width: 40px;">
+						</td>
+					    </tr>
+					    <tr>
+						<td>
+						    \(\tan(0)\)
+						</td>
+						<td>
+						    <input type="text" name="t17" style="width: 40px;">
+						</td>
+						<td>
+						    \(\tan(\frac{\pi}{6})\)
+						</td>
+						<td>
+						    <input type="text" name="t18" style="width: 40px;">
+						</td>
+					    </tr>
+					    <tr>
+						<td>
+						    \(\tan(\frac{\pi}{4})\)
+						</td>
+						<td>
+						    <input type="text" name="t19" style="width: 40px;">
+						</td>
+						<td>
+						    \(\tan(\frac{\pi}{3})\)
+						</td>
+						<td>
+						    <input type="text" name="t20" style="width: 40px;">
+						</td>
+					   </tr>
+					    <tr>
+						<td>
+						    \(\tan(\frac{\pi}{2})\)
+						</td>
+						<td>
+						    <input type="text" name="t21" style="width: 40px;">
+						</td>
+						<td>
+						    \(\tan(\pi)\)
+						</td>
+						<td>
+						    <input type="text" name="t22" style="width: 40px;">
+						</td>
+					   </tr>
+					    <tr>
+						<td>
+						    \(\tan(\frac{3\pi}{2})\)
+						</td>
+						<td>
+						    <input type="text" name="t23" style="width: 40px;">
+						</td>
+						<td>
+						    \(\tan(2\pi)\)
+						</td>
+						<td>
+						    <input type="text" name="t24" style="width: 40px;">
+						</td>
+					   </tr>
+					</table>
+				    </div>
+			    </div>
+			
+			<input type="button" id= "checkAns" value="Check Answers" onclick="checkPracQ();"/><br />
+		</form>
+	    </div>
+	    
+	    <div id="dialog" title = "Answer Check">
+		Question 1:<br /><br />
+		\(2^2\):<input type="text" style="border: none; width: 40px;" id="i1_msg" disabled = "disabled"/>
+		\(2^3\):<input type="text" style="border: none; width: 40px;" id="i2_msg" disabled = "disabled"/>
+		\(2^4\):<input type="text" style="border: none; width: 40px;" id="i3_msg" disabled = "disabled"/>
+		\(2^5\):<input type="text" style="border: none; width: 40px;" id="i4_msg" disabled = "disabled"/>
+		\(3^2\):<input type="text" style="border: none; width: 40px;" id="i5_msg" disabled = "disabled"/>
+		\(3^3\):<input type="text" style="border: none; width: 40px;" id="i6_msg" disabled = "disabled"/>
+		\(3^4\):<input type="text" style="border: none; width: 40px;" id="i7_msg" disabled = "disabled"/><br />
+		\(4^2\):<input type="text" style="border: none; width: 40px;" id="i8_msg" disabled = "disabled"/>
+		\(4^3\):<input type="text" style="border: none; width: 40px;" id="i9_msg" disabled = "disabled"/>
+		\(5^2\):<input type="text" style="border: none; width: 40px;" id="i10_msg" disabled = "disabled"/>
+		\(5^3\):<input type="text" style="border: none; width: 40px;" id="i11_msg" disabled = "disabled"/>
+		\(6^2\):<input type="text" style="border: none; width: 40px;" id="i12_msg" disabled = "disabled"/>
+		\(7^2\):<input type="text" style="border: none; width: 40px;" id="i13_msg" disabled = "disabled"/>
+		\(8^2\):<input type="text" style="border: none; width: 40px;" id="i14_msg" disabled = "disabled"/><br />
+		\(9^2\):<input type="text" style="border: none; width: 40px;" id="i15_msg" disabled = "disabled"/>
+		\(10^2\):<input type="text" style="border: none; width: 40px;" id="i16_msg" disabled = "disabled"/>
+		\(10^3\):<input type="text" style="border: none; width: 40px;" id="i17_msg" disabled = "disabled"/>
+		\(10^4\):<input type="text" style="border: none; width: 40px;" id="i18_msg" disabled = "disabled"/>
+		\(11^2\):<input type="text" style="border: none; width: 40px;" id="i19_msg" disabled = "disabled"/>
+		\(12^2\):<input type="text" style="border: none; width: 40px;" id="i20_msg" disabled = "disabled"/>
+		<br /><br />
+		Question 2:<br /><br />
+		\(\cos(0)\): <input type="text" style="border: none; width: 40px;" id="t1_msg" disabled = "disabled"/>
+		\(\cos(\frac{\pi}{6})\):<input type="text" style="border: none; width: 40px;" id="t2_msg" disabled = "disabled"/>
+		\(\cos(\frac{\pi}{4})\):<input type="text" style="border: none; width: 40px;" id="t3_msg" disabled = "disabled"/>
+		\(\cos(\frac{\pi}{3})\):<input type="text" style="border: none; width: 40px;" id="t4_msg" disabled = "disabled"/><br />
+		\(\cos(\frac{\pi}{2})\):<input type="text" style="border: none; width: 40px;" id="t5_msg" disabled = "disabled"/>
+		\(\cos(\pi)\):<input type="text" style="border: none; width: 40px;" id="t6_msg" disabled = "disabled"/>
+		\(\cos(\frac{3\pi}{2})\):<input type="text" style="border: none; width: 40px;" id="t7_msg" disabled = "disabled"/>
+		\(\cos(2\pi)\):<input type="text" style="border: none; width: 40px;" id="t8_msg" disabled = "disabled"/><br />
+		\(\sin(0)\):<input type="text" style="border: none; width: 40px;" id="t9_msg" disabled = "disabled"/>
+		\(\sin(\frac{\pi}{6})\):<input type="text" style="border: none; width: 40px;" id="t10_msg" disabled = "disabled"/>
+		\(\sin(\frac{\pi}{4})\):<input type="text" style="border: none; width: 40px;" id="t11_msg" disabled = "disabled"/>
+		\(\sin(\frac{\pi}{3})\):<input type="text" style="border: none; width: 40px;" id="t12_msg" disabled = "disabled"/><br />
+		\(\sin(\frac{\pi}{2})\):<input type="text" style="border: none; width: 40px;" id="t13_msg" disabled = "disabled"/>
+		\(\sin(\pi)\):<input type="text" style="border: none; width: 40px;" id="t14_msg" disabled = "disabled"/>
+		\(\sin(\frac{3\pi}{2})\):<input type="text" style="border: none; width: 40px;" id="t15_msg" disabled = "disabled"/>
+		\(\sin(2\pi)\):<input type="text" style="border: none; width: 40px;" id="t16_msg" disabled = "disabled"/><br />
+		\(\tan(0)\):<input type="text" style="border: none; width: 40px;" id="t17_msg" disabled = "disabled"/>
+		\(\tan(\frac{\pi}{6})\):<input type="text" style="border: none; width: 40px;" id="t18_msg" disabled = "disabled"/>
+		\(\tan(\frac{\pi}{4})\):<input type="text" style="border: none; width: 40px;" id="t19_msg" disabled = "disabled"/>
+		\(\tan(\frac{\pi}{3})\):<input type="text" style="border: none; width: 40px;" id="t20_msg" disabled = "disabled"/><br />
+		\(\tan(\frac{\pi}{2})\):<input type="text" style="border: none; width: 40px;" id="t21_msg" disabled = "disabled"/>
+		\(\tan(\pi)\):<input type="text" style="border: none; width: 40px;" id="t22_msg" disabled = "disabled"/>
+		\(\tan(\frac{3\pi}{2})\):<input type="text" style="border: none; width: 40px;" id="t23_msg" disabled = "disabled"/>
+		\(\tan(2\pi)\):<input type="text" style="border: none; width: 40px;" id="t24_msg" disabled = "disabled"/>
+	    </div>
+		    <br /><a href="./index.html"> Return to Main</a>
+	</div>
+    </body>
+</html>

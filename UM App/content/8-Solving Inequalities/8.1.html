@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- Math Jax Configuration -->
+        <script type="text/javascript"src="../common/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<!--jQuery-->
+	<script src= "../common/jquery-ui.custom/js/jquery-1.9.1.js"></script>
+	<link href="../common/jquery-ui.custom/css/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+	<script src="../common/jquery-ui.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<!--jQuery dialog box-->
+	<script type="text/javascript" src="../common/dialog.js"></script>
+	<!-- Script to create random variables and questions -->
+	<script type="text/javascript" src="../scripts/random_variables/ra8.1.js"></script>
+	<!--Create Answer Space-->
+	<script type="text/javascript" src="../common/answerMaker.js"></script>
+	<!--Question Evaluation-->
+	<script type="text/javascript" src="../scripts/cr.js"></script>
+	<script type="text/javascript" src="../scripts/8.1.js"></script>
+	<!--Style Sheet-->
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	
+        <title>UM Topic 8.1</title>
+    </head>
+    <body onbeforeunload="unloadPage()">
+	<div id="wrapper">
+	    <div id="title">
+		<h1>Solving Inequalities</h1>
+		<hr />
+	    </div>
+	    <h2>Solving in Your Head</h2>
+            <p>
+		Just as we can look at an equation to guess what numbers will make it true, we can solve some inequalities mentally by asking which numbers will make the inequality true.
+	    </p>
+	    <div class="example_box">
+                <strong>Examples</strong><br />
+                Note how the translation of the equation in the left column leads to the solution in the right column.<br />
+                <div class="ex" style="line-height: 35px;">
+                    <table class="def_table">
+			<tr>
+			    <td><b>To Solve</b></td>
+			    <td><b>We Think</b></td>
+			    <td><b>The Solution</b></td>
+			</tr>
+			<tr>
+			    <td>\(x-1 \gt 0\)</td>
+			    <td><i>"If x is larger than 1, the left-hand side is positive"</i></td>
+			    <td>\(x>1\)</td>
+			</tr>
+			<tr>
+			    <td>\(x+4 \lt 10\)</td>
+			    <td><i>"As long as x stays smaller than 6, the left-hand side will be less than 10"</i></td>
+			    <td>\(x \lt 6\)</td>
+			</tr>
+			<tr>
+			    <td>\(3-x \lt 0\)</td>
+			    <td><i>"When x gets larger than 3, the left-hand side will be negative"</i></td>
+			    <td>\(x \gt 3\)</td>
+			</tr>
+			<tr>
+			    <td>\(x-2 \ge 0\)</td>
+			    <td><i>"If x=2 then x-2 is zero. When x is larger than 2, then x-2 is positive"</i></td>
+			    <td>\(x \ge 2\)</td>
+			</tr>
+			<tr>
+			    <td>\(x^2(x+5) \gt 0\)</td>
+			    <td><i>"The value of \(x^2\) is always positive, so x+5 needs to be positive"</i></td>
+			    <td>\(x \gt -5\)</td>
+			</tr>
+		    </table>
+                </div>
+            </div>
+	    <h2>Notation</h2>
+	    <p>
+		When we want to describe intervals, we can sometimes use double inequalities: to describe all \(x\) values between \(a\) and \(b\), we write \(a \lt x \lt b\).
+		(We assume \(a \lt b\).) Note, however, that if we want to describe all values of x which are either less than \(a\) or greater than \(b\) we have to write
+		it as two intequalities: \(x \lt a\) or \(x \gt b\). Because \(a \lt b\) it is impossible to write a double inequality that describes both of \(x lt a\) and \(x \gt b\) simultaneously.
+	    </p>
+	    
+	    <h2>Operations on Inequalities</h2>
+	    <p>
+		We solve inequalities using some of the techniques used in solving equations. However, there are some important differences in the application of
+		these techniques to inequalities. In particular, we have to be careful that the operation we apply to both sides of the inequality leaves it unchanged.
+	    </p>
+	    
+	    <div class="def">
+		<h1>Operations on Inequalities:</h1>
+		<p>
+		    For a, b, and c real numbers: if \(a \lt b\), then:
+		</p>
+		<table class="def_table">
+		    <tr>
+			<td>
+			    \(a+c \lt b+c\)
+			</td>
+			<td>
+			    (we can add to either side and leave the inequality unchanged) 
+			</td>
+		    </tr>
+		    <tr>
+			<td>
+			    \(a(c) \lt b(c),\ if\ c \gt 0\)
+			</td>
+			<td>
+			    (multiplying by a positive number leaves the inequality unchanged) 
+			</td>
+		    </tr>
+		    <tr>
+			<td>
+			    \(a(c) \gt b(c),\ if\ c \lt 0\)
+			</td>
+			<td>
+			    (multiplying by a negative number reverses the inequality)
+			</td>
+		    </tr>
+		    <tr>
+			<td>
+			    \(a^2 \lt b^2,\ if\ a \gt0\ and\ b \gt 0\)
+			</td>
+			<td>
+			    (for positive numbers squaring both sides leaves the inequality unchanged)
+			</td>
+		    </tr>
+		    <tr>
+			<td>
+			    \(\frac{1}{a} \gt \frac{1}{b},\ if\ a \gt 0\ and\ b \gt 0\)
+			</td>
+			<td>
+			    (for positive numbers, inverting both sides reverses the inequality)
+			</td>
+		    </tr>
+		</table>
+	    </div>
+
+            <div class="example_box">
+                <strong>Examples</strong><br />
+                Note carefully which factors or expressions are common to each term and are factored out.<br />
+                <div class="ex" style="line-height: 35px;">
+                    <div style="margin-right: 5px; float: left;">1. Solve for \(x\):</div><br />
+			<img src="../images/8.1/8.1.e.3.gif" style = "margin-left: 30px; padding-top: 5px;" /><br />
+                    <div style="margin-right: 5px; float: left;">Using the rules above:</div><br />
+			<img src="../images/8.1/8.1.e.3a.gif" style = "margin-left: 30px; padding-top: 5px;" /><br />
+		    <div style="margin-right: 5px; float: left;">2. Solve for \(x\):</div><br />
+			<img src="../images/8.1/8.1.e.4.gif" style = "margin-left: 30px; padding-top: 5px;" /><br />
+		    <div style="margin-right: 5px; float: left;">We can operate on all three sections of the inequality at once as long as we're careful:</div><br />
+			<img src="../images/8.1/8.1.e.4a.gif" style = "margin-left: 30px; padding-top: 5px;" />
+                </div>
+            </div>
+	    
+	    <h2>Solving Linear Inequalities</h2>
+	    <p>
+		Notice how in the previous examples we used the same techniques we use to solve linear equations: we isolate the variable on one side of the inequality.
+		With inequalities, however, we have to be careful about reversing the inequality when multiplying or dividing by a negative number.
+	    </p>
+	    
+	    <div class="example_box">
+                <strong>Examples</strong><br />
+                Note where the inequality changes.<br />
+                <div class="ex" style="line-height: 35px;">
+                    <div style="margin-right: 5px; float: left;">Solve for \(x\):</div><br />
+			<img src="../images/8.1/8.1.e.5.gif" style = "margin-left: 30px; padding-top: 5px;" />
+                </div>
+            </div>
+            
+	    <!-- Randomize eqn values -->
+	    <script>
+	    	randomize();
+	    </script>
+	    
+	    <div class="practice">
+		<h2>Practice</h2>
+		<form name="intpractice" action="">
+			      Be sure you've gone through each step in the examples above before doing these. Once you've worked them until you're sure
+			      that you understand them, go on to the next section. There are more problems of this type in the section test at the end of the section.<br />
+			      <br />
+				Note that you can get new practice problems by clicking the "Refresh" button at the bottom of the practice set.
+			      <br /><br />
+			    <div>
+				    1. Solve for \(x\):
+				    <div id="question">
+					<!-- Question 1 -->
+					<div id="q1" style="float: left; padding-top: 10px;"> </div>	 
+					     <br /><br /><br />
+					     <script type="text/javascript">
+						symbol_space("\\Rightarrow Answer(s)\\ (Enter\\ x\\ in\\ the\\ appropriate\\ box\\ and\\ a\\ value\\ in\\ the\\ other):");
+						answer_space(1,1,"a");
+						symbol_space("\\gt");
+						answer_space(1,1,"b");
+					     </script>
+				    </div><br />
+				    2. Solve for \(x\):
+				    <div id="question">
+					    <!-- Question 2 -->
+					    <div id="q2" style="float: left; padding-top: 10px;"> </div>
+					    <br /><br /><br /><br />
+					     <script type="text/javascript">
+						symbol_space("\\Rightarrow Answer(s)\\ (Enter\\ x\\ in\\ the\\ appropriate\\ box\\ and\\ a\\ value\\ in\\ the\\ other):");
+						answer_space(2,1,"a");
+						symbol_space("\\ge");
+						answer_space(2,1,"b");
+					     </script>
+				    </div>
+			    
+				    <!-- Create questions -->
+				    <script type="text/javascript">
+				    createQ();
+				</script>
+			    </div>
+			
+			<input type="button" id= "checkAns" value="Check Answers" onclick="checkPracQ(this.form);"/><br />
+		</form>
+	    </div>
+	    
+	    <div id="dialog" title = "Answer Check">
+			Question 1:<br /><input type="text" class="ansMess" id="ansTxt1" disabled = "disabled"/><br /><br />
+			Question 2:<br /><input type="text" class="ansMess" id="ansTxt2" disabled = "disabled"/><br /><br />
+	    </div>
+		    <br /><a href="./index.html"> Return to Main</a>
+	</div>
+    </body>
+</html>
