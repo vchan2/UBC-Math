@@ -24,7 +24,7 @@ function checkPrac1(f) {
     } else {
         var wrongAns = '';
         if ( cVal != cAns || ( cAns != 1 && cVal == '' ) ||
-             ( cAns != -1 && cVal == '-' ) ) { wrongAns = 'c'; points-= 0.3;}
+             ( cAns != -1 && cVal == '-' ) ) { wrongAns = 'c';}
         if ( f.pAns1.value != pAns ) {  
 	    if ( wrongAns != '' ) {
 	        wrongAns = wrongAns + ', p';
@@ -61,7 +61,7 @@ function checkPrac2(f) {
     } else {
         var wrongAns = '';
         if ( cVal != cAns || ( cAns != 1 && cVal == '' ) ||
-             ( cAns != -1 && cVal == '-' ) ) { wrongAns = 'c'; points-= 0.3; }
+             ( cAns != -1 && cVal == '-' ) ) { wrongAns = 'c';}
         if ( f.pAns2.value != pAns ) {  
 	    if ( wrongAns != '' ) {
 	        wrongAns = wrongAns + ', p';
@@ -99,7 +99,7 @@ function checkPrac3(f) {
 	var points = 1;
         var wrongAns = '';
         if ( cVal != cAns || ( cAns != 1 && cVal == '' ) ||
-             ( cAns != -1 && cVal == '-' ) ) { wrongAns = 'c'; points-= 0.3;}
+             ( cAns != -1 && cVal == '-' ) ) { wrongAns = 'c';}
         if ( f.pAns3.value != pAns ) {  
 	    if ( wrongAns != '' ) {
 	        wrongAns = wrongAns + ', p';

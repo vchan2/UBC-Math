@@ -34,7 +34,7 @@ function checkPrac3(f) {
         document.getElementById("ansTxt3").setAttribute("value", "Correct!  Try another practice problem!");
     } else {
         var wrongAns = '';
-        if ( cVal != cAns ) { wrongAns = 'c'; points -= 0.5; }
+        if ( cVal != cAns ) { wrongAns = 'c';}
         if ( pVal != pAns ) {  
 	    if ( wrongAns != '' ) {
 	        wrongAns = wrongAns + ', p';
@@ -64,7 +64,7 @@ function checkPrac4(f) {
         document.getElementById("ansTxt4").setAttribute("value", "Correct!  Try another practice problem!");
     } else {
         var wrongAns = '';
-        if ( cVal != cAns ) { wrongAns = 'c'; points -= 0.3; }
+        if ( cVal != cAns ) { wrongAns = 'c';}
         if ( pVal != pAns ) {  
 	    if ( wrongAns != '' ) {
 	        wrongAns = wrongAns + ', p';
@@ -96,7 +96,7 @@ function checkPrac5(f) {
         document.getElementById("ansTxt5").setAttribute("value", "Correct!  Try another practice problem!");
     } else {
         var wrongAns = '';
-        if ( pVal != pAns ) { wrongAns = 'p'; points -= 0.5;}
+        if ( pVal != pAns ) { wrongAns = 'p';}
         if ( qVal != qAns ) { 
 	    if ( wrongAns != '' ) {
 	        wrongAns = wrongAns + ', q';
