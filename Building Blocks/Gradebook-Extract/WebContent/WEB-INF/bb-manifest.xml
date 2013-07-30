@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+	<plugin>
+		<name value="A-Gradebook Test" />
+		<description
+			value="description" />
+		<handle value="gradebook" />
+		<version value="1.0.0" />
+		<requires>
+			<bbversion value="9.0" />
+		</requires>
+		<vendor>
+			<id value="bb" />
+			<name value="Sebastian Valdivia" />
+			<url value="http://www.edugarage.com/" />
+			<description value="description" />
+		</vendor>
+		<http-actions>
+		</http-actions>
+		<application-defs>
+			<application handle="gradebook" is-course-tool="true"
+				is-sys-tool="false" type="course" use-ssl="false" name="A-Gradebook Test" can-allow-guest="false" small-icon="" large-icon="">
+				<description>Description</description>
+				<links>
+					<link>
+						<type value="tool" />
+						<name value="A-Gradebook Test" />
+						<url value="/jsp/index.jsp" />
+						<description value="description" />
+						<icons>
+							<listitem value="images/null.gif" />
+						</icons>
+					</link>
+				</links>
+			</application>
+		</application-defs>
+
+
+		<permissions>
+		<permission type="attribute" name="user.authinfo" actions="get,set"/>
+	    <permission type="attribute" name="user.cardnumber" actions="get"/>
+	    <permission type="attribute" name="user.personalinfo" actions="get,set"/>
+	    
+	    <permission type="persist" name="Content" actions="create,modify,delete"/>
+	    
+	    <permission type="persist" name="attempt" actions="load,persist,delete"/>
+	    <permission type="persist" name="course" actions="create,modify,delete"/>
+	    <permission type="persist" name="coursemembership" actions="create,modify,delete"/>
+	    <permission type="persist" name="Outcome" actions="create,modify,delete"/>
+	    <permission type="persist" name="OutcomeDefinition" actions="create,modify,delete"/>
+	    <permission type="persist" name="OutcomeDefinitionCategory" actions="create,modify,delete"/>
+	    <permission type="persist" name="user" actions="create,modify,delete"/>
+	    <permission type="persist" name="userrole" actions="create,modify,delete"/>
+		</permissions>
+	</plugin>
+</manifest>

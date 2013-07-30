@@ -1,0 +1,233 @@
+* {
+margin: 0;
+padding: 0;
+}
+
+/* render html5 elements as block */
+header, footer, section, aside, nav, article {
+display: block;
+}
+
+body {
+line-height: 1;
+font-family: Verdana, Arial, Helvetica, sans-serif;
+color: #000000;
+background-color:#EDEDED;
+font-size: 18px;
+line-height: 18px;
+}
+
+h1 {
+	margin-bottom:40px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+h2 {
+	margin: 15px 0px 15px 0px;
+	text-align: center;
+}
+p {
+	font-size: 20px;
+	margin: 10px 10px 10px 0px;
+}
+
+#wrapper{
+    margin: 20px 20px 20px 20px;
+    padding: 20px 20px 20px 20px;
+    border: none;
+    background-color: #FFFFFF;
+}
+
+.shadow{
+	/*     Shadow */
+ 	-webkit-box-shadow: 3px 6px 12px 2px #5E5E5E;
+  	box-shadow:         3px 6px 12px 2px #5E5E5E;
+}
+
+
+/* For centering divs */
+.block{
+	text-align: center;
+}
+.block:before{
+	content:'';
+	display:inline-block;
+	height:100%;
+	vertical-align:middle;
+	margin-right: -0.25em;
+}
+.centered {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+
+
+/* PROGRESSION SECTION */
+
+#progression{
+	display:box;
+	display: -webkit-box;
+	display: -moz-box;
+}
+	#left_box{
+	 	-webkit-box-flex: 1;
+    	-moz-box-flex: 1;
+   		box-flex: 1;
+	}
+		#numbers{
+			background-color: #E85454;
+		}
+		#functions{
+			background-color: #66AD6F;
+		}
+		
+	/* Visual elements */
+	#prog_visual{
+		width: 500px;
+		height: 500px;
+		background-color: #F2F2F2;
+		/* Positioning */
+		-webkit-box-flex: 1;
+   		-moz-box-flex: 1;
+    	box-flex: 1;
+	}
+	table.visual_table{
+/* 		border-width: 1px; */
+/* 		border-color: #666666; */
+/* 		border-collapse: collapse; */
+		margin: 10px 10px 10px 10px;
+	}
+	table.visual_table td{
+/* 		border-width: 1px; */
+/* 		border-style: solid; */
+/* 		border-color: #666666; */
+/* 		background-color: #ffffff; */
+		width: 240px;
+		height:240px
+	}
+	/*------------ */
+	#right_box{
+		-webkit-box-flex: 1;
+    	-moz-box-flex: 1;
+    	box-flex: 1;
+	}
+		#algebra{
+			background-color: #445BDB;
+		}
+		#equations{
+			background-color: #FCF281;
+		}
+
+.info_box{
+	margin: 10px 10px 10px 10px;
+	padding: 10px 10px 10px 10px;
+	/* 	Rounded Corner */
+/* 	-moz-border-radius: 10px; */
+	-webkit-border-radius: 10px;
+	border-radius: 10px; /* future proofing */
+	
+}
+.visual_box{
+	height:inherit;
+	/* 	Rounded Corner */
+	-webkit-border-radius: 10px;
+	border-radius: 10px; /* future proofing */
+}
+
+
+/* TEMP */
+.rec_box{
+	
+}
+
+
+/* ==================================================================================== */
+
+
+
+table.def_table {
+	margin-left: 30px;
+}
+
+table.def_table td {
+	padding: 8px;
+}
+
+
+    #wrapper em{
+        color: #600080;
+    }
+#title{
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+.eqn{
+    margin: 10px 10px 10px 40px;
+}
+#score{
+	border: solid 1px; 
+	background: #F0F0F0;
+	width: 100px;
+	overflow: hidden;
+}
+
+.ansMess{
+	border: none;
+	width: 480px;
+}
+
+.def, .comment {
+    margin: 10px 20px 10px 40px;
+    padding: 5px 5px 5px 5px;
+    border-left: solid 1px;
+    border-top: solid 1px;
+}
+    .def h1, .comment h1{
+        text-align: left;
+        font-size: 14px;
+        margin-bottom: 5px;
+        color: #202C7A;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+    .def .eqn, .comment .eqn{
+	margin-left: 30px;
+	margin-right: 30px;
+	margin-bottom: 10px;
+    }
+    .def p, .comment p{
+	margin-left: 10px;
+	margin-top: 10px;
+	margin-bottom: 5px;
+    }
+.def{
+    background: #E3E3E3;
+ }
+.comment{
+    background: #BAC0E3;
+}
+
+.example_box{
+	margin-left: 40px;
+	margin-top: 10px;
+	margin-bottom: 50px;
+}
+	.example_box .ex{
+		margin-top: 15px;
+		margin-left:  40px;
+	}
+
+#examples{
+	margin-top: 15px;
+	margin-left:  40px;
+}
+
+#question{
+	margin: 10px 10px 60px 10px;
+}
+
+.div_line{
+	margin: 0px 10px 0px 0px;
+}
