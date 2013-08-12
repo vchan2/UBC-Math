@@ -27,6 +27,13 @@ h2 {
 p {
 	margin: 10px 10px 10px 0px;
 }
+table.def_table {
+	margin-left: 30px;
+}
+
+table.def_table td {
+	padding: 8px;
+}
 
 #wrapper{
     margin-top: 20px;
@@ -39,7 +46,7 @@ p {
 	margin-right: 20px;
 	margin-bottom: 20px;
 }
-#eqn{
+.eqn{
     margin: 10px 10px 10px 40px;
 }
 #score{
@@ -51,7 +58,7 @@ p {
 
 .ansMess{
 	border: none;
-	width:  400px;
+	width: 480px;
 }
 
 .def, .comment {
@@ -73,7 +80,7 @@ p {
 	margin-right: 30px;
 	margin-bottom: 10px;
     }
-    .def p{
+    .def p, .comment p{
 	margin-left: 10px;
 	margin-top: 10px;
 	margin-bottom: 5px;
@@ -88,6 +95,7 @@ p {
 .example_box{
 	margin-left: 40px;
 	margin-top: 10px;
+	margin-bottom: 50px;
 }
 	.example_box .ex{
 		margin-top: 15px;
@@ -100,10 +108,9 @@ p {
 }
 
 #question{
-	height:40px;
-	margin: 10px 10px 10px 10px;
+	margin: 10px 10px 60px 10px;
 }
 
-#comments{
-    
+.div_line{
+	margin: 0px 10px 0px 0px;
 }

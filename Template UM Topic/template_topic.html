@@ -1,19 +1,28 @@
 <!DOCTYPE HTML>
+<!--===============================TOPIC TEMPLATE====================================================-->
+
+<!--The following is a template to help you construct a section for our Calculus Prep Application-->
+<!--Please erase these comments when you are done with your content creation. Also, remember to make a    -->
+<!--copy of this document before modifying it. Any change done and pushed to Git will change the template    -->
+<!--for everyone, so have your own copy.-->
+<!--Have fun!-->
+
+<!--Author: Sebastian Valdivia-->
+<!--Date: 08/08/2013-->
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <!-- Math Jax Configuration -->
+        
+	<!--The following are scripts necessary for the correct functioning of the HTML page-->
+	
+	<!-- Math Jax Configuration -->
         <script type="text/javascript"src="common/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 	<!--jQuery-->
 	<script src= "common/jquery-ui.custom/js/jquery-1.9.1.js"></script>
 	<link href="common/jquery-ui.custom/css/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
 	<script src="common/jquery-ui.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
-	<!-- SCORM API Wrapper -->
-	<script type="text/javascript" src="common/SCORM_API_wrapper.js"></script>
 	<!--jQuery dialog box-->
 	<script type="text/javascript" src="common/dialog.js"></script>
-	<!-- SCORM Initialization Script (Pipwerks)-->
-	<!--<script type="text/javascript" src="common/SCORM_init.js"></script>-->
 	<!-- Script to create random variables and questions -->
 	<script type="text/javascript" src="scripts/random_variables/ra3.1.js"></script>
 	<!--Create Answer Space-->
@@ -24,17 +33,27 @@
 	<!--Style Sheet-->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	
-        <title>UM Topic Template</title>
+        <!--Window bar title-->
+	<title>UM Topic Template</title>
     </head>
     <body onbeforeunload="unloadPage()">
+	<!--All content is wrapped in this block-->
 	<div id="wrapper">
+	    
+	    <!--Title block-->
 	    <div id="title">
 		<h1>Topic Template!!!</h1>
 		<hr />
 	    </div>
-            When we <em>factor</em> we are applying the <em>distributive law</em> in reverse--reversing what we did when <em>multiplying</em> (which we did in the previous section). <!-- Use Hyperlink??-->
-            Note that we can always check our factoring by multiplying out our factored expression to see that we get what we started with.
 	    
+	    <p>
+		All information must be contained inside these tags, this will make our pages consistent. If there is something important you want to highlight in your content
+		use the <em>(Something important)</em> tag
+	    </p>
+	    
+	    <!--This HTML template depends on a .css stylesheet so please refer to the correct usage of tags, ids and classes to make the content organized and consistent-->
+	    
+	    <!--Definition block-->
 	    <div class="def">
 		<h1>Definition Title:</h1>
 		<p>
@@ -48,18 +67,28 @@
                     \((a-b)=-(b-a)\)
                 </div>
 	    </div>
-
+	    
+	    <!--Comment block-->
+	    <div class="comment">
+		<h1>Comment Title:</h1>
+		<p>
+		    This is my comment
+		</p>
+	    </div>
+	    
+	    <!--The example_box block is used for all examples in a group-->
             <div class="example_box">
                 <strong>Examples</strong><br />
-                Note carefully which factors or expressions are common to each term and are factored out.<br />
+		<p>
+		    Information!!!
+		</p>
+		<!--Listed Examples-->
                 <div class="ex" style="line-height: 35px;">
-                    <div style="margin-right: 5px; float: left;">1.</div>  <img src="images/Factoring_1/3.1.e.1.gif" style = "padding-top: 5px;" /><br />
-                    <div style="margin-right: 5px; float: left;">2.</div>  <img src="images/Factoring_1/3.1.e.2.gif" style = "padding-top: 5px;" /><br />
-                    <div style="margin-right: 5px; float: left;">3.</div>  <img src="images/Factoring_1/3.1.e.3.gif" style = "padding-top: 5px;" /><br />
-                    <div style="margin-right: 5px; float: left;">4.</div>  <img src="images/Factoring_1/3.1.e.4.gif" style = "padding-top: 5px;" /><br />
-                    <div style="margin-right: 5px; float: left;">5.</div>  <img src="images/Factoring_1/3.1.e.5.gif" style = "padding-top: 5px;" />
+		    <!--Copy one of the lines here, change the number and the image and you will have another listed example-->
+                    <div style="margin-right: 5px; float: left;">1.</div>  <img src="images/Factoring_1/3.1.e.1.gif" style = "padding-top: 5px;" /><br /> <!-- image example -->
+                    <div style="margin-right: 5px; float: left;">2.</div>  \(1+1=2\)<br />								  <!-- LaTex example -->
+                    <div style="margin-right: 5px; float: left;">5.</div>  <img src="images/Factoring_1/3.1.e.5.gif" style = "padding-top: 5px;" /> <!-- last one does not need a br -->
                 </div>
-                (In particular, note that for the middle step in example four the expression \((2p+1)\) is that which is common and can be factored out.)
             </div>
 	    
 	    <h2>Subtitle</h2>
@@ -67,27 +96,34 @@
 		More information!!!
 	    </p>
             
+	    <!--Depending on the way your content is set up the following script will or will not be necessary. In this case it calls a randomization script that will create random numbers for the practice questions-->
 	    <!-- Randomize eqn values -->
 	    <script>
 	    	randomize();
 	    </script>
 	    
+	    <!--Practice section block-->
 	    <div class="practice">
 		<h2>Practice</h2>
 		<form name="intpractice" action="">
-			      Be sure you've gone through each step in the examples above before doing these. Once you've worked them until you're sure
-			      that you understand them, go on to the next section. There are more problems of this type in the section test at the end of the section.<br />
-			      <br />
-				Note that you can get new practice problems by clicking the "Refresh" button at the bottom of the practice set.
-			      <br /><br />
+			      <p>
+				Some instructions for your practice problems!
+			      </p>
+			    <!--All questions are contained in this block-->
+			    <!--P tags are not necessary but could be added if desired-->
 			    <div>
 				    1. Factor the following as completely as possible into the indicated form. (In the parenthesized term, enter expressions like \(2x^3\) as 2 x^3,
 				    with no multiplication sign and indicating exponentiation with a caret.)
+				    
+				    <!--Each question should have this id and be enclosed by this block -->
 				    <div id="question">
 					<!-- Question 1 -->
+					<!--This q1...etc id is filled by the random variable script and is ran at the end of the practice question block-->
+					<!--This is done because it creates the question dynamically with the random values-->
 					<div id="q1" style="float: left; padding-top: 10px;"> </div>	 
+					     <!--Answer spaces are built using the answerMaker.js classes-->
 					     <script type="text/javascript">
-						    answer_space(1,1,"a");
+						answer_space(1,1,"a");
 						answer_space(1,2,"p");
 						answer_space(1,3,"q");
 						symbol_space("(");
@@ -97,6 +133,9 @@
 						symbol_space(")");
 					     </script>
 				    </div>
+				    
+				    <!--Add more descriptions and questions as necessary-->
+				    
 				    2. Next, factor the following into a product of binomials as indicated. (For each of your answers, enter expressions like \(2x^3\) as 2 x^3,
 				    with no multiplication sign and indicating exponentiation with a caret.)
 				    <div id="question">
@@ -115,24 +154,27 @@
 						symbol_space(")");
 					    </script>
 				    </div>
-			    
+				    <!--Creates the queestions with random variables-->
 				    <!-- Create questions -->
 				    <script type="text/javascript">
 				    createQ();
 				</script>
 			    </div>
 			
+			<!--This button checks the answers and pulls out the dialog box with the messages for each question-->
 			<input type="button" id= "checkAns" value="Check Answers" onclick="checkPracQ(this.form);"/><br />
 		</form>
 	    </div>
 	    
+	    <!--Dialog box that opens when the button for "Check Answers" is clicked-->
 	    <div id="dialog" title = "Answer Check">
+			<!--Copy one line below, change the question # and the id # to add a new question message-->
+			<!--NOTE: These messages are filled with the javascript; as a result, it must change the content of these inputs according to their ids-->
 			Question 1:<br /><input type="text" class="ansMess" id="ansTxt1" disabled = "disabled"/><br /><br />
 			Question 2:<br /><input type="text" class="ansMess" id="ansTxt2" disabled = "disabled"/><br /><br />
-			<!--<button id="reset"> Reset Questions</button>-->
-			<button id="send_to_bb" onclick="send_score();"> Submit Score to Blackboard</button>
 	    </div>
-		    <br /><a href="./index.html"> Return to Main</a>
+		    <!--Depreciated button. It helps return to the main menu of the test SCORM Package. Feel free to delete it-->
+		    <br /><a href="./index.html">to r Return to Main</a>
 	</div>
     </body>
 </html>
