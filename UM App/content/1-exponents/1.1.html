@@ -29,7 +29,7 @@
 	    <hr />
 	    
 	    <br />Repeated addition leads to multiplication.  For example, <br />
-	    <br /> \(\underbrace{2+2+2+2+2}_{5 factors} = 2 \cdot 5\) <br />
+	    <br /> \(\underbrace{2+2+2+2+2}_{5 \text{factors}} = 2 \cdot 5\) <br />
 	    Similarly, repeated multiplication leads to <em>exponentiation</em>.
 	    For example, <br />
 	    <br /> \(\underbrace{2 \cdot 2 \cdot 2 \cdot 2 \cdot 2}_{5 factors} = 2^5\) <br />
@@ -38,9 +38,106 @@
 	    \(2^5\)
 	    is not the same as 
 	    \(5^2\)
-	    because the first is 32 while the second is 25.  
-	    Using this understanding of exponentiation, we have the following definitions and rules:<br />
+	    because the first is 32 while the second is 25.
+	    We make this the definition for positive integer exponents:<br />  
 	    <div class="def">
+		<h1>Definition:</h1>
+		<table class="def_table">
+		    <tr>
+			<td>
+			    \(a^n = \underbrace{a \cdot a \cdot \cdots \cdot a}_{n \text{factors}}\)
+			</td>
+			<td>
+			    (for \(n\) a positive integer)
+			</td>
+		    </tr>
+		</table>
+	    </div>
+	    
+	    Recall some properties of multiplication: it is associative, meaning 
+	    \((2 \cdot 2)(2 \cdot 2 \cdot 2) = 2 \cdot 2 \cdot 2 \cdot 2 \cdot 2\), 
+	    so in general, our definition above gives us
+	    <div class="def">
+		<h1>Rule:</h1>
+		<table class="def_table">
+		    <tr>
+			<td>
+			    \(a^na^m = a^{n+m}\)
+			</td>
+			<td>
+			    (for \(n,m\) positive integers)
+			</td>
+		    </tr>
+		</table>
+	    </div>
+	    
+	    This seems like a useful rule, so we may wish to extend it beyond positive integers. If \(m = 0\), then we have
+	    \(a^na^0 = a^{n+0} = a^n\). Then if \(a\) is not 0, we can divide both sides by \(a^n\) to get \(a^0 = 1\) for \(a \neq 0\).
+	    
+	    <br />What if \(m\) is a negative integer? Start with \(m = -n\). We have
+	    \(a^na^{-n} = a^0 = 1\) from above, if \(a\) is not 0. Then \(a^{-n} = 1/a^n\) if \(a\) is not 0.
+	    <br />
+	    
+	    <br />The case of \(a = 0\) is interesting. On one hand, \(0^n = 0\) for any positive integer \(n\) by following 
+	    the initial definition. On the other hand, \(a^0 = 1\) for any non-zero \(a\). This makes defining \(0^0\) ambiguous,
+	    and so we say that this is undefined - think of it like dividing by \(0\), it's simply not allowed in math!
+	    <br />
+	    
+	    <br />If we consider \(m = n\), we get the special case \(a^na^n = a^{2n}\). More generally, we see that
+	    <div class="def">
+		<h1>Rule:</h1>
+		<table class="def_table">
+		    <tr>
+			<td>
+			    \((a^n)^m = a^{nm}\)
+			</td>
+			<td>
+			    (for \(n,m\) integers, positive if \(a = 0\))
+			</td>
+		    </tr>
+		</table>
+	    </div>
+	    
+	    <div id="def" class="comment">
+		<h1>Be careful using the following</h1>
+		<table class="def_table">
+		    <tr>
+			<td>
+			    \(ab^n = a(b)^n\)
+			</td>
+			<td>
+			    (Notice that \(ab^n \not= (ab)^n\))
+			</td>
+		    </tr>
+		    <tr>
+			<td>
+			    \(-b^n = -(b^n)\)
+			</td>
+			<td>
+			    (Notice that \(-b^n \not= (-b)^n\))
+			</td>
+		    </tr>
+		    <tr>
+			<td>
+			    \(-ab^n = (-a)(b)^n\)
+			</td>
+		    </tr>
+		</table>
+		
+		<h1>and watch out for this common mistake</h1>
+		<table class="def_table">
+		    <tr>
+			<td>
+			    \((a+b)^n \not= a^n + b^n\)
+			</td>
+			<td>
+			    (The power of a sum is not equal to the sum of the powers)
+			</td>
+		    </tr>
+		</table>
+	    </div>
+	    
+	    <!--<div class="def">
 		<h1>Definitions:</h1>
 		<table class="def_table">
 		    <tr>
@@ -120,6 +217,31 @@
 		    </tr>
 		</table>
 	    </div>
+	    -->
+	    
+	    Another property of multiplication is that it is commutative, meaning 
+	    \((2 \cdot 5)(2 \cdot 5) = (2 \cdot 2)(5 \cdot 5)\), 
+	    so in general, our definition above gives us
+	    <div class="def">
+		<h1>Rule:</h1>
+		<table class="def_table">
+		    <tr>
+			<td>
+			    \((ab)^n = a^nb^n\)
+			</td>
+			<td>
+			    (for \(n\) a positive integer)
+			</td>
+		    </tr>
+		</table>
+	    </div>
+	    
+	    This is another useful rule; as before we can extend it beyond positive integers in a similar fashion.
+	    
+	    <br />The case of \(a = 0\) is interesting. On one hand, \(0^n = 0\) for any positive integer \(n\) by following 
+	    the initial definition. On the other hand, \(a^0 = 1\) for any non-zero \(a\). This makes defining \(0^0\) ambiguous,
+	    and so we say that this is undefined - think of it like dividing by \(0\), it's simply not allowed in math!
+	    <br />
 	    
 	    Notice how the rules for exponents follow from our definition: for example, when we multiply powers we have <br \>
 	    <img src="../images/1.1/expintr1expl.gif" style = "margin-left: 40px; padding-top: 5px;" /><br />
