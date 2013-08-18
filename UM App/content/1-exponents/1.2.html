@@ -41,12 +41,11 @@
             You may recall that the square root of \(a\) is the number such that when you multiply by itself, the result is \(a\). 
             Then what we have just shown is that \(a^{1/2}\) is the square root of \(a\); in other words, \(a^{1/2}\) is another way to write \(\sqrt{a}\).
             
-            In a similar way, the \(n\)-th root of \(a\) is the number such that when you multiply by itself \(n\) times, the result is \(a\).
-            We denote this by \(\sqrt[n]{a}\). Since exponentiation with integer powers is precisely repeated multiplication, \(\sqrt[n]{a}\) is 
-            the number which when raised to the 
+            You may notice that for any positive number, there are two square roots - the positive one and the negative one. For example, \(2^2 = 4\) but also \((-2)^2 = 4\). As a matter of notation, we chose \(a^{1/2} = \sqrt{a}\) to represent the positive root only. For negative numbers, the square root is not even defined! (Think about why this is the case, what happens when you square a number? Can it be negative?)
             
-            Another way of thinking about this is that the 1/\(n\)th power of \(a\) is the number which when raised to the \(n\)gives \(a\)--which is just the \(n\)th root of \(a\).<br />
-             
+            In a similar way, the \(n\)-th root of \(a\) is the number such that when you multiply by itself \(n\) times, the result is \(a\).
+            We denote this by \(\sqrt[n]{a}\). Since exponentiation with integer powers is precisely repeated multiplication, \(\sqrt[n]{a}\) is the number which when raised to the exponent \(n\) gives \(a\), which is \(a^{1/n}\). As in the case \(n = 2\), whenever \(n\) is even this is undefined for negative \(a\), but if \(n\) is odd, there is no problem. For example, \(\sqrt[3]{-8} = -2\).
+            
             <div class="comment">
 		<h1>Definition of Roots:</h1>
 		<div class="eqn" style="margin-left: 70px; line-height: 25px;">
@@ -54,18 +53,18 @@
 		    <table class="def_table">
 			<tr>
 			    <td>
-				\(\sqrt{a}\) is the positive number whose square is \(a\): e.g.,
+				\(a^{1/2} = \sqrt{a}\) is the positive number whose square is \(a\): e.g.,
 			    </td>
 			    <td>
-				\(\sqrt{49} = 7\)
+				\(49^{1/2} = \sqrt{49} = 7\)
 			    </td>
 			</tr>
 			<tr>
 			    <td>
-				\(\sqrt[n]{a}\) is the positive number whose \(n\)th power is \(a\): e.g.,
+				\(a^{1/n} = \sqrt[n]{a}\) is the positive number whose \(n\)th power is \(a\): e.g.,
 			    </td>
 			    <td>
-				\(\sqrt[3]{125} = 5\)
+				\(125^{1/3} = \sqrt[3]{125} = 5\)
 			    </td>
 			</tr>
 		    </table>
@@ -73,24 +72,27 @@
 		    <table class="def_table">
 			<tr>
 			    <td>
-				\(\sqrt{a}\) is the negative number whose \(n\)th power is \(a\) if \(n\) is odd: e.g.,
+				\(a^{1/n} = \sqrt[n]{a}\) is the negative number whose \(n\)th power is \(a\) if \(n\) is odd: e.g.,
 			    </td>
 			    <td>
-				\(\sqrt[3]{-8} = -2\)
+				\((-8)^{1/3} = \sqrt[3]{-8} = -2\)
 			    </td>
 			</tr>
 			<tr>
 			    <td>
-				\(\sqrt[n]{a}\) is not a real number if \(a\) is negative and \(n\) is even: e.g.,
+				\(a^{1/n} = \sqrt[n]{a}\) is not a real number if \(a\) is negative and \(n\) is even: e.g.,
 			    </td>
 			    <td>
-				\(\sqrt{-8} =\ ?\)
+				\((-4)^{1/2} = \sqrt{-4} =\ ?\)
 			    </td>
 			</tr>
 		    </table>
 		</div>
 	    </div>
 
+            Recall the exponentiation rule \((a^n)^m = a^{nm}\). Extending this to fractions and using the above interpretation, 
+            
+            
             Because fractional exponents are defined as roots, we have the definitions below. The rules for fractional exponents are the same as those for <a href="./exp1.html">integer exponents</a>. Thus we have: <br />
             
             <div class="def">
