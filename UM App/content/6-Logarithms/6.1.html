@@ -29,21 +29,20 @@
 		<hr />
 	    </div>
             <p>
-		We write the logarithm with base 10 as log(x) and that with base e as ln(x).
-		These are just the inverse functions for the corresponding exponentials, so that
+		The <em>logarithm</em> (<em>base</em> \(b\)) of a number \(x\) is the exponent to which the base must be raised in order to produce \(x\), which we denote \(log_b(x)\). Then log base \(b\) is the "undoing" exponentiation base \(b\):
+		
 	    </p>
 	    <div class="eqn">
-		if \(y=log(x)\) then \(10^y = x\)<br />
-		if \(y=ln(x)\) then \(e^y = x\)
+		if \(y=log_b(x)\) then \(b^y = x\)<br />
 	    </div>
 	    <p>
-		In words, <em>log(x) is the exponent of 10 that gives x</em>, and <em>ln(x) is the exponent of e that gives x</em>, that is,
-	    </p>
-	    <div class="eqn">
-		$$10^{log(x)} = x\ and\ e^{ln(x)}=x$$
+		
+	    <div id="def" class="comment">
+		<h1>Note:</h1>
+		For reasons that will become clear after talking about functions and exponents/logarithms as functions, we only consider logarithms with positive base \(b\).
 	    </div>
 	    <p>
-		All logarithm functions have some useful properties:
+		All logarithms have some useful properties that can be derived from the properties of exponents:
 	    </p>
 	    <div class="def">
 		<h1>Properties of Logarithms:</h1>
@@ -54,10 +53,7 @@
                     <table class="def_table">
 			<tr>
 			    <td>
-				\(log(MN)=log(M)+log(N)\)
-			    </td>
-			    <td>
-				\(ln(MN)=ln(M)+ln(N)\)
+				\(log_b(MN)=log_b(M)+log_b(N)\)
 			    </td>
 			    <td>
 				Logarithm of a Product
@@ -65,10 +61,7 @@
 			</tr>
 			<tr>
 			    <td>
-				\(log(\frac{M}{N})=log(M)-log(N)\)
-			    </td>
-			    <td>
-				\(ln(\frac{M}{N})=ln(M)-ln(N)\)
+				\(log_b(\frac{M}{N})=log_b(M)-log_b(N)\)
 			    </td>
 			    <td>
 				Logarithm of a Quotient
@@ -76,10 +69,7 @@
 			</tr>
 			<tr>
 			    <td>
-				\(log(M^p)=p\ log(M)\)
-			    </td>
-			    <td>
-				\(ln(M^p)=p\ ln(M)\) 
+				\(log_b(M^p)=p\ log_b(M)\)
 			    </td>
 			    <td>
 				Logarithm of a Power
@@ -87,24 +77,18 @@
 			</tr>
 			<tr>
 			    <td>
-				\(log(1)=0\)
+				\(log_b(1)=0\)
 			    </td>
 			    <td>
-				\(ln(1)=0\) 
-			    </td>
-			    <td>
-				Logarithm of a +1
+				Logarithm of +1
 			    </td>
 			</tr>
 			<tr>
 			    <td>
-				\(log(10)=1\)
+				\(log_b(b)=1\)
 			    </td>
 			    <td>
-				\(ln(e)=1\) 
-			    </td>
-			    <td>
-				Logarithm of a Base
+				Logarithm of the base
 			    </td>
 			</tr>
 		    </table>
@@ -114,15 +98,12 @@
 	    <div class="comment">
 		<p>
 		    <strong>Be careful</strong> not to make the mistake of trying to use these properties when they do not apply.
-		    None of the following forms can be rewritten using the properties above.
+		    <strong>Neither</strong> of the following forms can be rewritten using the properties above.
 		</p>
 		<table class="def_table">
 		    <tr>
 			<td>
-			    \(log(M+N)\)
-			</td>
-			<td>
-			    \(ln(M+N)\)
+			    \(log_b(M+N)\)
 			</td>
 			<td>
 			    No rules for the logarithm of a sum
@@ -130,13 +111,10 @@
 		    </tr>
 		    <tr>
 			<td>
-			    \(\frac{log(M)}{log(N)}\)
+			    \(\frac{log_b(M)}{log_b(N)}\)
 			</td>
 			<td>
-			    \(\frac{ln(M)}{ln(N)}\)
-			</td>
-			<td>
-			    No rules for the quotient of 6.1
+			    No rules for the quotient of logarithms
 			</td>
 		    </tr>
 		</table>
@@ -151,26 +129,17 @@
 		<table class="def_table">
 		    <tr>
 			<td>
-			    \(log(N)=x \Leftarrow\Rightarrow 10^x=N\)
-			</td>
-			<td>
-			    \(ln(N)=x \Leftarrow\Rightarrow e^x=N\)
+			    \(log_b(N)=x \Leftarrow\Rightarrow b^x=N\)
 			</td>
 		    </tr>
 		    <tr>
 			<td>
-			    \(log(10^x)=x\)
-			</td>
-			<td>
-			    \(ln(e^x)=x\)
+			    \(log_b(b^x)=x\)
 			</td>
 		    </tr>
 		    <tr>
 			<td>
-			    \(10^{log(x)}=x\)
-			</td>
-			<td>
-			    \(e^{ln(x)}=x\)
+			    \(b^{log_b(x)}=x\)
 			</td>
 		    </tr>
 		</table>
